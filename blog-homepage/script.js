@@ -24,6 +24,11 @@ menuToggle.addEventListener('click', () => {
     if (menuIcon) menuIcon.classList.toggle('bx-x', isActive);
 });
 
+// IMPORTANT: Stop propagation inside the sidebar so it doesn't close when clicked
+navRight.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
 navOverlay.addEventListener('click', closeMenu);
 
 document.querySelectorAll('.nav-link').forEach(link => {
