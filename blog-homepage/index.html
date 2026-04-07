@@ -22,19 +22,17 @@
                 <a href="#" class="logo">Blog<span>Hub</span></a>
             </div>
 
-            <!-- 🌟 Added Search Bar -->
-            <!-- Replace the existing search form with this -->
-            <form class="nav-search-form" id="searchForm">
-                <input type="text" placeholder="Search..." class="nav-search-input" id="searchQuery" />
-                <select class="nav-search-input" id="searchType">
-                    <option value="user">Users</option>
-                    <option value="location">Location</option>
-                    <option value="category">Category</option>
-                </select>
-                <button type="submit" class="nav-search-btn"><i class='bx bx-search'></i></button>
-            </form>
-
             <div class="nav-right">
+                <form class="nav-search-form" id="searchForm">
+                    <input type="text" placeholder="Search..." class="search-input" id="searchQuery">
+                    <select class="search-filter" id="searchType">
+                        <option value="all">All</option>
+                        <option value="user">Users</option>
+                        <option value="location">Location</option>
+                        <option value="category">Category</option>
+                    </select>
+                    <button type="submit" class="nav-search-btn"><i class='bx bx-search'></i></button>
+                </form>
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#posts" class="nav-link">Posts</a>
@@ -61,6 +59,7 @@
             </div>
         </div>
     </header>
+    <div class="nav-overlay"></div>
 
 
     <section class="home" id="home">

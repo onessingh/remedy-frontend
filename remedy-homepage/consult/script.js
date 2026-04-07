@@ -76,7 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify(formData)
             });
 
-            const result = await response.json();
+            let result = {};
+            try {
+                result = await response.json();
+            } catch (jsonErr) {
+                console.warn('Could not parse JSON response:', jsonErr);
+            }
             
             if (response.ok && result.success) {
                 // Reset form
@@ -85,23 +90,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Show success modal
                 successModal.classList.add("visible");
                 
-                // Hide the small confirmation message (if still using it)
-                confirmationMessage.classList.add("hidden");
+                // Hide the small confirmation message
+                if (confirmationMessage) confirmationMessage.classList.add("hidden");
             } else {
                 // Show error message
-                confirmationMessage.textContent = result.error || "Failed to book appointment. Please try again.";
+                if (confirmationMessage) {
+                    confirmationMessage.textContent = result.error || "Failed to book appointment. Please try again.";
+                    confirmationMessage.classList.remove("hidden");
+                    setTimeout(() => {
+                        confirmationMessage.classList.add("hidden");
+                    }, 5000);
+                } else {
+                    alert(result.error || "Failed to book appointment.");
+                }
+            }
+        } catch (err) {
+            console.error('Error submitting form:', err);
+            if (confirmationMessage) {
+                confirmationMessage.textContent = "Network error or timeout. Please try again.";
                 confirmationMessage.classList.remove("hidden");
                 setTimeout(() => {
                     confirmationMessage.classList.add("hidden");
                 }, 5000);
             }
-        } catch (err) {
-            console.error('Error submitting form:', err);
-            confirmationMessage.textContent = "Network error. Please try again.";
-            confirmationMessage.classList.remove("hidden");
-            setTimeout(() => {
-                confirmationMessage.classList.add("hidden");
-            }, 5000);
         } finally {
             // Reset button state
             submitBtn.disabled = false;

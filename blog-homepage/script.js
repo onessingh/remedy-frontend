@@ -8,17 +8,26 @@ window.addEventListener("scroll", () => {
 
 const menuToggle = document.querySelector('.menu-toggle');
 const navRight = document.querySelector('.nav-right');
+const navOverlay = document.querySelector('.nav-overlay');
+
+const closeMenu = () => {
+    navRight.classList.remove('active');
+    navOverlay.classList.remove('active');
+    const menuIcon = menuToggle.querySelector('i');
+    if (menuIcon) menuIcon.classList.remove('bx-x');
+};
 
 menuToggle.addEventListener('click', () => {
-    navRight.classList.toggle('active');
-    menuToggle.querySelector('i').classList.toggle('bx-x');
+    const isActive = navRight.classList.toggle('active');
+    navOverlay.classList.toggle('active', isActive);
+    const menuIcon = menuToggle.querySelector('i');
+    if (menuIcon) menuIcon.classList.toggle('bx-x', isActive);
 });
 
+navOverlay.addEventListener('click', closeMenu);
+
 document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navRight.classList.remove('active');
-        menuToggle.querySelector('i').classList.remove('bx-x');
-    });
+    link.addEventListener('click', closeMenu);
 });
 
 const profileDropdown = document.querySelector('.profile-dropdown');
