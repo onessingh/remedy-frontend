@@ -1136,18 +1136,20 @@ img {
 
 
 
-/* Forced Desktop Mode Overrides - FINAL CRITICAL FIX for "Ajib" Nav Bar */
+
+/* Forced Desktop Mode Overrides - Fix for "Ajib" (Weird) Navbar and Header Blowup */
 .main-header {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    height: 70px !important; /* Fixed height for consistency */
+    height: 70px !important;
     padding: 0 5% !important;
-    background: var(--white) !important;
+    background-color: var(--white) !important;
     position: sticky !important;
     top: 0 !important;
     width: 100% !important;
-    box-sizing: border-box !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+    z-index: 1000 !important;
 }
 
 .main-nav {
@@ -1155,6 +1157,23 @@ img {
     align-items: center !important;
     width: 100% !important;
     justify-content: space-between !important;
+}
+
+.logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.8rem !important;
+    font-size: 1.1rem !important; /* Reduced for force desktop */
+    font-weight: 700 !important;
+    color: var(--primary) !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+.logo img, .logo i {
+    height: 24px !important; /* Smaller icon like screenshot */
+    font-size: 1.2rem !important;
+    color: var(--primary) !important;
 }
 
 .main-nav ul {
@@ -1169,24 +1188,29 @@ img {
     box-shadow: none !important;
     padding: 0 !important;
     margin: 0 !important;
-    gap: 1.5rem !important;
+    gap: 1.2rem !important; /* Tightened gap */
     transform: none !important;
     visibility: visible !important;
 }
 
 .main-nav ul li {
-    display: block !important;
-    width: auto !important;
+    display: inline-block !important;
     margin: 0 !important;
+    padding: 0 !important;
 }
 
 .main-nav ul li a {
-    display: inline-block !important;
-    font-size: 0.95rem !important;
+    font-size: 0.85rem !important; /* Smaller, professional font */
     font-weight: 500 !important;
-    color: var(--text) !important;
+    color: var(--primary-dark) !important;
     padding: 0.5rem 0 !important;
     white-space: nowrap !important;
+}
+
+.main-nav ul li.active a {
+    color: var(--primary) !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid var(--primary) !important;
 }
 
 .mobile-menu-btn, .menu-overlay {
@@ -1194,25 +1218,5 @@ img {
 }
 
 .header-right {
-    display: flex !important;
-    align-items: center !important;
-}
-
-.logo {
-    display: flex !important;
-    align-items: center !important;
-    font-size: 1.4rem !important;
-    font-weight: 700 !important;
-    color: var(--primary) !important;
-    flex-shrink: 0 !important;
-}
-
-.logo span {
-    font-size: inherit !important;
-    line-height: 1 !important;
-}
-
-.logo img {
-    height: 40px !important;
-    width: auto !important;
+    display: none !important; /* Hide extra elements if they wrap */
 }

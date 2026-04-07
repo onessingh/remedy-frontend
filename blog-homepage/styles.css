@@ -1518,16 +1518,19 @@ footer p {
 
 /* Responsive Adjustments */
 
-/* Forced Desktop Mode Overrides - Fix for Overlap and "Ajib" Nav */
+
+/* Forced Desktop Mode Overrides - Fix for Overlap and "Ajib" Nav Bar */
 .nav {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
     max-width: 1200px !important;
+    min-width: 1024px !important; /* Ensure it doesn't shrink too much */
     margin: 0 auto !important;
     padding: 10px 20px !important;
     flex-wrap: nowrap !important;
 }
+
 
 
 .logo-home-container {
@@ -1535,32 +1538,39 @@ footer p {
     margin-right: 20px !important;
 }
 
+
 .logo {
-    font-size: 1.5rem !important;
+    font-size: 1.2rem !important; /* Shrunk from 1.5rem to prevent overlap */
     white-space: nowrap !important;
+    font-weight: 800 !important;
 }
+
+
 
 .nav-search-form {
     display: flex !important;
     flex-grow: 1 !important;
-    max-width: 400px !important;
-    margin: 0 20px !important;
+    max-width: 350px !important; /* Slightly reduced */
+    margin: 0 10px !important; /* Tightened margins */
 }
+
+
 
 .nav-right {
     display: flex !important;
     position: static !important;
     width: auto !important;
     height: auto !important;
-    background: none !important;
+    background: transparent !important;
     box-shadow: none !important;
     padding: 0 !important;
     transform: none !important;
-    gap: 1.5rem !important;
+    gap: 1.2rem !important; /* Slightly reduced */
     flex-direction: row !important;
     opacity: 1 !important;
     pointer-events: auto !important;
 }
+
 
 .nav-link {
     color: var(--bg-color) !important;
