@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>User Profile</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <div class="left-sidebar">
+            <div class="section achievements-section animate__animated animate__fadeInLeft">
+                <h3><i class="fas fa-trophy"></i> Achievements & Awards</h3>
+                <ul id="achievementsList"></ul>
+            </div>
+
+            <div class="section about-section animate__animated animate__fadeInLeft">
+                <h3><i class="fas fa-user"></i> About Me</h3>
+                <p id="userBio">Loading...</p>
+                <div class="skills" id="skillsContainer"></div>
+            </div>
+
+            <div class="section social-media-section animate__animated animate__fadeInLeft">
+                <h3><i class="fas fa-link"></i> Connect With Me</h3>
+                <ul class="social-links">
+                    <li><a id="linkedinLink" href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a id="githubLink" href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a id="twitterLink" href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Content Area -->
+        <div class="right-content">
+            <div class="profile-container animate__animated animate__fadeInDown">
+                <div class="profile-header">
+                    <div class="profile-pic-wrapper">
+                        <img src="/images/default.jpg" alt="Profile Image" class="profile-pic" id="profilePreview">
+                        <!-- Follow Button will be added here by JS -->
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="user-name" id="userName">User</h1>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-number" id="blogCount">0</span>
+                                <span class="stat-label">BLOGS</span>
+                            </div>
+                            <div class="stat" onclick="showFollowersList()">
+                                <span class="stat-number" id="followerCount">0</span>
+                                <span class="stat-label">FOLLOWERS</span>
+                            </div>
+                            <div class="stat" onclick="showFollowingList()">
+                                <span class="stat-number" id="followingCount">0</span>
+                                <span class="stat-label">FOLLOWING</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="editProfileContainer"></div>
+            </div>
+
+            <div class="user-blogs animate__animated animate__fadeInUp">
+                <div class="blogs-header">
+                    <h2><i class="fas fa-pen-fancy"></i> Blogs</h2>
+                    <div id="createBlogBtnContainer"></div>
+                </div>
+                <ul id="blogList"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Followers/Following Modal -->
+    <div id="followModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle">Followers</h3>
+            <div id="modalList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

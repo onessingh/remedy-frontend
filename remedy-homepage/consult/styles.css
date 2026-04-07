@@ -1,0 +1,232 @@
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 6rem 5%;
+    background-color: var(--light-alt);
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-dark);
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--dark-gray);
+}
+
+/* Consult Form */
+.consult-form {
+    padding: 4rem 5%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.consult-form h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-dark);
+}
+
+.consult-form form {
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.consult-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--primary-dark);
+}
+
+.consult-form input,
+.consult-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    outline: none;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.consult-form input:focus,
+.consult-form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 5px rgba(58, 125, 68, 0.3);
+}
+
+.consult-form .cta-button {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+}
+
+#confirmationMessage {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Expert Cards */
+.experts {
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.experts h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.expert-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.expert-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.expert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.expert-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.expert-card h3 {
+    margin: 1rem 0 0.5rem;
+    color: var(--primary-dark);
+}
+
+.expert-card p {
+    padding: 0 1rem 1.5rem;
+    color: var(--dark-gray);
+}
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+}
+
+.modal.visible .modal-content {
+    transform: translateY(0);
+}
+
+.modal h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+.modal p {
+    margin-bottom: 1.5rem;
+    color: var(--dark-gray);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.modal-btn {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.modal-btn.cancel {
+    background-color: var(--gray);
+    color: var(--dark-gray);
+}
+
+.modal-btn.cancel:hover {
+    background-color: #d1d1d1;
+}
+
+.modal-btn.confirm {
+    background-color: var(--primary);
+    color: white;
+}
+
+.modal-btn.confirm:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Error Styles */
+.error {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    display: none;
+}
+/* Success Modal Specific Styles */
+#successModal .modal-content {
+    background-color: #f8fff8;
+    border: 1px solid var(--primary);
+}
+
+#successModal h3 {
+    color: var(--primary);
+}
+
+#successModal .modal-buttons {
+    justify-content: center;
+}

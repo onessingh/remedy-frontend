@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="post-container" class="post-detail">
+        <header class="post-header">
+            <span id="post-category" class="category">Category</span>
+            <h1 id="post-title">Loading title...</h1>
+            <div class="post-meta">
+                <span id="post-status"></span>
+                <span id="post-date"></span>
+            </div>
+            <div class="author-info">
+                <a id="author-profile-link" href="#" class="author-link">
+                    <img id="post-author-image" src="/Uploads/default.jpg" alt="Author profile image" class="author-image">
+                </a>
+                <a id="author-name-link" href="#" class="author-link">
+                    <span id="post-author-name">Unknown</span>
+                </a>
+                <span id="follow-container"></span> <!-- Follow/Unfollow buttons -->
+            </div>
+            <div id="post-tags" class="post-tags"></div>
+        </header>
+
+        <div id="post-content" class="post-content">
+            <div id="post-media" class="post-media"></div>
+            <div id="post-content-text" class="post-content-text"></div>
+        </div>
+
+        <div class="post-actions">
+            <button id="like-btn" class="action-btn">Like</button>
+            <span id="like-count" class="like-count">0 likes</span>
+        </div>
+
+        <section class="comments-section">
+            <h3>Comments</h3>
+            <form id="comment-form" class="comment-form">
+                <input type="text" id="comment-input" placeholder="Write a comment..." aria-label="Comment input">
+                <button type="submit" class="submit-comment">Post Comment</button>
+            </form>
+            <div id="comments-container" class="comments-list">Loading comments...</div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

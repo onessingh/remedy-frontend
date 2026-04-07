@@ -1,0 +1,319 @@
+:root {
+    --primary-color: #3b82f6; /* Bright blue for modern vibrancy */
+    --secondary-color: #a855f7; /* Purple for colorful gradient */
+    --accent-color: #22c55e; /* Green for success states */
+    --text-color: #111827; /* Dark gray for readability */
+    --background-color: #f8fafc; /* Light background for clean look */
+    --card-background: rgba(255, 255, 255, 0.9); /* Glassmorphism effect */
+    --border-color: #e5e7eb; /* Subtle borders */
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    --glow: 0 0 8px rgba(59, 130, 246, 0.2); /* Subtle glow */
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    margin: 0;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+.edit-profile-container {
+    background: var(--card-background);
+    backdrop-filter: blur(10px);
+    padding: 32px;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    overflow: hidden; /* Clip content that might exceed bounds */
+}
+
+.profile-header h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.profile-header h1 i {
+    margin-right: 8px;
+    color: var(--secondary-color);
+}
+
+.profile-picture-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.image-upload {
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.image-upload:hover {
+    transform: scale(1.02); /* Reduced scale to stay within bounds */
+}
+
+#profilePreview {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    background-color: var(--background-color);
+    display: block;
+    transition: var(--transition);
+}
+
+.image-upload:hover #profilePreview {
+    box-shadow: var(--glow);
+}
+
+.upload-overlay {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--background-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.203);
+}
+
+#profilePicture {
+    display: none;
+}
+
+.form-group {
+    background: var(--background-color);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    margin: 0 8px; /* Reduced margin to keep within container */
+}
+
+.form-group:hover {
+    border-color: var(--primary-color);
+    transform: none; /* Removed translateY to prevent overflow */
+    box-shadow: var(--glow);
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+label i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    background: var(--background-color);
+    transition: var(--transition);
+    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.social-media-section {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+    margin: 0 8px; /* Keep within container */
+}
+
+.social-media-section h3 {
+    margin-bottom: 16px;
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center; /* Center the single button */
+    margin-top: 24px;
+    margin: 0 8px; /* Keep within container */
+}
+
+button {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); /* Colorful blue-to-purple gradient */
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    width: 200px; /* Fixed width for better centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    position: relative;
+}
+
+button i {
+    margin-right: 8px;
+}
+
+button:hover {
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color)); /* Reversed gradient for hover */
+    transform: scale(1.03);
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.4); /* Purple glow */
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    background: linear-gradient(90deg, #93c5fd, #d8b4fe); /* Muted colorful gradient */
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.spinner {
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid var(--primary-color);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Tick Animation Styling */
+.tick-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    animation: tickScale 0.6s ease-out forwards;
+}
+
+.tick-animation::after {
+    content: '\f00c'; /* Font Awesome checkmark */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 40px;
+    color: #ffffff;
+    animation: tickBounce 0.6s ease-out forwards;
+}
+
+@keyframes tickScale {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+@keyframes tickBounce {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.tick-animation.fade-out {
+    animation: tickFadeOut 0.4s ease-in forwards;
+}
+
+@keyframes tickFadeOut {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+}
+
+@media (max-width: 600px) {
+    .edit-profile-container {
+        padding: 24px;
+    }
+    
+    .button-group {
+        margin: 0 4px;
+    }
+
+    button {
+        width: 100%; /* Full width on mobile for better usability */
+    }
+
+    .profile-header h1 {
+        font-size: 24px;
+    }
+
+    .form-group {
+        padding: 16px;
+        margin: 0 4px;
+    }
+
+    .social-media-section {
+        margin: 0 4px;
+    }
+
+    .tick-animation {
+        width: 60px;
+        height: 60px;
+    }
+
+    .tick-animation::after {
+        font-size: 30px;
+    }
+}

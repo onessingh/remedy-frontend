@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga | Home Remedies</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+   <header class="main-header">
+       <nav class="main-nav">
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="/index.html" style="color: var(--primary); font-size: 1.5rem;"><i class="fas fa-home"></i></a>
+        <div class="logo">
+            <span>Home Remedies</span>
+        </div>
+    </div>
+            <ul>
+                <li><a href="/remedy-homepage/index.html">Home</a></li>
+                 <li class="active"><a href="/remedy-homepage/yoga/index.html">Yoga</a></li>
+                 <li><a href="/remedy-homepage/blogs/index.html">Blogs</a></li>
+                <li><a href="/remedy-homepage/ayurvedabasics/index.html">Ayurveda Basics</a></li>
+                <li><a href="/remedy-homepage/homeremedies/index.html">Home Remedies</a></li>
+                <li><a href="/remedy-homepage/consult/index.html">Consult</a></li>
+                <li><a href="/remedy-homepage/about/index.html">About Us</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="menu-overlay" id="menuOverlay"></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>Discover the Power of Yoga</h1>
+            <p>Transform your life with ancient yoga practices from around the world, designed for modern wellness.</p>
+            <div class="search-container">
+                <input type="text" id="yogaSearch" placeholder="Search yoga poses...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </section>
+
+        <section class="filters">
+            <div class="filter-group">
+                <label for="categoryFilter">Category:</label>
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="benefitFilter">Benefits:</label>
+                <select id="benefitFilter">
+                    <option value="all">All Benefits</option>
+                    <option value="stress-relief">Stress Relief</option>
+                    <option value="flexibility">Flexibility</option>
+                    <option value="strength">Strength</option>
+                    <option value="balance">Balance</option>
+                    <option value="digestion">Digestion</option>
+                    <option value="back-pain">Back Pain</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="yoga-categories">
+            <h2>Yoga Categories</h2>
+            <div class="category-buttons">
+                <button class="category-btn active" data-category="all">All Poses</button>
+                <button class="category-btn" data-category="hatha">Hatha Yoga</button>
+                <button class="category-btn" data-category="vinyasa">Vinyasa</button>
+                <button class="category-btn" data-category="iyengar">Iyengar</button>
+                <button class="category-btn" data-category="ashtanga">Ashtanga</button>
+                <button class="category-btn" data-category="kundalini">Kundalini</button>
+                <button class="category-btn" data-category="restorative">Restorative</button>
+            </div>
+        </section>
+
+        <section class="yoga-cards" id="yogaCards">
+            <!-- Cards will be populated by JavaScript -->
+        </section>
+
+        <section class="video-section">
+            <h2>Yoga Video Tutorials</h2>
+            <div class="video-container" id="videoContainer">
+                <!-- Videos will be populated by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p class="copyright">&copy; 2025 HOME REMEDY. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

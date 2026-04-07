@@ -1,0 +1,2107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Remedies | Home Remedies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Discover authentic Ayurvedic home remedies using natural ingredients from your kitchen for digestive health, immunity, skin care and stress relief">
+</head>
+<body>
+    <header class="main-header">
+       <nav class="main-nav">
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="/index.html" style="color: var(--primary); font-size: 1.5rem;"><i class="fas fa-home"></i></a>
+        <div class="logo">
+            <span>Home Remedies</span>
+        </div>
+    </div>
+            <ul>
+                <li><a href="/remedy-homepage/index.html">Home</a></li>
+                 <li><a href="/remedy-homepage/yoga/index.html">Yoga</a></li>
+                  <li><a href="/remedy-homepage/blogs/index.html">Blogs</a></li>
+                <li><a href="/remedy-homepage/ayurvedabasics/index.html">Ayurveda Basics</a></li>
+                <li class="active"><a href="/remedy-homepage/homeremedies/index.html">Home Remedies</a></li>
+                <li><a href="/remedy-homepage/consult/index.html">Consult</a></li>
+                <li><a href="/remedy-homepage/about/index.html">About Us</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="menu-overlay" id="menuOverlay"></div>
+        </nav>
+        </div>
+    </header>
+
+    <main class="home-remedies">
+        <section class="remedy-hero">
+            <div class="container">
+                <h1>Ayurvedic Home Remedies</h1>
+                <p>Simple solutions using kitchen ingredients</p>
+            </div>
+        </section>
+
+        <section class="remedy-intro">
+            <div class="container">
+                <div class="intro-content">
+                    <img src="images/ancient-book.png" alt="Ancient Ayurvedic Text">
+                    <div>
+                        <h2>Ancient Wisdom for Modern Living</h2>
+                        <p>Our home remedies collection draws from 5000-year-old Ayurvedic texts, adapted for today's lifestyle. Each remedy has been carefully selected for its effectiveness and ease of preparation using common kitchen ingredients.</p>
+                        <p>Browse by category or search for specific health concerns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Updated Categories Section with 8 categories -->
+        <section class="remedy-categories">
+            <div class="container">
+                <h2>Browse by Category</h2>
+                <div class="category-grid">
+                    <a href="#digestive" class="category-card">
+                        <img src="images/digestive.png" alt="Digestive Remedies">
+                        <div class="category-overlay">
+                            <h3>Digestive Health</h3>
+                            <p>5 remedies</p>
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                    </a>
+                    <a href="#immunity" class="category-card">
+                        <img src="images/immunity.png" alt="Immunity Boosters">
+                        <div class="category-overlay">
+                            <h3>Immunity Boosters</h3>
+                            <p>7 remedies</p>
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                    </a>
+                    <a href="#skin" class="category-card">
+                        <img src="images/skin-care.png" alt="Skin Care">
+                        <div class="category-overlay">
+                            <h3>Skin Care</h3>
+                            <p>4 remedies</p>
+                            <i class="fas fa-spa"></i>
+                        </div>
+                    </a>
+                    <a href="#stress" class="category-card">
+                        <img src="images/stress.png" alt="Stress Relief">
+                        <div class="category-overlay">
+                            <h3>Stress Relief</h3>
+                            <p>6 remedies</p>
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </a>
+                    <a href="#respiratory" class="category-card">
+                        <img src="images/respiratory.png" alt="Respiratory Health">
+                        <div class="category-overlay">
+                            <h3>Respiratory Health</h3>
+                            <p>5 remedies</p>
+                            <i class="fas fa-lungs"></i>
+                        </div>
+                    </a>
+                    <a href="#sleep" class="category-card">
+                        <img src="images/sleep.png" alt="Sleep Aid">
+                        <div class="category-overlay">
+                            <h3>Sleep Aid</h3>
+                            <p>4 remedies</p>
+                            <i class="fas fa-moon"></i>
+                        </div>
+                    </a>
+                    <a href="#hair" class="category-card">
+                        <img src="images/hair-care.png" alt="Hair Care">
+                        <div class="category-overlay">
+                            <h3>Hair Care</h3>
+                            <p>5 remedies</p>
+                            <i class="fas fa-cut"></i>
+                        </div>
+                    </a>
+                    <a href="#joint" class="category-card">
+                        <img src="images/joint-pain.png" alt="Joint Pain Relief">
+                        <div class="category-overlay">
+                            <h3>Joint Pain Relief</h3>
+                            <p>4 remedies</p>
+                            <i class="fas fa-bone"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digestive Remedies Section with 5 remedies -->
+         <section id="digestive" class="remedy-list">
+            <div class="container">
+                <h2><i class="fas fa-leaf"></i> Digestive Remedies</h2>
+                <p class="section-desc">Natural solutions for common digestive issues like bloating, indigestion and acidity</p>
+                
+                <div class="remedy-items">
+                    <div class="remedy-item">
+                        <div class="remedy-image">
+                            <img src="images/ginger-lemon.png" alt="Ginger Lemon Drink">
+                            <div class="time-servings">
+                                <span><i class="far fa-clock"></i> 5 mins</span>
+                                <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                            </div>
+                        </div>
+                        <div class="remedy-content">
+                            <div class="remedy-header">
+                                <h3>Ginger-Lemon Digestive Tonic</h3>
+                                <div class="benefits">
+                                    <span>Relieves bloating</span>
+                                    <span>Aids digestion</span>
+                                    <span>Reduces nausea</span>
+                                </div>
+                            </div>
+                            <p class="remedy-desc">This warming drink stimulates agni (digestive fire) and helps relieve post-meal discomfort. Best taken 30 minutes before or after meals.</p>
+                            <div class="remedy-details">
+                                <div class="ingredients">
+                                    <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                                    <ul>
+                                        <li>1 inch fresh ginger (organic preferred)</li>
+                                        <li>1/2 lemon (with peel if organic)</li>
+                                        <li>1 tsp raw honey (or jaggery for vegans)</li>
+                                        <li>1 cup warm water (not boiling)</li>
+                                        <li>Pinch of rock salt (optional)</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                                    <ol>
+                                        <li>Grate ginger and squeeze juice using a garlic press</li>
+                                        <li>Roll lemon on counter to release juices before cutting</li>
+                                        <li>Mix ginger juice with lemon juice and honey</li>
+                                        <li>Add warm water (test on wrist - should be comfortably warm)</li>
+                                        <li>Stir well and drink immediately</li>
+                                    </ol>
+                                </div>
+                                <div class="tips">
+                                    <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                                    <p>For Vata types, add a pinch of cinnamon. For Pitta, use less ginger. For Kapha, add a pinch of black pepper.</p>
+                                </div>
+                            </div>
+                            <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="remedy-item">
+                        <div class="remedy-image">
+                            <img src="images/cumin-tea.png" alt="Cumin Coriander Fennel Tea">
+                            <div class="time-servings">
+                                <span><i class="far fa-clock"></i> 10 mins</span>
+                                <span><i class="fas fa-user-friends"></i> 2 servings</span>
+                            </div>
+                        </div>
+                        <div class="remedy-content">
+                            <div class="remedy-header">
+                                <h3>CCF Tea (Cumin-Coriander-Fennel)</h3>
+                                <div class="benefits">
+                                    <span>Balances doshas</span>
+                                    <span>Detoxifying</span>
+                                    <span>Improves metabolism</span>
+                                </div>
+                            </div>
+                            <p class="remedy-desc">This classic Ayurvedic tea helps regulate all three doshas and is excellent for daily digestive maintenance.</p>
+                            <div class="remedy-details">
+                                <div class="ingredients">
+                                    <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                                    <ul>
+                                        <li>1/2 tsp cumin seeds</li>
+                                        <li>1/2 tsp coriander seeds</li>
+                                        <li>1/2 tsp fennel seeds</li>
+                                        <li>2 cups water</li>
+                                        <li>1 slice fresh ginger (optional)</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                                    <ol>
+                                        <li>Lightly crush spices using mortar and pestle</li>
+                                        <li>Boil water and add spices</li>
+                                        <li>Simmer for 5-7 minutes covered</li>
+                                        <li>Strain and drink warm</li>
+                                        <li>Best taken 15 minutes before meals</li>
+                                    </ol>
+                                </div>
+                                <div class="tips">
+                                    <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                                    <p>Drink this tea throughout the day for gentle detoxification. Can be stored in thermos for up to 8 hours.</p>
+                                </div>
+                            </div>
+                            <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Added 3 more remedies to reach 5 total -->
+                    <div class="remedy-item">
+                        <div class="remedy-image">
+                            <img src="images/fennel-seeds.png" alt="Fennel Seeds">
+                            <div class="time-servings">
+                                <span><i class="far fa-clock"></i> 1 min</span>
+                                <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                            </div>
+                        </div>
+                        <div class="remedy-content">
+                            <div class="remedy-header">
+                                <h3>Fennel Seed Digestive Aid</h3>
+                                <div class="benefits">
+                                    <span>Relieves gas</span>
+                                    <span>Freshens breath</span>
+                                    <span>Soothes stomach</span>
+                                </div>
+                            </div>
+                            <p class="remedy-desc">A simple yet effective remedy for immediate relief from digestive discomfort and bloating.</p>
+                            <div class="remedy-details">
+                                <div class="ingredients">
+                                    <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                                    <ul>
+                                        <li>1 tsp fennel seeds</li>
+                                        <li>1/2 tsp sugar (optional)</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                                    <ol>
+                                        <li>Chew 1 tsp fennel seeds after meals</li>
+                                        <li>Optionally mix with sugar for better taste</li>
+                                        <li>Chew thoroughly before swallowing</li>
+                                    </ol>
+                                </div>
+                                <div class="tips">
+                                    <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                                    <p>Fennel is tridoshic (good for all body types). For Vata, combine with rock sugar. For Pitta, use without sugar. For Kapha, add a pinch of ginger powder.</p>
+                                </div>
+                            </div>
+                            <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="remedy-item">
+                        <div class="remedy-image">
+                            <img src="images/ajwain-water.png" alt="Ajwain Water">
+                            <div class="time-servings">
+                                <span><i class="far fa-clock"></i> 10 mins</span>
+                                <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                            </div>
+                        </div>
+                        <div class="remedy-content">
+                            <div class="remedy-header">
+                                <h3>Ajwain Water for Indigestion</h3>
+                                <div class="benefits">
+                                    <span>Relieves acidity</span>
+                                    <span>Reduces bloating</span>
+                                    <span>Improves appetite</span>
+                                </div>
+                            </div>
+                            <p class="remedy-desc">Ajwain (carom seeds) are a powerful digestive aid that can quickly relieve stomach discomfort.</p>
+                            <div class="remedy-details">
+                                <div class="ingredients">
+                                    <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                                    <ul>
+                                        <li>1 tsp ajwain (carom seeds)</li>
+                                        <li>1 cup water</li>
+                                        <li>1/4 tsp black salt (optional)</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                                    <ol>
+                                        <li>Dry roast ajwain seeds for 1 minute until aromatic</li>
+                                        <li>Boil water and add roasted ajwain</li>
+                                        <li>Let steep for 5-7 minutes</li>
+                                        <li>Strain and drink warm</li>
+                                        <li>Add black salt if needed for taste</li>
+                                    </ol>
+                                </div>
+                                <div class="tips">
+                                    <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                                    <p>Drink after heavy meals. For Vata, add 1/4 tsp ginger powder. For Pitta, add 1/4 tsp fennel. For Kapha, add 1/4 tsp black pepper.</p>
+                                </div>
+                            </div>
+                            <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="remedy-item">
+                        <div class="remedy-image">
+                            <img src="images/papaya-remedy.png" alt="Papaya Remedy">
+                            <div class="time-servings">
+                                <span><i class="far fa-clock"></i> 0 mins</span>
+                                <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                            </div>
+                        </div>
+                        <div class="remedy-content">
+                            <div class="remedy-header">
+                                <h3>Papaya for Constipation</h3>
+                                <div class="benefits">
+                                    <span>Natural laxative</span>
+                                    <span>Rich in enzymes</span>
+                                    <span>Gut healing</span>
+                                </div>
+                            </div>
+                            <p class="remedy-desc">Ripe papaya contains papain enzyme that aids digestion and helps regulate bowel movements.</p>
+                            <div class="remedy-details">
+                                <div class="ingredients">
+                                    <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                                    <ul>
+                                        <li>1 cup ripe papaya cubes</li>
+                                        <li>1 tsp lemon juice (optional)</li>
+                                        <li>1 tsp chia seeds (optional)</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                                    <ol>
+                                        <li>Eat 1 cup of ripe papaya on empty stomach</li>
+                                        <li>Can add lemon juice for better taste</li>
+                                        <li>For extra fiber, add soaked chia seeds</li>
+                                        <li>Follow with warm water</li>
+                                    </ol>
+                                </div>
+                                <div class="tips">
+                                    <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                                    <p>Best for Vata and Kapha types. Pitta types should eat in moderation. For chronic constipation, eat daily for 1 month. Unripe papaya is not recommended.</p>
+                                </div>
+                            </div>
+                            <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Immunity Boosters Section with 7 remedies -->
+        <section id="immunity" class="remedy-list">
+            <div class="container">
+                <h2><i class="fas fa-shield-virus"></i> Immunity Boosters</h2>
+                <p class="section-desc">Traditional formulas to strengthen your body's natural defense mechanisms</p>
+                
+                <div class="remedy-items">
+                    <div class="remedy-item">
+                        <div class="remedy-image">
+                            <img src="images/turmeric-milk.png" alt="Golden Milk">
+                            <div class="time-servings">
+                                <span><i class="far fa-clock"></i> 15 mins</span>
+                                <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                            </div>
+                        </div>
+                        <div class="remedy-content">
+                            <div class="remedy-header">
+                                <h3>Golden Milk (Turmeric Latte)</h3>
+                                <div class="benefits">
+                                    <span>Boosts immunity</span>
+                                    <span>Anti-inflammatory</span>
+                                    <span>Improves circulation</span>
+                                </div>
+                            </div>
+                            <p class="remedy-desc">This ancient Ayurvedic drink combines turmeric with warming spices to create a powerful immunity-boosting elixir.</p>
+                            <div class="remedy-details">
+                                <div class="ingredients">
+                                    <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                                    <ul>
+                                        <li>1 cup milk (dairy or plant-based)</li>
+                                        <li>1/2 tsp turmeric powder</li>
+                                        <li>1/4 tsp black pepper</li>
+                                        <li>1/4 tsp cinnamon powder</li>
+                                        <li>1/4 tsp ginger powder</li>
+                                        <li>1 tsp honey or maple syrup</li>
+                                        <li>1 tsp ghee or coconut oil</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                                    <ol>
+                                        <li>Warm milk in a saucepan over medium heat</li>
+                                        <li>Add turmeric, black pepper, cinnamon and ginger</li>
+                                        <li>Whisk continuously for 2-3 minutes</li>
+                                        <li>Remove from heat and add honey and ghee</li>
+                                        <li>Strain if desired and drink warm before bedtime</li>
+                                    </ol>
+                                </div>
+                                <div class="tips">
+                                    <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                                    <p>For best results, drink daily during seasonal changes. Black pepper enhances turmeric absorption by 2000%. Vata types can add more ghee, Pitta can reduce black pepper, Kapha can add more ginger.</p>
+                                </div>
+                            </div>
+                            <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="remedy-item">
+                        <div class="remedy-image">
+                            <img src="images/tulsi-tea.png" alt="Tulsi Tea">
+                            <div class="time-servings">
+                                <span><i class="far fa-clock"></i> 10 mins</span>
+                                <span><i class="fas fa-user-friends"></i> 2 servings</span>
+                            </div>
+                        </div>
+                        <div class="remedy-content">
+                            <div class="remedy-header">
+                                <h3>Holy Basil (Tulsi) Immunity Tea</h3>
+                                <div class="benefits">
+                                    <span>Antiviral properties</span>
+                                    <span>Reduces stress</span>
+                                    <span>Respiratory support</span>
+                                </div>
+                            </div>
+                            <p class="remedy-desc">Tulsi, known as the "Queen of Herbs," is revered in Ayurveda for its powerful immune-modulating and adaptogenic properties.</p>
+                            <div class="remedy-details">
+                                <div class="ingredients">
+                                    <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                                    <ul>
+                                        <li>10-12 fresh tulsi leaves (or 1 tsp dried)</li>
+                                        <li>2 cups water</li>
+                                        <li>1/2 inch ginger, sliced</li>
+                                        <li>1 tsp raw honey</li>
+                                        <li>1/4 tsp black pepper (optional)</li>
+                                        <li>1 tsp lemon juice (optional)</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                                    <ol>
+                                        <li>Boil water in a saucepan</li>
+                                        <li>Add tulsi leaves and ginger slices</li>
+                                        <li>Simmer for 5-7 minutes on low heat</li>
+                                        <li>Strain into cups</li>
+                                        <li>Add honey and lemon juice when slightly cooled</li>
+                                        <li>Drink 1-2 times daily</li>
+                                    </ol>
+                                </div>
+                                <div class="tips">
+                                    <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                                    <p>Tulsi is tridoshic (balances all three doshas). For maximum benefit, grow your own organic tulsi plant. The leaves can also be chewed raw in the morning for immunity support.</p>
+                                </div>
+                            </div>
+                            <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Added 5 more remedies to reach 7 total -->
+                    <div class="remedy-item">
+                        <div class="remedy-image">
+                            <img src="images/chyawanprash.png" alt="Chyawanprash">
+                            <div class="time-servings">
+                                <span><i class="far fa-clock"></i> 0 mins</span>
+                                <span><i class="fas fa-user-friends"></i> 30 servings</span>
+                            </div>
+                        </div>
+                        <div class="remedy-content">
+                            <div class="remedy-header">
+                                <h3>Chyawanprash - Immunity Jam</h3>
+                                <div class="benefits">
+                                    <span>Rejuvenating</span>
+                                    <span>Boosts energy</span>
+                                    <span>Rich in antioxidants</span>
+                                </div>
+                            </div>
+                            <p class="remedy-desc">This ancient Ayurvedic herbal jam contains over 40 ingredients that work synergistically to boost immunity and vitality.</p>
+                            <div class="remedy-details">
+                                <div class="ingredients">
+                                    <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                                    <ul>
+                                        <li>1 tsp chyawanprash (store-bought or homemade)</li>
+                                        <li>1 tsp warm water or milk</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                                    <ol>
+                                        <li>Take 1 tsp chyawanprash in the morning</li>
+                                        <li>Can mix with warm water or milk</li>
+                                        <li>Consume on empty stomach</li>
+                                        <li>Follow with warm water</li>
+                                    </ol>
+                                </div>
+                                <div class="tips">
+                                    <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                                    <p>Best taken during seasonal changes. For children, reduce to 1/2 tsp. Avoid if diabetic unless sugar-free version. Take for 40 days for maximum benefit.</p>
+                                </div>
+                            </div>
+                            <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="remedy-item">
+                        <div class="remedy-image">
+                            <img src="images/amla-juice.png" alt="Amla Juice">
+                            <div class="time-servings">
+                                <span><i class="far fa-clock"></i> 5 mins</span>
+                                <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                            </div>
+                        </div>
+                        <div class="remedy-content">
+                            <div class="remedy-header">
+                                <h3>Amla (Indian Gooseberry) Juice</h3>
+                                <div class="benefits">
+                                    <span>Rich in Vitamin C</span>
+                                    <span>Detoxifying</span>
+                                    <span>Anti-aging</span>
+                                </div>
+                            </div>
+                            <p class="remedy-desc">Amla is one of the richest natural sources of vitamin C and a powerful immunity booster in Ayurveda.</p>
+                            <div class="remedy-details">
+                                <div class="ingredients">
+                                    <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                                    <ul>
+                                        <li>1 fresh amla (or 1 tsp amla powder)</li>
+                                        <li>1/2 cup water</li>
+                                        <li>1 tsp honey (optional)</li>
+                                        <li>Pinch of black pepper</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                                    <ol>
+                                        <li>Wash and grate fresh amla</li>
+                                        <li>Mix with water and strain</li>
+                                        <li>Add honey and black pepper</li>
+                                        <li>Drink on empty stomach</li>
+                                    </ol>
+                                </div>
+                                <div class="tips">
+                                    <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                                    <p>Best for Pitta types. Vata types can add 1 tsp ghee. Kapha types can add 1/4 tsp ginger. Avoid if you have hyperacidity.</p>
+                                </div>
+                            </div>
+                            <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="remedy-item">
+                        <div class="remedy-image">
+                            <img src="images/garlic-honey.png" alt="Garlic Honey">
+                            <div class="time-servings">
+                                <span><i class="far fa-clock"></i> 5 days</span>
+                                <span><i class="fas fa-user-friends"></i> 30 servings</span>
+                            </div>
+                        </div>
+                        <div class="remedy-content">
+                            <div class="remedy-header">
+                                <h3>Fermented Garlic Honey</h3>
+                                <div class="benefits">
+                                    <span>Antibacterial</span>
+                                    <span>Antiviral</span>
+                                    <span>Boosts immunity</span>
+                                </div>
+                            </div>
+                            <p class="remedy-desc">This ancient remedy combines the antimicrobial properties of garlic with the healing power of raw honey.</p>
+                            <div class="remedy-details">
+                                <div class="ingredients">
+                                    <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                                    <ul>
+                                        <li>1 cup peeled garlic cloves</li>
+                                        <li>Raw honey to cover</li>
+                                        <li>1 small glass jar with lid</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                                    <ol>
+                                        <li>Peel garlic cloves and place in clean jar</li>
+                                        <li>Pour raw honey over garlic until fully covered</li>
+                                        <li>Seal jar and let ferment for 5-7 days</li>
+                                        <li>Take 1 clove daily or 1 tsp syrup</li>
+                                    </ol>
+                                </div>
+                                <div class="tips">
+                                    <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                                    <p>Best for Kapha types. Vata types can take with warm water. Pitta types should use in moderation. The honey will become more liquid as it ferments.</p>
+                                </div>
+                            </div>
+                            <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="remedy-item">
+                        <div class="remedy-image">
+                            <img src="images/moringa-tea.png" alt="Moringa Tea">
+                            <div class="time-servings">
+                                <span><i class="far fa-clock"></i> 5 mins</span>
+                                <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                            </div>
+                        </div>
+                        <div class="remedy-content">
+                            <div class="remedy-header">
+                                <h3>Moringa Immunity Tea</h3>
+                                <div class="benefits">
+                                    <span>Rich in nutrients</span>
+                                    <span>Boosts energy</span>
+                                    <span>Detoxifies</span>
+                                </div>
+                            </div>
+                            <p class="remedy-desc">Moringa leaves are packed with essential vitamins and minerals that strengthen the immune system.</p>
+                            <div class="remedy-details">
+                                <div class="ingredients">
+                                    <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                                    <ul>
+                                        <li>1 tsp dried moringa leaves (or 1 tbsp fresh)</li>
+                                        <li>1 cup hot water</li>
+                                        <li>1 tsp honey (optional)</li>
+                                        <li>1 tsp lemon juice (optional)</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                                    <ol>
+                                        <li>Steep moringa leaves in hot water for 5 minutes</li>
+                                        <li>Strain and add honey/lemon if desired</li>
+                                        <li>Drink 1-2 times daily</li>
+                                    </ol>
+                                </div>
+                                <div class="tips">
+                                    <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                                    <p>Moringa is tridoshic. Can also be taken as powder (1/4 tsp) with water. Avoid boiling to preserve nutrients. Best taken in morning.</p>
+                                </div>
+                            </div>
+                            <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="remedy-item">
+                        <div class="remedy-image">
+                            <img src="images/giloy-juice.png" alt="Giloy Juice">
+                            <div class="time-servings">
+                                <span><i class="far fa-clock"></i> 10 mins</span>
+                                <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                            </div>
+                        </div>
+                        <div class="remedy-content">
+                            <div class="remedy-header">
+                                <h3>Giloy (Guduchi) Immunity Juice</h3>
+                                <div class="benefits">
+                                    <span>Adaptogenic</span>
+                                    <span>Fever reducing</span>
+                                    <span>Liver support</span>
+                                </div>
+                            </div>
+                            <p class="remedy-desc">Giloy is known as "Amrita" in Ayurveda - the nectar of immortality, revered for its immune-modulating properties.</p>
+                            <div class="remedy-details">
+                                <div class="ingredients">
+                                    <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                                    <ul>
+                                        <li>6-inch giloy stem (or 1 tsp powder)</li>
+                                        <li>1/2 cup water</li>
+                                        <li>1 tsp honey (optional)</li>
+                                        <li>1/4 tsp black pepper</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                                    <ol>
+                                        <li>Crush giloy stem and boil in water for 5 minutes</li>
+                                        <li>Strain and add honey and black pepper</li>
+                                        <li>Drink on empty stomach</li>
+                                    </ol>
+                                </div>
+                                <div class="tips">
+                                    <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                                    <p>Best taken during seasonal changes or when feeling under the weather. Can also be taken as tablets (1 tablet twice daily). Avoid in pregnancy.</p>
+                                </div>
+                            </div>
+                            <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- Skin Care Section with detailed remedies -->
+<section id="skin" class="remedy-list">
+    <div class="container">
+        <h2><i class="fas fa-spa"></i> Skin Care</h2>
+        <p class="section-desc">Natural solutions for glowing skin, acne, dryness and other common skin concerns</p>
+        <div class="remedy-items">
+
+            <!-- Existing Remedy 1: Turmeric & Chickpea Face Pack -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/face-pack.png" alt="Turmeric Face Pack">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 20 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 3-4 uses</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Turmeric & Chickpea Flour Face Pack</h3>
+                        <div class="benefits">
+                            <span>Brightens complexion</span>
+                            <span>Reduces acne</span>
+                            <span>Exfoliates gently</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This traditional ubtan (herbal paste) has been used for centuries in Ayurveda for radiant, healthy skin.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>2 tbsp chickpea flour (besan)</li>
+                                <li>1/2 tsp turmeric powder</li>
+                                <li>1 tbsp sandalwood powder (optional)</li>
+                                <li>1 tbsp raw milk or rose water</li>
+                                <li>1 tsp honey</li>
+                                <li>3-4 drops lemon juice (for oily skin)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Mix all dry ingredients in a bowl</li>
+                                <li>Add milk/rose water gradually to make a paste</li>
+                                <li>Add honey and mix well</li>
+                                <li>Apply evenly on clean face and neck</li>
+                                <li>Leave for 15-20 minutes until semi-dry</li>
+                                <li>Gently scrub in circular motions while removing</li>
+                                <li>Rinse with lukewarm water</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Use 2-3 times weekly. For Vata skin, add 1 tsp almond oil. For Pitta, use more sandalwood. For Kapha, add 1/4 tsp neem powder. Do a patch test first as turmeric can temporarily stain fair skin.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- Existing Remedy 2: Coconut Oil & Sugar Scrub -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/coconut-oil.png" alt="Coconut Oil Remedy">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 5 mins</span>
+                        <span><i class="fas fa-user-friends"></i> Multiple uses</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Coconut Oil & Sugar Scrub</h3>
+                        <div class="benefits">
+                            <span>Moisturizes deeply</span>
+                            <span>Removes dead skin</span>
+                            <span>Prevents stretch marks</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This simple two-ingredient scrub is excellent for dry skin, especially during winter months.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1/2 cup coconut oil (solid state)</li>
+                                <li>1 cup brown sugar or white sugar</li>
+                                <li>5-10 drops essential oil (lavender/rose - optional)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>In a bowl, mix coconut oil and sugar</li>
+                                <li>Add essential oils if using</li>
+                                <li>Store in an airtight glass jar</li>
+                                <li>To use: Take a small amount and massage onto damp skin</li>
+                                <li>Focus on rough areas like elbows, knees and feet</li>
+                                <li>Rinse with warm water</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Best for Vata skin types. Pitta types can use less sugar and add 1 tbsp oatmeal. Kapha types can add 1 tsp sea salt for more exfoliation. Use within 2 weeks for freshness.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 3: Aloe Vera & Honey Face Mask -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/aloe-honey-mask.png" alt="Aloe Vera & Honey Face Mask">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 20 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Aloe Vera & Honey Face Mask</h3>
+                        <div class="benefits">
+                            <span>Soothes skin</span>
+                            <span>Hydrates</span>
+                            <span>Reduces acne</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This natural face mask hydrates and soothes irritated or oily skin.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>2 tbsp fresh aloe vera gel</li>
+                                <li>1 tbsp raw honey</li>
+                                <li>1 tsp rose water (optional)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Mix all ingredients into a paste.</li>
+                                <li>Apply on clean face and neck.</li>
+                                <li>Leave for 15–20 minutes; rinse with cool water.</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Best for Pitta types. Vata types add 1 tsp almond oil. Kapha types use neem powder instead of honey.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 4: Oatmeal & Yogurt Moisturizer -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/oatmeal-yogurt-moisturizer.png" alt="Oatmeal & Yogurt Moisturizer">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 15 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Oatmeal & Yogurt Moisturizer</h3>
+                        <div class="benefits">
+                            <span>Gentle exfoliation</span>
+                            <span>Moisturizes</span>
+                            <span>Soothes dry skin</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">Gentle moisturizer that's perfect for sensitive or dry skin types.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>2 tbsp cooked oatmeal</li>
+                                <li>1 tbsp plain yogurt</li>
+                                <li>1 tsp honey</li>
+                                <li>1 tsp mashed banana (optional)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Mix all ingredients until smooth.</li>
+                                <li>Apply on damp face and massage gently.</li>
+                                <li>Rinse after 15 minutes with lukewarm water.</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Use 2x weekly. For oily skin, reduce yogurt to half.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+       <!-- Stress Relief Section with 6 remedies -->
+<section id="stress" class="remedy-list">
+    <div class="container">
+        <h2><i class="fas fa-heart"></i> Stress Relief</h2>
+        <p class="section-desc">Natural solutions to calm the mind, reduce anxiety and promote relaxation</p>
+        <div class="remedy-items">
+
+            <!-- Existing Remedy 1: Ashwagandha Warm Milk -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/ashwagandha-milk.png" alt="Ashwagandha Milk">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 10 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Ashwagandha Warm Milk</h3>
+                        <div class="benefits">
+                            <span>Reduces stress</span>
+                            <span>Improves sleep</span>
+                            <span>Boosts energy</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">Ashwagandha is Ayurveda's premier adaptogen, helping the body manage stress while promoting vitality.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 cup milk (dairy or plant-based)</li>
+                                <li>1/2 tsp ashwagandha powder</li>
+                                <li>1/4 tsp cardamom powder</li>
+                                <li>1/4 tsp nutmeg powder</li>
+                                <li>1 tsp ghee or coconut oil</li>
+                                <li>1 tsp honey (add after cooling)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Warm milk in a saucepan over medium heat</li>
+                                <li>Add ashwagandha, cardamom and nutmeg</li>
+                                <li>Whisk continuously for 3-4 minutes</li>
+                                <li>Remove from heat and add ghee</li>
+                                <li>Let cool slightly before adding honey</li>
+                                <li>Drink warm 30 minutes before bedtime</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Best for Vata and Kapha types. Pitta types should reduce to 1/4 tsp ashwagandha. Avoid during pregnancy. For maximum benefit, consume daily for 40 days, then take 10 days break.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- Existing Remedy 2: Brahmi & Gotu Kola Memory Tea -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/brahmi-tea.png" alt="Brahmi Tea">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 15 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 2 servings</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Brahmi & Gotu Kola Memory Tea</h3>
+                        <div class="benefits">
+                            <span>Calms the mind</span>
+                            <span>Enhances focus</span>
+                            <span>Reduces anxiety</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This powerful brain tonic combines two of Ayurveda's most revered herbs for mental clarity and relaxation.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 tsp brahmi powder</li>
+                                <li>1 tsp gotu kola powder</li>
+                                <li>2 cups water</li>
+                                <li>1/2 inch fresh ginger</li>
+                                <li>1 tsp honey (optional)</li>
+                                <li>1 tsp ghee (optional)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Boil water in a saucepan</li>
+                                <li>Add brahmi, gotu kola and ginger</li>
+                                <li>Simmer for 10 minutes on low heat</li>
+                                <li>Strain into cups</li>
+                                <li>Add honey and ghee if using</li>
+                                <li>Drink warm in the morning or early evening</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Excellent for students and knowledge workers. Avoid in case of low thyroid function. Can also be taken as powder (1/4 tsp each) with warm water if tea preparation is not possible.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 3: Lavender & Chamomile Tea -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/lavender-chamomile-tea.png" alt="Lavender Chamomile Tea">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 10 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 2 servings</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Lavender & Chamomile Tea</h3>
+                        <div class="benefits">
+                            <span>Calms nerves</span>
+                            <span>Promotes relaxation</span>
+                            <span>Improves sleep</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">A soothing blend of calming herbs that help ease tension and promote restful sleep.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 tbsp dried chamomile flowers</li>
+                                <li>1 tbsp dried lavender buds</li>
+                                <li>2 cups hot water</li>
+                                <li>1 tsp raw honey (optional)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Steep herbs in hot water for 7–10 minutes</li>
+                                <li>Strain and drink warm before bedtime</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Excellent for Vata and Pitta. Avoid if allergic to daisy family plants.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 4: Magnesium-Rich Almond Milk -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/almond-magnesium-milk.png" alt="Magnesium Almond Milk">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 5 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Magnesium-Rich Almond Milk</h3>
+                        <div class="benefits">
+                            <span>Relieves muscle tension</span>
+                            <span>Calms anxiety</span>
+                            <span>Supports sleep</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This magnesium-rich drink helps relax muscles and calm the nervous system naturally.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 cup almond milk</li>
+                                <li>1 tsp almond butter</li>
+                                <li>1/2 tsp ashwagandha powder</li>
+                                <li>1 tsp raw honey</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Warm milk gently</li>
+                                <li>Stir in all ingredients</li>
+                                <li>Drink 30 minutes before bed</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Add cinnamon for flavor and additional calming effects.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 5: Rose Water & Sandalwood Paste -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/rose-sandalwood-paste.png" alt="Rose Water Sandalwood Paste">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 5 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 1 application</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Rose Water & Sandalwood Paste</h3>
+                        <div class="benefits">
+                            <span>Cooling for mind</span>
+                            <span>Reduces irritability</span>
+                            <span>Enhances meditation</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">A cooling face paste that calms the senses and reduces emotional agitation.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>2 tbsp sandalwood powder</li>
+                                <li>Rose water (as needed)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Make a paste using rose water</li>
+                                <li>Apply on forehead or wrists</li>
+                                <li>Let dry before removing</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Ideal for Pitta-type stress.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 6: Mint & Lemon Detox Water -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/mint-lemon-detox-water.png" alt="Mint Lemon Detox Water">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 10 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 1 liter</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Mint & Lemon Detox Water</h3>
+                        <div class="benefits">
+                            <span>Refreshes mind</span>
+                            <span>Reduces mental fatigue</span>
+                            <span>Aids digestion</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This refreshing herbal water helps clear mental fog and supports digestive health.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 lemon (sliced)</li>
+                                <li>5–6 mint leaves</li>
+                                <li>1 liter filtered water</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Muddle mint leaves slightly</li>
+                                <li>Add to water with lemon slices</li>
+                                <li>Chill for an hour and sip throughout the day</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Great for summer heat-related stress.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+        <!-- Respiratory Health Section with 5 remedies -->
+<section id="respiratory" class="remedy-list">
+    <div class="container">
+        <h2><i class="fas fa-lungs"></i> Respiratory Health</h2>
+        <p class="section-desc">Natural solutions for cough, cold, congestion and respiratory wellness</p>
+        <div class="remedy-items">
+
+            <!-- Existing Remedy 1: Tulsi-Ginger Respiratory Tea -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/tulsi-ginger-tea.png" alt="Tulsi Ginger Tea">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 15 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 2 servings</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Tulsi-Ginger Respiratory Tea</h3>
+                        <div class="benefits">
+                            <span>Relieves congestion</span>
+                            <span>Soothes throat</span>
+                            <span>Boosts immunity</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This warming tea combines tulsi's antiviral properties with ginger's expectorant qualities for respiratory relief.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>10-12 fresh tulsi leaves</li>
+                                <li>1 inch ginger, sliced</li>
+                                <li>5-6 black peppercorns</li>
+                                <li>1 tsp licorice root (optional)</li>
+                                <li>2 cups water</li>
+                                <li>1 tsp honey (add after cooling)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Crush tulsi leaves and ginger slightly</li>
+                                <li>Boil water and add all ingredients except honey</li>
+                                <li>Simmer for 10 minutes covered</li>
+                                <li>Strain into cups</li>
+                                <li>Add honey when slightly cooled</li>
+                                <li>Drink warm 2-3 times daily when congested</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>For dry cough, add 1 tsp ghee. For wet cough, add 1/4 tsp turmeric. Avoid licorice in high blood pressure. Inhale the steam while drinking for added benefit.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 2: Black Pepper & Honey Syrup -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/black-pepper-honey.png" alt="Black Pepper Honey Syrup">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 10 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Black Pepper & Honey Syrup</h3>
+                        <div class="benefits">
+                            <span>Clears congestion</span>
+                            <span>Soothes sore throat</span>
+                            <span>Boosts immunity</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This simple syrup helps clear mucus and soothe irritated airways naturally.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 tsp black pepper</li>
+                                <li>1 cup warm water</li>
+                                <li>2 tsp raw honey</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Boil water and add pepper</li>
+                                <li>Let steep for 5 minutes and strain</li>
+                                <li>Add honey; drink warm</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Take twice daily during cold season.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 3: Licorice & Cinnamon Tea -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/licorice-cinnamon-tea.png" alt="Licorice Cinnamon Tea">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 10 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 2 servings</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Licorice & Cinnamon Tea</h3>
+                        <div class="benefits">
+                            <span>Soothes sore throat</span>
+                            <span>Clears mucus</span>
+                            <span>Fights infection</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">Licorice root is a powerful demulcent that coats and soothes inflamed mucous membranes.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 tsp licorice root</li>
+                                <li>1 stick cinnamon</li>
+                                <li>2 cups boiling water</li>
+                                <li>1 tsp honey</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Simmer ingredients for 10 minutes</li>
+                                <li>Strain and drink warm</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Not recommended for long-term use or high blood pressure.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 4: Eucalyptus Steam Inhalation -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/eucalyptus-inhalation.png" alt="Eucalyptus Steam Inhalation">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 10 mins</span>
+                        <span><i class="fas fa-user-friends"></i> Single use</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Eucalyptus Steam Inhalation</h3>
+                        <div class="benefits">
+                            <span>Clears airways</span>
+                            <span>Reduces sinus congestion</span>
+                            <span>Relieves breathing difficulty</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">A natural decongestant that opens nasal passages and soothes irritated respiratory tissues.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 bowl hot water</li>
+                                <li>3–5 drops eucalyptus essential oil</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Pour hot water into a bowl</li>
+                                <li>Add oil, cover head with towel, and inhale steam for 5–10 minutes</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Can add peppermint oil for enhanced effect.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 5: Turmeric Gargle -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/turmeric-gargle.png" alt="Turmeric Gargle">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 2 mins</span>
+                        <span><i class="fas fa-user-friends"></i> Multiple uses</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Turmeric Gargle</h3>
+                        <div class="benefits">
+                            <span>Reduces throat inflammation</span>
+                            <span>Kills bacteria</span>
+                            <span>Soften irritation</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">A simple yet effective remedy to soothe sore throat and reduce bacterial load.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 cup warm water</li>
+                                <li>1/4 tsp turmeric</li>
+                                <li>Pinch of salt</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Mix well and gargle for 30 seconds</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Do 3x daily for best results.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+        <!-- Sleep Aid Section with 4 remedies -->
+<section id="sleep" class="remedy-list">
+    <div class="container">
+        <h2><i class="fas fa-moon"></i> Sleep Aid</h2>
+        <p class="section-desc">Natural solutions for insomnia, restlessness and quality sleep</p>
+        <div class="remedy-items">
+
+            <!-- Existing Remedy 1: Nutmeg Warm Milk -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/nutmeg-milk.png" alt="Nutmeg Milk">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 10 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Nutmeg Warm Milk</h3>
+                        <div class="benefits">
+                            <span>Promotes sleep</span>
+                            <span>Calms nerves</span>
+                            <span>Reduces anxiety</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">Nutmeg is a traditional Ayurvedic remedy for insomnia, especially when combined with warm milk.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 cup warm milk (dairy or plant-based)</li>
+                                <li>A pinch of nutmeg powder (about 1/8 tsp)</li>
+                                <li>1/4 tsp cardamom powder</li>
+                                <li>1 tsp ghee or coconut oil</li>
+                                <li>1 tsp honey (optional)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Warm milk gently (do not boil)</li>
+                                <li>Add nutmeg and cardamom</li>
+                                <li>Stir in ghee</li>
+                                <li>Let sit for 2-3 minutes</li>
+                                <li>Add honey if using (when slightly cooled)</li>
+                                <li>Drink 30 minutes before bedtime</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Very effective for Vata-type insomnia. Do not exceed nutmeg dosage - more is not better. Can also massage feet with warm sesame oil before bed for deeper sleep.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 2: Valerian Root Tea -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/valerian-tea.png" alt="Valerian Root Tea">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 10 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Valerian Root Tea</h3>
+                        <div class="benefits">
+                            <span>Promotes deep sleep</span>
+                            <span>Reduces restlessness</span>
+                            <span>Relaxes muscles</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This herbal tea helps calm an overactive mind and induce natural sleep without side effects.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 tsp valerian root powder</li>
+                                <li>2 cups hot water</li>
+                                <li>1 tsp honey (optional)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Steep root in hot water for 10 minutes</li>
+                                <li>Strain and drink warm 30 minutes before bed</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Avoid during pregnancy or while taking medications.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 3: Warm Banana & Almond Milk -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/banana-almond-milk.png" alt="Banana Almond Milk">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 5 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Warm Banana & Almond Milk</h3>
+                        <div class="benefits">
+                            <span>Melatonin booster</span>
+                            <span>Relaxes muscles</span>
+                            <span>Improves sleep quality</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This natural sleep drink combines magnesium-rich banana and calming almond milk for better sleep.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 banana</li>
+                                <li>1 cup almond milk</li>
+                                <li>Pinch cinnamon</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Blend banana with warm milk and cinnamon</li>
+                                <li>Drink 1 hour before bedtime</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Add 1 tsp ghee for extra grounding effect (Vata types).</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 4: Foot Massage with Sesame Oil -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/sesame-oil-foot-massage.png" alt="Foot Massage with Sesame Oil">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 10 mins</span>
+                        <span><i class="fas fa-user-friends"></i> Daily use</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Foot Massage with Sesame Oil</h3>
+                        <div class="benefits">
+                            <span>Grounding</span>
+                            <span>Draws energy downward</span>
+                            <span>Promotes sleep</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This simple Ayurvedic practice calms the nervous system and prepares the body for restful sleep.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>Warm sesame oil</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Massage oil gently into feet before bed</li>
+                                <li>Cover feet with cotton socks</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Pittas can use coconut oil instead. Kaphas should use mustard oil once weekly.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+        <!-- Hair Care Section with 5 remedies -->
+<section id="hair" class="remedy-list">
+    <div class="container">
+        <h2><i class="fas fa-cut"></i> Hair Care</h2>
+        <p class="section-desc">Natural solutions for hair growth, dandruff, and scalp health</p>
+        <div class="remedy-items">
+
+            <!-- Existing Remedy 1: Herbal Hair Growth Oil -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/hair-oil.png" alt="Herbal Hair Oil">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 30 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 10 uses</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Herbal Hair Growth Oil</h3>
+                        <div class="benefits">
+                            <span>Promotes growth</span>
+                            <span>Reduces hair fall</span>
+                            <span>Strengthens roots</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This traditional Ayurvedic hair oil combines nourishing herbs to promote healthy hair growth and prevent hair loss.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1/2 cup coconut oil (cold-pressed)</li>
+                                <li>2 tbsp bhringraj leaves (or powder)</li>
+                                <li>2 tbsp amla pieces (or powder)</li>
+                                <li>1 tbsp fenugreek seeds</li>
+                                <li>5-6 hibiscus flowers (or 2 tbsp petals)</li>
+                                <li>1 tsp neem leaves (optional for dandruff)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Heat coconut oil in a pan on low heat</li>
+                                <li>Add all herbs and let them infuse for 15-20 minutes</li>
+                                <li>Strain the oil through a muslin cloth</li>
+                                <li>Store in a glass bottle in cool place</li>
+                                <li>Massage into scalp 2-3 times weekly</li>
+                                <li>Leave for at least 1 hour before washing</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>For best results, warm oil slightly before application. Vata types can add 1 tsp sesame oil. Pitta types can add 1 tbsp aloe vera gel. Kapha types can add 1 tsp mustard oil.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- Existing Remedy 2: Egg & Yogurt Hair Mask -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/hair-mask.png" alt="Hair Mask">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 45 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 2 uses</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Egg & Yogurt Hair Mask</h3>
+                        <div class="benefits">
+                            <span>Conditions hair</span>
+                            <span>Adds shine</span>
+                            <span>Reduces breakage</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This protein-rich hair mask helps repair damaged hair and restore natural shine and softness.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 egg (whole for dry hair, white only for oily hair)</li>
+                                <li>2 tbsp plain yogurt</li>
+                                <li>1 tbsp honey</li>
+                                <li>1 tbsp olive oil or coconut oil</li>
+                                <li>5 drops rosemary essential oil (optional)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Beat egg until frothy</li>
+                                <li>Mix in yogurt, honey and oil thoroughly</li>
+                                <li>Apply to damp hair from roots to tips</li>
+                                <li>Cover with shower cap and leave for 30 minutes</li>
+                                <li>Rinse with cool water (hot water will cook egg)</li>
+                                <li>Shampoo as usual</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Use once weekly. For extra conditioning, wrap warm towel around head after application. Add 1 tbsp amla powder for premature graying. Avoid if allergic to eggs.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 3: Onion Juice Scalp Treatment -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/onion-hair-treatment.png" alt="Onion Juice Hair Treatment">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 30 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 1 application</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Onion Juice Scalp Treatment</h3>
+                        <div class="benefits">
+                            <span>Strengthens roots</span>
+                            <span>Prevents hair fall</span>
+                            <span>Stimulates growth</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">Rich in sulfur and antioxidants, onion juice helps strengthen hair follicles and reduce hair fall naturally.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 onion (grated and juice extracted)</li>
+                                <li>A few drops lemon juice</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Extract juice from grated onion</li>
+                                <li>Add a few drops of lemon juice</li>
+                                <li>Apply directly onto scalp</li>
+                                <li>Leave for 30 minutes before washing</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Rinse thoroughly to remove odor. Best used fresh daily. Can be mixed with aloe vera for sensitive scalps.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 4: Neem & Coconut Oil Treatment -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/neem-coconut-oil.png" alt="Neem Coconut Oil Treatment">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 20 mins</span>
+                        <span><i class="fas fa-user-friends"></i> Multiple uses</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Neem & Coconut Oil Treatment</h3>
+                        <div class="benefits">
+                            <span>Treats dandruff</span>
+                            <span>Soothes itchy scalp</span>
+                            <span>Prevents infections</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This antimicrobial blend is perfect for treating dandruff and maintaining a healthy scalp environment.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>2 tbsp coconut oil</li>
+                                <li>1 tsp crushed neem leaves</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Heat oil gently with neem leaves</li>
+                                <li>Cool and apply on scalp</li>
+                                <li>Massage well and leave overnight</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Excellent for oily or dandruff-prone scalps. Wash off in morning with herbal shampoo.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 5: Coffee Hair Rinse -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/coffee-hair-rinse.png" alt="Coffee Hair Rinse">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 5 mins</span>
+                        <span><i class="fas fa-user-friends"></i> Single use</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Coffee Hair Rinse</h3>
+                        <div class="benefits">
+                            <span>Stimulates follicles</span>
+                            <span>Delays greying</span>
+                            <span>Natural color boost</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">Caffeine in coffee boosts blood circulation to hair follicles and supports stronger hair growth.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 cup cooled brewed coffee</li>
+                                <li>1 cup water</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>After shampooing, pour through hair as final rinse</li>
+                                <li>Do not condition afterward</li>
+                                <li>Let air dry or dry naturally</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Helps darken hair naturally. Use 2x weekly for best results.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Joint Pain Relief Section with 4 remedies -->
+<section id="joint" class="remedy-list">
+    <div class="container">
+        <h2><i class="fas fa-bone"></i> Joint Pain Relief</h2>
+        <p class="section-desc">Natural solutions for arthritis, joint inflammation and mobility</p>
+        <div class="remedy-items">
+
+            <!-- Existing Remedy 1: Herbal Joint Pain Relief Oil -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/joint-oil.png" alt="Joint Pain Oil">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 20 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 15 uses</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Herbal Joint Pain Relief Oil</h3>
+                        <div class="benefits">
+                            <span>Reduces inflammation</span>
+                            <span>Relieves pain</span>
+                            <span>Improves mobility</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This warming herbal oil helps alleviate joint stiffness and pain through its anti-inflammatory properties.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1/2 cup sesame oil (or coconut oil)</li>
+                                <li>2 tbsp fresh ginger, grated</li>
+                                <li>2 tbsp garlic, crushed</li>
+                                <li>1 tbsp fenugreek seeds</li>
+                                <li>1 tbsp camphor (optional)</li>
+                                <li>1 tbsp wintergreen essential oil (optional)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Heat oil in a pan on low heat</li>
+                                <li>Add ginger, garlic and fenugreek seeds</li>
+                                <li>Let simmer for 15 minutes until aromatic</li>
+                                <li>Strain through cheesecloth into glass jar</li>
+                                <li>Add camphor and wintergreen oil when cooled</li>
+                                <li>Massage into affected joints 2-3 times daily</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Best for Vata-type joint pain. For Pitta, use coconut oil instead of sesame. For Kapha, add 1 tbsp mustard oil. Warm oil slightly before application for better absorption.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- Existing Remedy 2: Turmeric-Ginger Anti-Inflammatory Paste -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/turmeric-paste.png" alt="Turmeric Paste">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 5 mins</span>
+                        <span><i class="fas fa-user-friends"></i> 1 serving</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Turmeric-Ginger Anti-Inflammatory Paste</h3>
+                        <div class="benefits">
+                            <span>Reduces swelling</span>
+                            <span>Natural pain relief</span>
+                            <span>Improves circulation</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This powerful internal remedy helps reduce joint inflammation from within when taken regularly.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 tsp turmeric powder</li>
+                                <li>1/2 tsp ginger powder</li>
+                                <li>1/4 tsp black pepper</li>
+                                <li>1 tsp honey or ghee</li>
+                                <li>1/2 cup warm water or milk</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Mix turmeric, ginger and black pepper</li>
+                                <li>Add honey or ghee to form a paste</li>
+                                <li>Stir into warm water or milk</li>
+                                <li>Drink 1-2 times daily</li>
+                                <li>Can also be applied externally as paste</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>For best results, take on empty stomach. Black pepper enhances turmeric absorption. Continue for at least 40 days for chronic conditions. Avoid if taking blood thinners.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 3: Guggulu Tincture (Internal Use) -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/guggulu-tincture.png" alt="Guggulu Tincture">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 1 min</span>
+                        <span><i class="fas fa-user-friends"></i> Daily use</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Guggulu Tincture (Internal Use)</h3>
+                        <div class="benefits">
+                            <span>Powerful anti-inflammatory</span>
+                            <span>Eases arthritis pain</span>
+                            <span>Supports joint health</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">Guggulu is an ancient Ayurvedic resin known for its potent anti-inflammatory and detoxifying properties.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>1 dropper guggulu tincture</li>
+                                <li>1/4 cup warm water</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Mix tincture with warm water</li>
+                                <li>Take once or twice daily</li>
+                                <li>Best taken with meals</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Consult physician if taking medications. Best for Vata types. Pitta can combine with licorice. Kapha can add black pepper.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <!-- New Remedy 4: Apple Cider Vinegar & Cayenne Rub -->
+            <div class="remedy-item">
+                <div class="remedy-image">
+                    <img src="images/acv-cayenne-rub.png" alt="Apple Cider Vinegar & Cayenne Rub">
+                    <div class="time-servings">
+                        <span><i class="far fa-clock"></i> 5 mins</span>
+                        <span><i class="fas fa-user-friends"></i> Single application</span>
+                    </div>
+                </div>
+                <div class="remedy-content">
+                    <div class="remedy-header">
+                        <h3>Apple Cider Vinegar & Cayenne Rub</h3>
+                        <div class="benefits">
+                            <span>Increases circulation</span>
+                            <span>Warms joints</span>
+                            <span>Relieves stiffness</span>
+                        </div>
+                    </div>
+                    <p class="remedy-desc">This warming rub helps draw out coldness and stagnation from joints, especially helpful in Vata-type pain.</p>
+                    <div class="remedy-details">
+                        <div class="ingredients">
+                            <h4><i class="fas fa-carrot"></i> Ingredients:</h4>
+                            <ul>
+                                <li>2 tbsp apple cider vinegar</li>
+                                <li>1/2 tsp cayenne powder</li>
+                                <li>1 tbsp olive oil or sesame oil</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4><i class="fas fa-list-ol"></i> Instructions:</h4>
+                            <ol>
+                                <li>Mix all ingredients well</li>
+                                <li>Apply to affected area</li>
+                                <li>Rub gently for 5 minutes</li>
+                                <li>Wrap with cloth and leave for 30 minutes</li>
+                            </ol>
+                        </div>
+                        <div class="tips">
+                            <h4><i class="fas fa-lightbulb"></i> Ayurvedic Tips:</h4>
+                            <p>Avoid broken skin. Do not use on Pitta-dominant burning pain. Wash hands thoroughly after use.</p>
+                        </div>
+                    </div>
+                    <button class="view-button">View Full Recipe <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+        <!-- Tips Section remains the same -->
+         <section class="remedy-tips">
+            <div class="container">
+                <h2>Ayurvedic Preparation Tips</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <img src="images/fresh-ingredients.png" alt="Fresh Ingredients">
+                        <h3>Use Fresh Ingredients</h3>
+                        <p>Ayurveda emphasizes using fresh, seasonal ingredients for maximum prana (life force).</p>
+                    </div>
+                    <div class="tip-card">
+                        <img src="images/mindful-prep.png" alt="Mindful Preparation">
+                        <h3>Prepare Mindfully</h3>
+                        <p>Cook with positive intention - your state of mind affects the remedy's energy.</p>
+                    </div>
+                    <div class="tip-card">
+                        <img src="images/proper-storage.png" alt="Proper Storage">
+                        <h3>Store Properly</h3>
+                        <p>Most remedies should be prepared fresh. Store in glass (not plastic) if needed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer remains the same -->
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 HOME REMEDY. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

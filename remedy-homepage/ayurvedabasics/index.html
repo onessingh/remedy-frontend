@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurveda Basics | Home Remedies</title>
+    <meta name="description" content="Learn the fundamentals of Ayurveda, including the three doshas, five elements, and daily routines for optimal health">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+   <header class="main-header">
+       <nav class="main-nav">
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="/index.html" style="color: var(--primary); font-size: 1.5rem;"><i class="fas fa-home"></i></a>
+        <div class="logo">
+            <span>Home Remedies</span>
+        </div>
+    </div>
+            <ul>
+                <li><a href="/remedy-homepage/index.html">Home</a></li>
+                <li><a href="/remedy-homepage/yoga/index.html">Yoga</a></li>
+                 <li><a href="/remedy-homepage/blogs/index.html">Blogs</a></li>
+                <li class="active"><a href="/remedy-homepage/ayurvedabasics/index.html">Ayurveda Basics</a></li>
+                <li><a href="/remedy-homepage/homeremedies/index.html">Home Remedies</a></li>
+                <li><a href="/remedy-homepage/consult/index.html">Consult</a></li>
+                <li><a href="/remedy-homepage/about/index.html">About Us</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="menu-overlay" id="menuOverlay"></div>
+        </nav>
+    </header>
+
+    <main class="ayurveda-basics">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1>Discover the Ancient Wisdom of Ayurveda</h1>
+                <p class="subtitle">5,000 years of holistic healing for modern living</p>
+                <div class="hero-buttons">
+                    <a href="#doshas" class="cta-button pulse">Explore Doshas</a>
+                    <a href="#principles" class="cta-button secondary">Core Principles</a>
+                </div>
+            </div>
+            <div class="scroll-down">
+                <span>Scroll to Explore</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro-content">
+                    <h2>What is Ayurveda?</h2>
+                    <p class="lead">Ayurveda, the "Science of Life," is the world's oldest holistic healing system originating in India over 5,000 years ago.</p>
+                    <p>This ancient medical tradition views health as a perfect balance between body, mind, and consciousness. Unlike Western medicine that focuses on treating symptoms, Ayurveda emphasizes prevention and addresses the root cause of imbalance through personalized lifestyle practices, dietary recommendations, herbal remedies, and detoxification techniques.</p>
+                    <div class="signature">
+                        <img src="images/signature.png" alt="Dr. Shivani Singh Signature" width="150">
+                        <p>Dr. Shivani Singh<br><span>Ayurvedic Practitioner</span></p>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <img src="images/ayurveda-intro.jpg" loading="lazy" decoding="async" alt="...">
+                    <div class="image-caption">
+                        <i class="fas fa-spa"></i>
+                        <p>Traditional Ayurvedic herbs and preparation tools</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dosha Section -->
+        <section id="doshas" class="dosha-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>The Three Doshas</h2>
+                    <p class="section-description">Your unique mind-body constitution that governs all physical and mental processes</p>
+                </div>
+                <div class="dosha-cards">
+                    <!-- Vata Card -->
+                    <div class="dosha-card vata">
+                        <div class="dosha-icon">
+                            <img src="images/vata-icon.png" alt="Vata Dosha" width="80">
+                        </div>
+                        <h3>Vata</h3>
+                        <p class="elements">Air + Ether</p>
+                        <div class="dosha-image">
+                            <img src="images/vata-person.jpg" alt="Vata Type">
+                        </div>
+                        <div class="dosha-traits">
+                            <h4>Key Characteristics:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Light, thin build</li>
+                                <li><i class="fas fa-check"></i> Creative and energetic</li>
+                                <li><i class="fas fa-check"></i> Quick to learn and forget</li>
+                                <li><i class="fas fa-check"></i> Enthusiastic and vivacious</li>
+                                <li><i class="fas fa-check"></i> Tendency toward anxiety</li>
+                            </ul>
+                        </div>
+                        <div class="dosha-balance">
+                            <h4>Balancing Tips:</h4>
+                            <ul>
+                                <li><i class="fas fa-utensils"></i> Warm, nourishing foods</li>
+                                <li><i class="fas fa-spa"></i> Regular routine</li>
+                                <li><i class="fas fa-water"></i> Stay hydrated</li>
+                                <li><i class="fas fa-bed"></i> Plenty of rest</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Pitta Card -->
+                    <div class="dosha-card pitta">
+                        <div class="dosha-icon">
+                            <img src="images/pitta-icon.png" alt="Pitta Dosha" width="80">
+                        </div>
+                        <h3>Pitta</h3>
+                        <p class="elements">Fire + Water</p>
+                        <div class="dosha-image">
+                            <img src="images/pitta-person.jpg" alt="Pitta Type">
+                        </div>
+                        <div class="dosha-traits">
+                            <h4>Key Characteristics:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Medium, muscular build</li>
+                                <li><i class="fas fa-check"></i> Intelligent and focused</li>
+                                <li><i class="fas fa-check"></i> Strong digestion</li>
+                                <li><i class="fas fa-check"></i> Goal-oriented</li>
+                                <li><i class="fas fa-check"></i> Tendency toward irritability</li>
+                            </ul>
+                        </div>
+                        <div class="dosha-balance">
+                            <h4>Balancing Tips:</h4>
+                            <ul>
+                                <li><i class="fas fa-utensils"></i> Cooling foods</li>
+                                <li><i class="fas fa-moon"></i> Avoid excessive heat</li>
+                                <li><i class="fas fa-swimming-pool"></i> Regular swimming</li>
+                                <li><i class="fas fa-wind"></i> Gentle exercise</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Kapha Card -->
+                    <div class="dosha-card kapha">
+                        <div class="dosha-icon">
+                            <img src="images/kapha-icon.png" alt="Kapha Dosha" width="80">
+                        </div>
+                        <h3>Kapha</h3>
+                        <p class="elements">Earth + Water</p>
+                        <div class="dosha-image">
+                            <img src="images/kapha-person.jpg" alt="Kapha Type">
+                        </div>
+                        <div class="dosha-traits">
+                            <h4>Key Characteristics:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Solid, heavy build</li>
+                                <li><i class="fas fa-check"></i> Strong and enduring</li>
+                                <li><i class="fas fa-check"></i> Loving and compassionate</li>
+                                <li><i class="fas fa-check"></i> Slow to anger</li>
+                                <li><i class="fas fa-check"></i> Tendency toward lethargy</li>
+                            </ul>
+                        </div>
+                        <div class="dosha-balance">
+                            <h4>Balancing Tips:</h4>
+                            <ul>
+                                <li><i class="fas fa-utensils"></i> Light, dry foods</li>
+                                <li><i class="fas fa-fire-alt"></i> Regular exercise</li>
+                                <li><i class="fas fa-pepper-hot"></i> Stimulating spices</li>
+                                <li><i class="fas fa-sun"></i> Early rising</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="dosha-combination">
+                    <h3>Most people are a combination of two doshas</h3>
+                    <p>While we all have all three doshas, most people have one or two that dominate. Take our <a href="dosha-quiz.html">Dosha Quiz</a> to discover your unique mind-body type.</p>
+                    <div class="combination-images">
+                        <img src="images/vata-pitta.jpg" alt="Vata-Pitta Combination">
+                        <img src="images/pitta-kapha.jpg" alt="Pitta-Kapha Combination">
+                        <img src="images/vata-kapha.jpg" alt="Vata-Kapha Combination">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principles Section -->
+        <section id="principles" class="principles-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Core Principles of Ayurveda</h2>
+                    <p class="section-description">Fundamental concepts that form the basis of Ayurvedic philosophy</p>
+                </div>
+                <div class="principles-grid">
+                    <!-- Principle 1 -->
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <img src="images/five-elements.png" alt="Five Elements" width="80">
+                        </div>
+                        <h3>Five Elements</h3>
+                        <p>The entire universe is composed of five fundamental elements: Earth, Water, Fire, Air, and Ether (Space).</p>
+                        <div class="principle-details">
+                            <h4>Manifestation in the Body:</h4>
+                            <ul>
+                                <li>Earth → Bones, muscles</li>
+                                <li>Water → Fluids, plasma</li>
+                                <li>Fire → Digestion, metabolism</li>
+                                <li>Air → Breathing, movement</li>
+                                <li>Ether → Spaces in the body</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Principle 2 -->
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <img src="images/dosha-balance.png" alt="Dosha Balance" width="80">
+                        </div>
+                        <h3>Dosha Balance</h3>
+                        <p>Health is maintained when the three doshas (Vata, Pitta, Kapha) are in equilibrium according to one's constitution.</p>
+                        <div class="principle-details">
+                            <h4>Signs of Balance:</h4>
+                            <ul>
+                                <li>Good digestion (Agni)</li>
+                                <li>Proper elimination (Malas)</li>
+                                <li>Balanced tissues (Dhatus)</li>
+                                <li>Happy senses (Indriyas)</li>
+                                <li>Content mind (Manas)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Principle 3 -->
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <img src="images/agni.png" alt="Digestive Fire" width="80">
+                        </div>
+                        <h3>Digestive Fire (Agni)</h3>
+                        <p>The strength of your digestive fire determines your ability to transform food into energy and eliminate toxins.</p>
+                        <div class="principle-details">
+                            <h4>Types of Agni:</h4>
+                            <ul>
+                                <li>Jatharagni (stomach fire)</li>
+                                <li>Bhutagni (elemental fire)</li>
+                                <li>Dhatvagni (tissue fire)</li>
+                            </ul>
+                            <p>Weak agni leads to ama (toxins) accumulation.</p>
+                        </div>
+                    </div>
+                    <!-- Principle 4 -->
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <img src="images/dinacharya.png" alt="Daily Routine" width="80">
+                        </div>
+                        <h3>Daily Routine (Dinacharya)</h3>
+                        <p>Aligning with nature's rhythms through a daily routine is essential for maintaining balance and preventing disease.</p>
+                        <div class="principle-details">
+                            <h4>Key Practices:</h4>
+                            <ul>
+                                <li>Wake before sunrise</li>
+                                <li>Oil pulling (Gandusha)</li>
+                                <li>Self-massage (Abhyanga)</li>
+                                <li>Yoga and meditation</li>
+                                <li>Early, light dinner</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Principle 5 -->
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <img src="images/panchakarma.png" alt="Detoxification" width="80">
+                        </div>
+                        <h3>Detoxification (Panchakarma)</h3>
+                        <p>The process of eliminating toxins from the body through five cleansing actions to restore balance.</p>
+                        <div class="principle-details">
+                            <h4>The Five Actions:</h4>
+                            <ul>
+                                <li>Vamana (emesis therapy)</li>
+                                <li>Virechana (purgation)</li>
+                                <li>Basti (enema therapy)</li>
+                                <li>Nasya (nasal administration)</li>
+                                <li>Raktamokshana (bloodletting)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Principle 6 -->
+                    <div class="principle-card">
+                        <div class="principle-icon">
+                            <img src="images/rasayana.png" alt="Rejuvenation" width="80">
+                        </div>
+                        <h3>Rejuvenation (Rasayana)</h3>
+                        <p>Special therapies and herbs that promote longevity, enhance memory, and improve overall health and vitality.</p>
+                        <div class="principle-details">
+                            <h4>Common Rasayanas:</h4>
+                            <ul>
+                                <li>Chyawanprash</li>
+                                <li>Ashwagandha</li>
+                                <li>Amalaki</li>
+                                <li>Shatavari</li>
+                                <li>Brahmi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seasonal Living Section -->
+        <section class="seasonal-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Seasonal Living (Ritucharya)</h2>
+                    <p class="section-description">Adapting your lifestyle to nature's cycles for optimal health</p>
+                </div>
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-season="spring">Spring (Kapha Season)</button>
+                    <button class="tab-button" data-season="summer">Summer (Pitta Season)</button>
+                    <button class="tab-button" data-season="fall">Fall (Vata Season)</button>
+                    <button class="tab-button" data-season="winter">Winter (Vata-Kapha)</button>
+                </div>
+                <div class="tab-content active" id="spring">
+                    <div class="seasonal-content">
+                        <div class="seasonal-image">
+                            <img src="images/spring.png" alt="Spring Season">
+                        </div>
+                        <div class="seasonal-info">
+                            <h3>Spring Wellness Guide</h3>
+                            <p>As nature renews itself in spring, Kapha dosha accumulates from winter begins to melt, often leading to seasonal allergies, congestion, and sluggishness.</p>
+                            <div class="seasonal-tips">
+                                <h4>Spring Recommendations:</h4>
+                                <ul>
+                                    <li>Diet: Light, dry, warming foods with bitter, pungent, and astringent tastes</li>
+                                    <li>Herbs: Ginger, turmeric, fenugreek, mustard, basil</li>
+                                    <li>Activities: Vigorous exercise, dry brushing, nasal cleansing</li>
+                                    <li>Detox: Ideal time for cleansing and Panchakarma</li>
+                                </ul>
+                            </div>
+                            <a href="#" class="seasonal-button" data-download="spring-guide.pdf">Download Spring Guide</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="summer">
+                    <div class="seasonal-content">
+                        <div class="seasonal-image">
+                            <img src="images/summer.png" alt="Summer Season">
+                        </div>
+                        <div class="seasonal-info">
+                            <h3>Summer Wellness Guide</h3>
+                            <p>Summer's heat intensifies Pitta dosha, potentially causing inflammation, irritability, and digestive issues.</p>
+                            <div class="seasonal-tips">
+                                <h4>Summer Recommendations:</h4>
+                                <ul>
+                                    <li>Diet: Cooling, hydrating foods with sweet, bitter, and astringent tastes</li>
+                                    <li>Herbs: Mint, coriander, fennel, rose, aloe vera</li>
+                                    <li>Activities: Swimming, moonlit walks, cooling pranayama</li>
+                                    <li>Lifestyle: Avoid midday sun, wear light clothing</li>
+                                </ul>
+                            </div>
+                            <a href="#" class="seasonal-button" data-download="summer-guide.pdf">Download Summer Guide</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="fall">
+                    <div class="seasonal-content">
+                        <div class="seasonal-image">
+                            <img src="images/fall.png" alt="Fall Season">
+                        </div>
+                        <div class="seasonal-info">
+                            <h3>Fall Wellness Guide</h3>
+                            <p>Fall's dry, cool, and windy nature can aggravate Vata dosha, leading to anxiety, dry skin, and irregular digestion.</p>
+                            <div class="seasonal-tips">
+                                <h4>Fall Recommendations:</h4>
+                                <ul>
+                                    <li>Diet: Warm, moist, grounding foods with sweet, sour, and salty tastes</li>
+                                    <li>Herbs: Ginger, cinnamon, cardamom, licorice</li>
+                                    <li>Activities: Gentle yoga, warm oil massage, meditation</li>
+                                    <li>Lifestyle: Maintain regular routine, stay warm</li>
+                                </ul>
+                            </div>
+                            <a href="#" class="seasonal-button" data-download="fall-guide.pdf">Download Fall Guide</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="winter">
+                    <div class="seasonal-content">
+                        <div class="seasonal-image">
+                            <img src="images/winter.png" alt="Winter Season">
+                        </div>
+                        <div class="seasonal-info">
+                            <h3>Winter Wellness Guide</h3>
+                            <p>Winter's cold and heavy qualities can increase both Vata and Kapha, causing stiffness, lethargy, and respiratory issues.</p>
+                            <div class="seasonal-tips">
+                                <h4>Winter Recommendations:</h4>
+                                <ul>
+                                    <li>Diet: Warm, nourishing foods with sweet, sour, and salty tastes</li>
+                                    <li>Herbs: Tulsi, ginger, black pepper, ashwagandha</li>
+                                    <li>Activities: Indoor exercise, steam therapy, warm baths</li>
+                                    <li>Lifestyle: Adequate rest, warm clothing</li>
+                                </ul>
+                            </div>
+                            <a href="#" class="seasonal-button" data-download="winter-guide.pdf">Download Winter Guide</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Resources Section -->
+        
+        <section class="resources-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Continue Your Ayurvedic Journey</h2>
+                    <p class="section-description">Recommended resources for deeper learning</p>
+                </div>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-image">
+                            <img src="images/book1.jpg" alt="Ayurvedic Book">
+                        </div>
+                        <div class="resource-info">
+                            <h3>The Complete Book of Ayurvedic Home Remedies</h3>
+                            <p class="author">by Dr. Vasant Lad</p>
+                            <p class="description">Comprehensive guide to using Ayurveda for common ailments with practical home treatments.</p>
+                            <a href="#" class="resource-button" data-download="ayurvedic-home-remedies.pdf">Download the Book <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- More resource cards would go here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 Home Remedy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Inline fix for any immediate needs
+    </script>
+</body>
+</html>

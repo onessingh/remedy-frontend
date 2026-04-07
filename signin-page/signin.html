@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="loginstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="loginscript.js" defer></script>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-slider-inner">
+            <div class="form-container sign-up">
+                <form id="signupForm">
+                    <h1>Create Account</h1>
+                    <div class="social-icons">
+                        <a href="/auth/google" class="icon"><i class="fab fa-google"></i></a>
+                        <a href="/auth/facebook" class="icon"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <span>or use your email for registration</span>
+                    <input type="text" placeholder="Name" id="signupName" required>
+                    <input type="email" placeholder="Email" id="signupEmail" required>
+                    <div class="password-wrapper">
+                        <input type="password" placeholder="Password" id="signupPassword" required>
+                        <i class="fas fa-eye toggle-password" toggle="#signupPassword"></i>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                    <div class="mobile-toggle" id="mobileSigninToggle">Already have an account? Sign In</div>
+                </form>
+            </div>
+            <div class="form-container sign-in">
+                <form id="loginForm">
+                    <h1>Sign In</h1>
+                    <div class="social-icons">
+                        <a href="/auth/google" class="icon"><i class="fab fa-google"></i></a>
+                        <a href="/auth/facebook" class="icon"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <span>or use your email password</span>
+                    <input type="email" placeholder="Email" id="signinEmail" required>
+                    <div class="password-wrapper">
+                        <input type="password" placeholder="Password" id="signinPassword" required>
+                        <i class="fas fa-eye toggle-password" toggle="#signinPassword"></i>
+                    </div>
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                    <button type="submit">Sign In</button>
+                    <div class="mobile-toggle" id="mobileSignupToggle">Don't have an account? Sign Up</div>
+                </form>
+            </div>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="signupSuccessModal" style="display: none;">
+            <div class="modal-content">
+                <span class="close">×</span>
+                <h2>Signup Successful!</h2>
+                <p>Please sign in to continue.</p>
+                <div class="modal-buttons">
+                    <button id="okSignup">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="forgotModal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Forgot Password</h2>
+            <input type="email" placeholder="Enter your email" id="forgotEmail">
+            <p id="forgotMessage"></p>
+            <div class="modal-buttons">
+                <button id="cancelForgot">Cancel</button>
+                <button id="submitForgot">OK</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

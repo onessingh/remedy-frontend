@@ -1,0 +1,604 @@
+/* Yoga Section */
+:root {
+    --primary: #4CAF50;
+    --primary-dark: #388E3C;
+    --secondary: #8BC34A;
+    --light: #F1F8E9;
+    --light-alt: #DCEDC8;
+    --white: #FFFFFF;
+    --dark-gray: #616161;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 6rem 5%;
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.search-container {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    position: relative;
+    z-index: 2;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.search-container button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: var(--primary-dark);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-container button:hover {
+    background: #2E7D32;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem 5%;
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
+.filter-group select {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+}
+
+.yoga-categories {
+    padding: 2rem 5%;
+    text-align: center;
+    background-color: var(--light);
+}
+
+.yoga-categories h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-dark);
+    font-family: 'Playfair Display', serif;
+}
+
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.category-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    border: 1px solid var(--primary);
+    background-color: white;
+    color: var(--primary-dark);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.category-btn:hover, .category-btn.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+.yoga-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 4rem 5%;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    will-change: opacity, transform;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card h3 {
+    margin-bottom: 0.8rem;
+    color: var(--primary-dark);
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: var(--dark-gray);
+    margin-bottom: 1.2rem;
+}
+
+.card .benefits {
+    margin: 1rem 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.card .benefits li {
+    display: inline-block;
+    background-color: var(--light);
+    color: var(--primary-dark);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    margin: 0.2rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.card .cta-link {
+    display: inline-block;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s;
+}
+
+.card .cta-link:hover {
+    transform: translateY(-2px);
+}
+
+.video-section {
+    padding: 3rem 5%;
+    background-color: var(--light-alt);
+    text-align: center;
+}
+
+.video-section h2 {
+    margin-bottom: 2rem;
+    color: var(--primary-dark);
+    font-family: 'Playfair Display', serif;
+}
+
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.video-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+}
+
+.video-info {
+    padding: 1rem;
+}
+
+.video-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+}
+
+.main-footer {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 3rem 5% 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: var(--light);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--light);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+    animation: modalopen 0.5s;
+}
+
+@keyframes modalopen {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.8rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.modal-header {
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+    color: var(--primary-dark);
+    font-family: 'Playfair Display', serif;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.modal-video {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 8px;
+}
+
+.steps-list {
+    padding-left: 1.5rem;
+}
+
+.steps-list li {
+    margin-bottom: 0.8rem;
+}
+
+.benefits-list {
+    columns: 2;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.benefits-list li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.benefits-list li:before {
+    content: "✓";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .category-buttons {
+        gap: 0.5rem;
+    }
+    
+    .category-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .yoga-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .benefits-list {
+        columns: 1;
+    }
+
+    .main-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .main-nav ul {
+        display: flex;
+        position: fixed !important;
+        top: 0;
+        left: -280px !important;
+        right: auto !important;
+        width: 280px !important;
+        height: 100vh !important;
+        background-color: var(--white);
+        flex-direction: column;
+        padding: 4rem 1.5rem 2rem;
+        box-shadow: 5px 0 25px rgba(0,0,0,0.15);
+        z-index: 2050 !important;
+        transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .main-nav ul.show {
+        left: 0 !important;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .menu-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(4px);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1500;
+        transition: all 0.4s ease;
+    }
+
+    .menu-overlay.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .main-nav ul li {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 0.8rem;
+    }
+
+    .main-nav ul li a {
+        display: inline-block;
+        font-size: 1.15rem;
+        font-weight: 500;
+        color: var(--dark);
+        padding: 0.3rem 0;
+    }
+
+    .main-nav ul li.active a {
+        color: var(--primary);
+        font-weight: 700;
+    }
+
+    .mobile-menu-btn {
+        display: block !important;
+        margin-left: auto;
+        background: none;
+        border: none;
+        font-size: 1.4rem;
+        color: var(--primary);
+        cursor: pointer;
+        z-index: 2100;
+        padding: 5px;
+    }
+}
+/* Add to styles.css */
+.indian-theme {
+    --primary: #FF9933; /* Saffron */
+    --primary-dark: #FF5722;
+    --secondary: #138808; /* Green */
+    --light: #E8F5E9;
+    --light-alt: #C8E6C9;
+}
+
+/* Add Indian pattern to hero section */
+.hero-section {
+    background: linear-gradient(135deg, #FF9933, #138808);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+    opacity: 0.1;
+    z-index: 1;
+}
+
+/* Add Om symbol to category buttons */
+.category-btn[data-category="hatha"]::before {
+    content: "🕉️ ";
+}
+
+/* Make cards more Indian themed */
+.card {
+    border-top: 4px solid var(--primary);
+}
+
+/* Add to responsive styles */
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .category-buttons {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 1rem;
+    }
+}

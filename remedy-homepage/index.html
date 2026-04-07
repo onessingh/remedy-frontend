@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Remedy</title>
+    <meta name="description" content="Simple, effective Ayurvedic remedies using natural ingredients">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+       <nav class="main-nav">
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <a href="/index.html" style="color: var(--primary); font-size: 1.5rem;"><i class="fas fa-home"></i></a>
+        <div class="logo">
+            <span>Home Remedies</span>
+        </div>
+    </div>
+    <!-- Rest of your existing nav code remains exactly the same -->
+    <ul>
+        <li class="active"><a href="/remedy-homepage/index.html">Home</a></li>
+        <li><a href="/remedy-homepage/yoga/index.html">Yoga</a></li>
+         <li><a href="/remedy-homepage/blogs/index.html">Blogs</a></li>
+        <li><a href="/remedy-homepage/ayurvedabasics/index.html">Ayurveda Basics</a></li>
+        <li><a href="/remedy-homepage/homeremedies/index.html">Home Remedies</a></li>
+        <li><a href="/remedy-homepage/consult/index.html">Consult</a></li>
+        <li><a href="/remedy-homepage/about/index.html">About Us</a></li>
+    </ul>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="menu-overlay" id="menuOverlay"></div>
+</nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Ancient Wisdom for <span class="highlight">Modern Healing</span></h1>
+                <p class="hero-subtitle">Discover 5,000 years of Ayurvedic knowledge transformed into simple, effective remedies you can make at home</p>
+                <div class="hero-buttons">
+                    <a href="#remedies" class="cta-button pulse">Explore Remedies</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <img src="images/img10.jpg" alt="Ayurvedic herbs in wooden bowl" class="hero-image" loading="lazy">
+                <div class="image-overlay"></div>
+                <div class="floating-icons">
+                    <div class="icon-circle"><i class="fas fa-leaf"></i></div>
+                    <div class="icon-circle"><i class="fas fa-mortar-pestle"></i></div>
+                    <div class="icon-circle"><i class="fas fa-spa"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="key-features">
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-leaf"></i></div>
+                <h3>100% Natural</h3>
+                <p>Remedies using only natural ingredients with no synthetic additives</p>
+                <div class="feature-wave"></div>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-clock"></i></div>
+                <h3>Quick Relief</h3>
+                <p>Simple preparations you can make in minutes for common ailments</p>
+                <div class="feature-wave"></div>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-book"></i></div>
+                <h3>Ancient Wisdom</h3>
+                <p>5,000 years of Ayurvedic knowledge adapted for modern life</p>
+                <div class="feature-wave"></div>
+            </div>
+        </section>
+
+        <section class="remedy-categories" id="remedies">
+            <div class="section-header">
+                <h2>Know Your Symptom - Find Your Remedy</h2>
+                <p>Ayurveda aims to re-balance body, mind and spirit through natural remedies</p>
+            </div>
+            
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="health">Health Care</button>
+                <button class="category-tab" data-category="skin">Skin Care</button>
+                <button class="category-tab" data-category="hair">Hair Care</button>
+                <button class="category-tab" data-category="baby">Baby Care</button>
+            </div>
+            
+            <div class="disease-container">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <section class="popular-remedies">
+            <div class="section-header">
+                <h2>Most Popular Remedies</h2>
+                <p>Tried and tested solutions loved by our community</p>
+            </div>
+            <div class="remedy-carousel" id="remedyCarousel">
+                <!-- Carousel items populated by JavaScript -->
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-prev" id="carouselPrev" aria-label="Previous remedy"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-dots" id="carouselDots"></div>
+                <button class="carousel-next" id="carouselNext" aria-label="Next remedy"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+        
+        <section class="testimonials">
+            <div class="section-header">
+                <h2>What Our Community Says</h2>
+                <p>Real experiences from people who've transformed their health</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>After struggling with digestion for years, the ginger-lemon remedy changed everything. I feel lighter and more energetic!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="../../images/anant.jpg" alt="Anant Mishra.">
+                        <div>
+                            <h4>Anant Mishra.</h4>
+                            <p>3 months using Ayurveda</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>The turmeric face mask cleared my acne better than any expensive product I've tried. Natural really is better.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="../../images/satyam1.jpg" alt="Satyam Bind.">
+                        <div>
+                            <h4>Satyam Bind.</h4>
+                            <p>6 months using Ayurveda</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>Learning my dosha helped me understand why certain foods didn't work for me. The personalized recommendations are spot on.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="../../images/satyam.jpg" alt="Satyam Maurya.">
+                        <div>
+                            <h4>Satyam Maurya.</h4>
+                            <p>5 months using Ayurveda</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disease Details Modal -->
+        <div class="modal" id="diseaseModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <img id="modalImage" src="" alt="">
+                <h2 id="modalTitle"></h2>
+                <p id="modalDescription"></p>
+                <h3>Ingredients</h3>
+                <ul id="modalIngredients"></ul>
+                <h3>Preparation</h3>
+                <p id="modalPreparation"></p>
+            </div>
+        </div>
+
+        <!-- Remedy Details Modal -->
+        <div class="modal" id="remedyModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <img id="remedyModalImage" src="" alt="">
+                <h2 id="remedyModalTitle"></h2>
+                <p class="ingredients" id="remedyModalIngredients"></p>
+                <h3>Preparation</h3>
+                <p id="remedyModalPreparation"></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <div class="logo">
+                    <img src="images/ayurveda-logo-white.png" alt="Ayurveda Logo">
+                    <span>Ayurveda Healing</span>
+                </div>
+                <p>Bringing ancient healing wisdom to modern lives since 2025. Our mission is to make Ayurveda accessible to everyone.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/15oArcMBw9/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/__s.singh._?igsh=cWVsOXNxMjdhejR6"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/one_ssingh?t=dyKEoDhBciTFrJU2-i9cGA&s=09"><i class="fab fa-twitter"></i></a>
+                    <a href="https://in.linkedin.com/in/shivarn-singh-a016b8344"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Home Remedy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

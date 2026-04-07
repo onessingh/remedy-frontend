@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Remedy & Blog hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 🔝 Header with centered Welcome and User Profile -->
+  <div class="page-header">
+    <h1 class="welcome-text">Remedy & Blog hub</h1>
+    <div class="user-profile">
+      <img src="/images/blankphoto.png" alt="User Profile" class="user-icon" id="userIcon" aria-haspopup="true" aria-controls="profileDropdown" />
+
+      <div class="profile-dropdown" id="profileDropdown">
+
+        <!-- Logged-out state -->
+        <a href="signin-page/signin.html?form=signin" class="dropdown-item logged-out-item" id="loginLink">Login</a>
+        <a href="signin-page/signin.html?form=signup" class="dropdown-item logged-out-item" id="createAccountLink">Create Account</a>
+
+        <!-- Logged-in state -->
+        <div class="logged-in-info" id="loggedInInfo" style="display: none;">
+          <img src="" alt="Profile" class="dropdown-profile-pic" id="dropdownProfilePic" />
+          <span class="user-name" id="userName">User Name</span>
+          <!-- Hidden Email Span Added Here -->
+          <span id="userEmail" style="display:none;"></span>
+        </div>
+
+        <!-- Manage Profile link -->
+        <a href="#" class="dropdown-item logged-in-item" id="manageProfileLink" style="display: none;">Manage Profile</a>
+
+        <!-- 🆕 Manage Profile Section (Initially hidden) -->
+        <div id="manageProfileSection" style="display: none; padding: 10px; text-align: center;">
+          <div id="imageWrapper" style="position: relative; display: inline-block; margin-bottom: 10px;">
+            <!-- Preview Photo -->
+            <img id="previewPhoto" src="/images/blankphoto.png" alt="Profile" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #7b4397;" />
+            <!-- Hidden File Input -->
+            <label for="newPhoto" style="position: absolute; bottom: 0; right: 0; background: #7b4397; color: white; border-radius: 50%; padding: 4px; cursor: pointer;">✏️</label>
+            <input type="file" id="newPhoto" accept="image/*" style="display: none;" />
+          </div>
+
+          <!-- Edit Name & Save Button -->
+          <input type="text" id="newName" placeholder="Enter New Name" />
+          <button id="saveProfileBtn">Save Profile</button>
+
+          <!-- Password Change Toggle -->
+          <button id="showPasswordChangeBtn">Change Password</button>
+          <div id="passwordChangeSection" style="display: none; margin-top: 10px;">
+            <input type="password" id="oldPassword" placeholder="Old Password" />
+            <input type="password" id="newPassword" placeholder="New Password" />
+            <input type="password" id="confirmPassword" placeholder="Confirm New Password" />
+            <button id="savePasswordBtn">Save New Password</button>
+            <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+          </div>
+        </div>
+
+        <!-- Logout Button -->
+        <button class="dropdown-button logged-in-item" id="logoutLink" style="display: none;">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="container">
+    <!-- Left Side: Home Remedy -->
+    <div class="form-container remedy-panel">
+      <div class="panel-inner">
+        <!-- Front: Info -->
+        <div class="panel-front">
+          <h1 class="title">Home Remedy</h1>
+          <p class="description">Home remedies are natural treatments using herbs, spices, and household items. They help with common ailments like colds and headaches.</p>
+          <div class="photo-section">
+            <img src="images/img2.jpg" alt="Home Remedy Image" class="remedy-photo" />
+          </div>
+          <div class="button-group">
+            <a href="remedy-homepage/index.html"><button class="enter-button">Enter</button></a>
+            <button class="discover-button remedy-discover mobile-only">Discover</button>
+          </div>
+        </div>
+        <!-- Back (Mobile Only): Girls Team -->
+        <div class="panel-back mobile-only">
+          <h1 class="title">The Brains Behind The Build</h1>
+          <div class="team-members blog-team">
+            <div class="team-member">
+              <div class="photo-container" data-hover="right">
+                <img src="images/ujjwala.jpg" alt="UJJWALA SINGH">
+                <div class="hover-info">Skilled in frontend design, complemented by backend familiarity.</div>
+              </div>
+              <p>UJJWALA SINGH<br><span>Frontend Developer</span></p>
+            </div>
+            <div class="team-member">
+              <div class="photo-container" data-hover="left">
+                <img src="images/shruti.jpg" alt="SHRUTI AGRAWAL">
+                <div class="hover-info">Expert in frontend design, with a good grasp of backend understanding.</div>
+              </div>
+              <p>SHRUTI AGRAWAL<br><span>Frontend Developer</span></p>
+            </div>
+            <div class="team-member center-member">
+              <div class="photo-container" data-hover="top">
+                <img src="images/shivani.jpg" alt="SHIVANI SINGH">
+                <div class="hover-info">Skilled in backend technologies and creative web page designing.</div>
+              </div>
+              <p>SHIVANI SINGH<br><span>Backend Developer</span></p>
+            </div>
+          </div>
+          <button class="back-button remedy-back">Back</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Blog Panel -->
+    <div class="form-container blog-panel">
+      <div class="panel-inner">
+        <!-- Back (Mobile Only): The Brains Behind The Build -->
+        <div class="panel-back mobile-only">
+          <h1 class="title">The Brains Behind The Build</h1>
+          <div class="team-members remedy-team">
+            <div class="team-member">
+              <div class="photo-container" data-hover="right">
+                <img src="images/shivarn.jpg" alt="SHIVARN SINGH">
+                <div class="hover-info">Ensures everything works behind the scenes - reliably and efficiently.</div>
+              </div>
+              <p>SHIVARN SINGH<br><span>Backend Developer</span></p>
+            </div>
+            <div class="team-member">
+              <div class="photo-container" data-hover="left">
+                <img src="images/satyam1.jpg" alt="SATYAM BIND">
+                <div class="hover-info">Powers the logic and performance behind every click - Writes clean, scalable code that keeps the system strong.</div>
+              </div>
+              <p>SATYAM BIND<br><span>Backend Developer</span></p>
+            </div>
+            <div class="team-member">
+              <div class="photo-container" data-hover="right">
+                <img src="images/anant.jpg" alt="ANANT MISHRA">
+                <div class="hover-info">Brings web interfaces to life with clean and responsive designs.</div>
+              </div>
+              <p>ANANT MISHRA<br><span>Frontend Developer</span></p>
+            </div>
+            <div class="team-member">
+              <div class="photo-container" data-hover="left">
+                <img src="images/satyam.jpg" alt="SATYAM MAURYA">
+                <div class="hover-info">Transforms ideas into interactive, user-friendly interfaces.</div>
+              </div>
+              <p>SATYAM MAURYA<br><span>Frontend Developer</span></p>
+            </div>
+          </div>
+          <button class="back-button blog-back">Back</button>
+        </div>
+        <!-- Front: Info -->
+        <div class="panel-front">
+          <h1 class="title">Blogs</h1>
+          <p class="description">Explore a variety of blogs covering health, lifestyle, and wellness. Gain insights, tips, and expert advice to improve your well-being.</p>
+          <div class="photo-section">
+            <img src="images/img3.jpg" alt="Blog Image" class="remedy-photo" />
+          </div>
+          <div class="button-group">
+            <a href="blog-homepage/index.html"><button class="enter-button">Enter</button></a>
+            <button class="discover-button blog-discover mobile-only">Discover</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay Panel (Desktop Only) -->
+    <div class="overlay-container desktop-only" id="overlay">
+      <!-- Team Members -->
+      <div class="team-section">
+        <h3>The Brains Behind The Build</h3>
+        <!-- Blog Team (Visible on start) -->
+        <div class="team-members desktop-blog-team">
+          <div class="team-member">
+            <div class="photo-container" data-hover="right">
+              <img src="images/ujjwala.jpg" alt="UJJWALA SINGH">
+              <div class="hover-info">Skilled in frontend design, complemented by backend familiarity.</div>
+            </div>
+            <p>UJJWALA SINGH<br><span>Frontend Developer</span></p>
+          </div>
+          <div class="team-member">
+            <div class="photo-container" data-hover="left">
+              <img src="images/shruti.jpg" alt="SHRUTI AGRAWAL">
+              <div class="hover-info">Expert in frontend design, with a good grasp of backend understanding.</div>
+            </div>
+            <p>SHRUTI AGRAWAL<br><span>Frontend Developer</span></p>
+          </div>
+          <div class="team-member center-member">
+            <div class="photo-container" data-hover="top">
+              <img src="images/shivani.jpg" alt="SHIVANI SINGH">
+              <div class="hover-info">Skilled in backend technologies and creative web page designing.</div>
+            </div>
+            <p>SHIVANI SINGH<br><span>Backend Developer</span></p>
+          </div>
+        </div>
+        <!-- Remedy Team (Hidden on start) -->
+        <div class="team-members desktop-remedy-team" style="display: none;">
+          <div class="team-member">
+            <div class="photo-container" data-hover="right">
+              <img src="images/shivarn.jpg" alt="SHIVARN SINGH">
+              <div class="hover-info">Ensures everything works behind the scenes - reliably and efficiently.</div>
+            </div>
+            <p>SHIVARN SINGH<br><span>Backend Developer</span></p>
+          </div>
+          <div class="team-member">
+            <div class="photo-container" data-hover="left">
+              <img src="images/satyam1.jpg" alt="SATYAM BIND">
+              <div class="hover-info">Powers the logic and performance behind every click.</div>
+            </div>
+            <p>SATYAM BIND<br><span>Backend Developer</span></p>
+          </div>
+          <div class="team-member">
+            <div class="photo-container" data-hover="right">
+              <img src="images/anant.jpg" alt="ANANT MISHRA">
+              <div class="hover-info">Brings web interfaces to life with clean and responsive designs.</div>
+            </div>
+            <p>ANANT MISHRA<br><span>Frontend Developer</span></p>
+          </div>
+          <div class="team-member">
+            <div class="photo-container" data-hover="left">
+              <img src="images/satyam.jpg" alt="SATYAM MAURYA">
+              <div class="hover-info">Transforms ideas into interactive, user-friendly interfaces.</div>
+            </div>
+            <p>SATYAM MAURYA<br><span>Frontend Developer</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overlay Content -->
+      <div class="overlay-content">
+        <h2 id="overlayTitle">Discover Blogs</h2>
+        <p id="overlayDescription">Explore blogs covering health, lifestyle, and wellness.</p>
+        <button class="details-button" id="detailsButton">Details</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
