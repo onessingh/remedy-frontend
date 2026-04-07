@@ -1134,198 +1134,52 @@ img {
   }
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .hero-title {
-      font-size: 3rem;
-  }
+
+/* Forced Desktop Mode Overrides - Final Fix for "Ajib" Nav Bar */
+.main-nav {
+    display: flex !important;
+    width: auto !important;
 }
 
-@media (max-width: 1024px) {
-  .hero {
-      flex-direction: column;
-      text-align: center;
-      padding: 4rem 5% 6rem;
-  }
-
-  .hero-content {
-      padding-right: 0;
-      margin-bottom: 3rem;
-  }
-
-  .hero-buttons {
-      justify-content: center;
-  }
-
-  .hero-image-container {
-      max-width: 600px;
-      margin: 0 auto;
-  }
-
-  .key-features {
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-      padding: 4rem 5%;
-  }
-
-  .feature-card {
-      max-width: 100%;
-      width: 100%;
-  }
+.main-nav ul {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    width: auto !important;
+    height: auto !important;
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 1.5rem !important;
 }
 
-@media (max-width: 768px) {
-  /* Hardened Mobile Navigation */
-  .main-nav {
-      display: flex !important;
-      justify-content: space-between !important;
-      align-items: center !important;
-      width: 100% !important;
-      padding: 0 1rem !important;
-  }
-
-  .main-nav ul {
-      display: flex;
-      position: fixed !important;
-      top: 0;
-      left: -280px !important;
-      right: auto !important;
-      width: 280px !important;
-      max-width: 280px !important;
-      height: 100vh !important;
-      background-color: var(--white) !important;
-      flex-direction: column !important;
-      padding: 4rem 1.5rem 2rem !important;
-      box-shadow: 5px 0 25px rgba(0,0,0,0.15) !important;
-      z-index: 2050 !important;
-      transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1) !important;
-      opacity: 0;
-      pointer-events: none;
-      margin: 0 !important;
-  }
-
-  .main-nav ul.show {
-      left: 0 !important;
-      opacity: 1 !important;
-      pointer-events: auto !important;
-  }
-
-  .menu-overlay {
-      display: block !important;
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      background: rgba(0, 0, 0, 0.3) !important;
-      backdrop-filter: blur(4px) !important;
-      opacity: 0;
-      pointer-events: none;
-      z-index: 1500 !important;
-      transition: all 0.4s ease !important;
-  }
-
-  .menu-overlay.show {
-      opacity: 1 !important;
-      pointer-events: auto !important;
-  }
-
-  .main-nav ul li {
-      width: 100% !important;
-      text-align: left !important;
-      margin-bottom: 0.8rem !important;
-      border-bottom: none !important;
-      padding: 0 !important;
-  }
-
-  .main-nav ul li a {
-      display: inline-block !important;
-      font-size: 1.15rem !important;
-      font-weight: 500 !important;
-      color: var(--dark) !important;
-      padding: 0.8rem 0 !important;
-      width: 100% !important;
-  }
-
-  .main-nav ul li.active a {
-      color: var(--primary) !important;
-      font-weight: 700 !important;
-  }
-
-  .main-nav ul li.active a::after {
-      display: none !important;
-  }
-
-  .mobile-menu-btn {
-      display: block !important;
-      margin-left: auto !important;
-      background: none !important;
-      border: none !important;
-      font-size: 1.4rem !important;
-      color: var(--primary) !important;
-      cursor: pointer !important;
-      z-index: 2100 !important;
-      padding: 5px !important;
-      position: relative !important;
-  }
-
-  .header-right {
-      display: none !important;
-  }
-  .hero-title {
-    font-size: 1.5rem; /* Further shrunk from 1.8rem */
-    margin-bottom: 0.8rem;
-  }
-  .hero-subtitle {
-    font-size: 0.9rem; /* Further shrunk from 1rem */
-    margin-bottom: 1.2rem;
-  }
-  .cta-button {
-    padding: 8px 18px; /* Further shrunk padding */
-    font-size: 0.85rem;
-  }
-  .feature-card {
-    max-width: 100%;
-    flex: 0 0 100%;
-    padding: 1rem 0.8rem; /* Further shrunk padding */
-  }
-  .feature-card .icon {
-    font-size: 1.5rem; /* Further shrunk from 1.8rem */
-    margin-bottom: 0.8rem;
-  }
-  .feature-card h3 {
-    font-size: 1.1rem; /* Further shrunk from 1.2rem */
-  }
-  .section-header h2 {
-    font-size: 1.4rem; /* Further shrunk from 1.6rem */
-  }
-  .section-header p {
-    font-size: 0.9rem; /* Further shrunk from 0.95rem */
-  }
-  .remedy-card {
-    flex: 0 0 240px; /* Further reduced width */
-  }
-  .footer-container {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
+.main-nav ul li {
+    width: auto !important;
+    margin-bottom: 0 !important;
 }
 
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 1.6rem; /* Shrunk from 1.8rem */
-  }
-  .hero-buttons {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .cta-button {
-    width: 100%;
-    padding: 12px; /* Slightly tighter for very small screens */
-  }
-  .category-tab {
-    padding: 0.6rem 1rem;
-    font-size: 0.85rem;
-  }
+.main-nav ul li a {
+    font-size: 1rem !important;
+    padding: 0.5rem 0 !important;
+    color: var(--text) !important;
+}
+
+.mobile-menu-btn, .menu-overlay {
+    display: none !important;
+}
+
+.header-right {
+    display: flex !important;
+}
+
+.logo {
+    font-size: 1.2rem !important;
+    flex-shrink: 0 !important;
+}
+
+.logo img {
+    height: 40px !important;
 }
