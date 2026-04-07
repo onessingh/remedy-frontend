@@ -1135,10 +1135,26 @@ img {
 }
 
 
-/* Forced Desktop Mode Overrides - Final Fix for "Ajib" Nav Bar */
+
+/* Forced Desktop Mode Overrides - FINAL CRITICAL FIX for "Ajib" Nav Bar */
+.main-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: 70px !important; /* Fixed height for consistency */
+    padding: 0 5% !important;
+    background: var(--white) !important;
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
 .main-nav {
     display: flex !important;
-    width: auto !important;
+    align-items: center !important;
+    width: 100% !important;
+    justify-content: space-between !important;
 }
 
 .main-nav ul {
@@ -1149,22 +1165,28 @@ img {
     pointer-events: auto !important;
     width: auto !important;
     height: auto !important;
-    background: none !important;
+    background: transparent !important;
     box-shadow: none !important;
     padding: 0 !important;
     margin: 0 !important;
     gap: 1.5rem !important;
+    transform: none !important;
+    visibility: visible !important;
 }
 
 .main-nav ul li {
+    display: block !important;
     width: auto !important;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
 }
 
 .main-nav ul li a {
-    font-size: 1rem !important;
-    padding: 0.5rem 0 !important;
+    display: inline-block !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
     color: var(--text) !important;
+    padding: 0.5rem 0 !important;
+    white-space: nowrap !important;
 }
 
 .mobile-menu-btn, .menu-overlay {
@@ -1173,13 +1195,24 @@ img {
 
 .header-right {
     display: flex !important;
+    align-items: center !important;
 }
 
 .logo {
-    font-size: 1.2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: var(--primary) !important;
     flex-shrink: 0 !important;
+}
+
+.logo span {
+    font-size: inherit !important;
+    line-height: 1 !important;
 }
 
 .logo img {
     height: 40px !important;
+    width: auto !important;
 }
