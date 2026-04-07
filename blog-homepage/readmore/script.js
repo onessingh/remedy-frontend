@@ -76,10 +76,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!authorLink || !authorName || !authorImage || !authorNameLink) {
                 throw new Error('Author elements not found');
             }
+            const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                ? 'http://localhost:5000' 
+                : 'https://remedy-backend-2lbx.onrender.com';
+
             authorLink.href = `/blog-homepage/blog-profilepage/index.html?userId=${blog.user_id}`;
             authorNameLink.href = `/blog-homepage/blog-profilepage/index.html?userId=${blog.user_id}`;
             authorName.textContent = blog.author.name || 'Unknown';
-            authorImage.src = blog.author.image || '/Uploads/default.jpg';
+            authorImage.src = blog.author.image 
+                ? (blog.author.image.startsWith('http') ? blog.author.image : BACKEND_URL + "/uploads/" + blog.author.image)
+                : '/images/default.jpg';
             authorImage.alt = `Profile image of ${blog.author.name || 'Unknown'}`;
 
             // Tags
@@ -107,14 +113,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 blog.media.forEach(media => {
                     if (media.type.startsWith('image/')) {
                         const img = document.createElement('img');
-                        img.src = media.url;
+                        img.src = media.url.startsWith('http') ? media.url : BACKEND_URL + "/uploads/" + media.url;
                         img.alt = 'Blog image';
                         img.className = 'media-item';
                         img.setAttribute('role', 'img');
                         mediaContainer.appendChild(img);
                     } else if (media.type.startsWith('video/')) {
                         const video = document.createElement('video');
-                        video.src = media.url;
+                        video.src = media.url.startsWith('http') ? media.url : BACKEND_URL + "/uploads/" + media.url;
                         video.controls = true;
                         video.className = 'media-item';
                         video.setAttribute('role', 'video');
@@ -124,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             } else {
                 const placeholder = document.createElement('img');
-                placeholder.src = '/Uploads/default.jpg';
+                placeholder.src = '/images/default.jpg';
                 placeholder.alt = 'No media available';
                 placeholder.className = 'media-item';
                 mediaContainer.appendChild(placeholder);
@@ -265,10 +271,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Comment author ID:', comment.author.id, 'Checking against current user:', currentUser?.id, 'and blog owner:', blogOwnerId); // Debug visibility
                 const commentElement = document.createElement('div');
                 commentElement.className = 'comment';
+                const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                    ? 'http://localhost:5000' 
+                    : 'https://remedy-backend-2lbx.onrender.com';
+
                 commentElement.innerHTML = `
                     <div class="comment-header">
                         <a href="/blog-homepage/blog-profilepage/index.html?userId=${comment.author.id}" class="comment-author-link">
-                            <img src="${comment.author.image || '/Uploads/default.jpg'}" alt="Profile image of ${comment.author.name || 'User'}" class="comment-author-image">
+                            <img src="${comment.author.image ? (comment.author.image.startsWith('http') ? comment.author.image : BACKEND_URL + "/uploads/" + comment.author.image) : '/images/default.jpg'}" alt="Profile image of ${comment.author.name || 'User'}" class="comment-author-image">
                         </a>
                         <a href="/blog-homepage/blog-profilepage/index.html?userId=${comment.author.id}" class="comment-author-link">
                             <span class="comment-author">${comment.author.name || 'User'}</span>

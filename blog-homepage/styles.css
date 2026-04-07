@@ -1089,27 +1089,32 @@ footer p {
 
 @media (max-width: 768px) {
     .nav {
-        padding: 12px 0;
+        padding: 5px 0; /* Further shrunk from 8px */
     }
 
     section {
-        padding: 2rem 0 !important;
+        padding: 1rem 0 !important; /* Further shrunk from 1.5rem */
     }
 
     .home {
-        min-height: 80vh;
+        min-height: 60vh; /* Further shrunk from 70vh */
     }
 
     .home-title {
-        font-size: 3rem;
+        font-size: 1.5rem; /* Further shrunk from 2rem */
     }
 
     .home-subtitle {
-        font-size: 1.1rem;
+        font-size: 0.85rem; /* Further shrunk from 0.95rem */
+    }
+
+    .btn {
+        padding: 8px 16px; /* Further shrunk padding */
+        font-size: 0.8rem; /* Further shrunk font */
     }
 
     .titleText {
-        font-size: 2rem;
+        font-size: 1.4rem; /* Further shrunk from 1.6rem */
     }
 
     .newsletter h2 {
@@ -1154,11 +1159,11 @@ footer p {
 
 @media (max-width: 570px) {
     .home-title {
-        font-size: 2.5rem;
+        font-size: 1.4rem; /* Further shrunk from 1.8rem */
     }
 
     .home-subtitle {
-        font-size: 1rem;
+        font-size: 0.8rem; /* Further shrunk from 0.9rem */
     }
 
     .filter-item {
@@ -1202,11 +1207,11 @@ footer p {
 
 @media (max-width: 396px) {
     .home-title {
-        font-size: 2rem;
+        font-size: 1.25rem; /* Further shrunk from 1.6rem */
     }
 
     .home-subtitle {
-        font-size: 0.9rem;
+        font-size: 0.75rem; /* Further shrunk from 0.85rem */
     }
 
     .logo {

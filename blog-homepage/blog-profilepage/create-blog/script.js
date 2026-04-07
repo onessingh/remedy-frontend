@@ -130,8 +130,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (media.type.startsWith('image')) {
                         const imgContainer = document.createElement('div');
                         imgContainer.className = 'image-preview-item';
+                        const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                            ? 'http://localhost:5000' 
+                            : 'https://remedy-backend-2lbx.onrender.com';
+
                         const img = document.createElement('img');
-                        img.src = media.url;
+                        img.src = media.url.startsWith('http') ? media.url : BACKEND_URL + "/uploads/" + media.url;
                         img.setAttribute('role', 'img');
                         img.setAttribute('aria-label', 'Uploaded image preview');
                         const removeBtn = document.createElement('button');
@@ -149,8 +153,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     } else if (media.type.startsWith('video')) {
                         const videoContainer = document.createElement('div');
                         videoContainer.className = 'video-preview-item';
+                        const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                            ? 'http://localhost:5000' 
+                            : 'https://remedy-backend-2lbx.onrender.com';
+
                         const video = document.createElement('video');
-                        video.src = media.url;
+                        video.src = media.url.startsWith('http') ? media.url : BACKEND_URL + "/uploads/" + media.url;
                         video.controls = true;
                         video.setAttribute('role', 'video');
                         video.setAttribute('aria-label', 'Uploaded video preview');
@@ -381,10 +389,18 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!draftsContainer) throw new Error('Drafts container not found');
             draftsContainer.innerHTML = '';
             drafts.forEach(draft => {
+                const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                    ? 'http://localhost:5000' 
+                    : 'https://remedy-backend-2lbx.onrender.com';
+
                 const draftElement = document.createElement('div');
                 draftElement.className = 'uploaded-blog';
+                const thumbnailUrl = draft.thumbnail_url 
+                    ? (draft.thumbnail_url.startsWith('http') ? draft.thumbnail_url : BACKEND_URL + "/uploads/" + draft.thumbnail_url)
+                    : '/images/default.jpg';
+
                 draftElement.innerHTML = `
-                    <div class="uploaded-blog-image" style="background-image: url(${draft.thumbnail_url || '/Uploads/default.jpg'})"></div>
+                    <div class="uploaded-blog-image" style="background-image: url(${thumbnailUrl})"></div>
                     <div class="uploaded-blog-content">
                         <h3>${draft.title}</h3>
                         <p>${draft.content.substring(0, 100)}...</p>

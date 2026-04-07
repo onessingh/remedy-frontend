@@ -847,7 +847,19 @@
           }
           
           .about-hero h1 {
-              font-size: 2.2rem;
+              font-size: 1.5rem; /* Further shrunk from 1.8rem */
+          }
+
+          .mission-content h2, .values-section h2, .team-section h2, .history-section h2, .testimonials-section h2 {
+              font-size: 1.4rem !important; /* Further shrunk from 1.6rem */
+          }
+
+          .about-hero {
+              padding: 4rem 0; /* Further shrunk from 5rem */
+          }
+          
+          .about-hero p {
+              font-size: 0.9rem; /* Further shrunk from 1rem */
           }
 
           .footer-bottom {
@@ -863,7 +875,7 @@
           }
 
           .about-hero h1 {
-              font-size: 1.8rem;
+              font-size: 1.6rem; /* Shrunk from 1.8rem */
           }
 
           .about-hero p {

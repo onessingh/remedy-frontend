@@ -194,14 +194,16 @@
 
             function renderPostResult(post) {
                 const container = document.querySelector(".post-container");
-                const postBox = document.createElement("div");
-                postBox.className = "post-box";
+                const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                    ? 'http://localhost:5000' 
+                    : 'https://remedy-backend-2lbx.onrender.com';
 
                 const thumbnailUrl = post.media && post.media.length > 0 ?
-                    post.media[0].url : '/Uploads/default.jpg';
+                    (post.media[0].url.startsWith('http') ? post.media[0].url : BACKEND_URL + "/uploads/" + post.media[0].url) : 
+                    '/images/default.jpg';
 
                 postBox.innerHTML = `
-                    <img src="${thumbnailUrl}" alt="Post Image" class="post-img" onerror="this.src='/Uploads/default.jpg'" />
+                    <img src="${thumbnailUrl}" alt="Post Image" class="post-img" onerror="this.src='/images/default.jpg'" />
                     <h2 class="category">${post.category || 'Uncategorized'}</h2>
                     <a href="/blog-homepage/readmore/index.html?blogId=${post.id}" class="post-title">${post.title || 'Untitled'}</a>
                     <span class="post-date">${new Date(post.created_at).toLocaleDateString()}</span>
@@ -210,7 +212,7 @@
                         ${post.content ? post.content.replace(/<[^>]+>/g, '').substring(0, 200) : "No content available."}...
                     </p>
                     <a href="/blog-homepage/blog-profilepage/index.html?userId=${post.user_id}" class="profile-info" style="display: flex; align-items: center; gap: 10px; margin-top: 15px;">
-                        <img src="${post.author?.image || '/Uploads/default.jpg'}" alt="Author" class="profile-img" style="width: 30px; height: 30px; border-radius: 50%;">
+                        <img src="${post.author?.image ? (post.author.image.startsWith('http') ? post.author.image : BACKEND_URL + "/uploads/" + post.author.image) : '/images/default.jpg'}" alt="Author" class="profile-img" style="width: 30px; height: 30px; border-radius: 50%;">
                         <span class="profile-name" style="font-size: 0.9rem;">${post.author?.name || "Unknown Author"}</span>
                     </a>
                 `;
@@ -222,13 +224,17 @@
                 const userBox = document.createElement("div");
                 userBox.className = "post-box";
 
+                const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                    ? 'http://localhost:5000' 
+                    : 'https://remedy-backend-2lbx.onrender.com';
+
                 userBox.innerHTML = `
                     <div style="text-align: center; padding: 20px;">
-                        <img src="${user.profileImage || '/Uploads/default.jpg'}" 
+                        <img src="${user.profileImage ? (user.profileImage.startsWith('http') ? user.profileImage : BACKEND_URL + "/uploads/" + user.profileImage) : '/images/default.jpg'}" 
                              class="profile-img" 
                              alt="${user.profileName}"
                              style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 15px; border: 3px solid var(--second-color);"
-                             onerror="this.src='/Uploads/default.jpg'">
+                             onerror="this.src='/images/default.jpg'">
                         <h3 class="post-title">${user.profileName || 'User'}</h3>
                         <a href="blog-profilepage/index.html?userId=${user.id}" class="read-more" style="display: inline-block; margin-top: 15px;">View Profile</a>
                     </div>
@@ -291,10 +297,14 @@
                                             `subscribed to newsletter updates`;
                                     }
 
+                                    const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                                        ? 'http://localhost:5000' 
+                                        : 'https://remedy-backend-2lbx.onrender.com';
+
                                     notifItem.innerHTML = `
                                     <div class="notification-content">
                                         <a href="/blog-homepage/blog-profilepage/index.html?userId=${notif.actor_id}">
-                                            <img src="${notif.profileImage || '/Uploads/default.jpg'}" alt="Profile" class="notification-avatar">
+                                            <img src="${notif.profileImage ? (notif.profileImage.startsWith('http') ? notif.profileImage : BACKEND_URL + "/uploads/" + notif.profileImage) : '/images/default.jpg'}" alt="Profile" class="notification-avatar">
                                         </a>
                                         <div class="notification-text">
                                             <a href="/blog-homepage/blog-profilepage/index.html?userId=${notif.actor_id}" style="font-weight:600">${notif.profileName || 'Anonymous'}</a> ${message}

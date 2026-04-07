@@ -209,9 +209,16 @@ function updateProfilePage(user, blogs, isOwnProfile, loggedInUserId, profileUse
     }
 
     // Update profile image
+    const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+        ? 'http://localhost:5000' 
+        : 'https://remedy-backend-2lbx.onrender.com';
+
     const profileImg = document.querySelector('.profile-pic');
     if (profileImg) {
-        profileImg.src = user.profileImage || "/images/default.jpg";
+        const photoUrl = user.profileImage 
+            ? (user.profileImage.startsWith('http') ? user.profileImage : BACKEND_URL + "/uploads/" + user.profileImage)
+            : "/images/default.jpg";
+        profileImg.src = photoUrl;
         profileImg.onerror = () => profileImg.src = "/images/default.jpg";
     }
 
@@ -407,14 +414,22 @@ async function showFollowersList() {
         const titleEl = document.getElementById("modalTitle");
         const listEl = document.getElementById("modalList");
 
+        const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+            ? 'http://localhost:5000' 
+            : 'https://remedy-backend-2lbx.onrender.com';
+
         titleEl.textContent = "Followers";
         listEl.innerHTML = data.followers.length > 0 
-            ? data.followers.map(user => `
+            ? data.followers.map(user => {
+                const avatar = user.image 
+                    ? (user.image.startsWith('http') ? user.image : BACKEND_URL + "/uploads/" + user.image)
+                    : '/images/default.jpg';
+                return `
                 <div class="user-item" onclick="window.location.href='/blog-homepage/blog-profilepage/index.html?userId=${user.id}'">
-                    <img src="${user.image || '/images/default.jpg'}" class="user-avatar" onerror="this.src='/images/default.jpg'">
+                    <img src="${avatar}" class="user-avatar" onerror="this.src='/images/default.jpg'">
                     <span class="user-name">${user.name || 'User'}</span>
                 </div>
-            `).join('')
+            `}).join('')
             : '<p>No followers found</p>';
 
         modal.style.display = "block";
@@ -457,14 +472,22 @@ async function showFollowingList() {
         const titleEl = document.getElementById("modalTitle");
         const listEl = document.getElementById("modalList");
 
+        const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+            ? 'http://localhost:5000' 
+            : 'https://remedy-backend-2lbx.onrender.com';
+
         titleEl.textContent = "Following";
         listEl.innerHTML = data.following.length > 0 
-            ? data.following.map(user => `
+            ? data.following.map(user => {
+                const avatar = user.image 
+                    ? (user.image.startsWith('http') ? user.image : BACKEND_URL + "/uploads/" + user.image)
+                    : '/images/default.jpg';
+                return `
                 <div class="user-item" onclick="window.location.href='/blog-homepage/blog-profilepage/index.html?userId=${user.id}'">
-                    <img src="${user.image || '/images/default.jpg'}" class="user-avatar" onerror="this.src='/images/default.jpg'">
+                    <img src="${avatar}" class="user-avatar" onerror="this.src='/images/default.jpg'">
                     <span class="user-name">${user.name || 'User'}</span>
                 </div>
-            `).join('')
+            `}).join('')
             : '<p>Not following anyone</p>';
 
         modal.style.display = "block";

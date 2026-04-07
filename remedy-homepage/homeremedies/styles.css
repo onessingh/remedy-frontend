@@ -863,15 +863,28 @@ img {
   }
 
   .remedy-hero h1 {
-      font-size: 2.2rem;
+      font-size: 1.5rem; /* Further shrunk from 1.8rem */
   }
   
   .remedy-item {
       grid-template-columns: 1fr;
+      gap: 0;
+  }
+
+  .remedy-image {
+      height: 150px; /* Further shrunk from 180px */
+  }
+
+  .remedy-content {
+      padding: 1rem; /* Further shrunk from 1.2rem */
+  }
+
+  .remedy-header h3 {
+      font-size: 1.2rem; /* Further shrunk from 1.3rem */
   }
   
   .remedy-item.active .remedy-image {
-      height: 250px;
+      height: 180px; /* Further shrunk from 200px */
   }
 }
 

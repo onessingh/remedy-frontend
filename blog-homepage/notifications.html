@@ -335,38 +335,25 @@
                                 return;
                             }
 
-                            // Add each notification to the list
-                            data.notifications.forEach(notification => {
-                                const notificationItem = document.createElement('div');
-                                notificationItem.className = `notification-item ${notification.isRead ? '' : 'unread'}`;
+                                // Add each notification to the list
+                                data.notifications.forEach(notification => {
+                                    const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                                        ? 'http://localhost:5000' 
+                                        : 'https://remedy-backend-2lbx.onrender.com';
 
-                                // Determine notification message based on type and content
-                                let message = '';
-                                let link = '';
+                                    const notificationItem = document.createElement('div');
+                                    notificationItem.className = `notification-item ${notification.isRead ? '' : 'unread'}`;
+                                    
+                                    // ... determined message logic ...
 
-                                if (notification.type === 'like') {
-                                    message = `liked your blog <a href="/blog-homepage/readmore/index.html?blogId=${notification.reference_id}">${notification.blogTitle || 'your post'}</a>`;
-                                    link = `/blog-homepage/readmore/index.html?blogId=${notification.reference_id}`;
-                                } else if (notification.type === 'follow') {
-                                    message = `started following you`;
-                                    link = `/blog-homepage/blog-profilepage/index.html?userId=${notification.actor_id}`;
-                                } else if (notification.type === 'comment') {
-                                    message = `commented on your blog <a href="/blog-homepage/readmore/index.html?blogId=${notification.reference_id}#comments">${notification.blogTitle || 'your post'}</a>`;
-                                    link = `/blog-homepage/readmore/index.html?blogId=${notification.reference_id}#comments`;
-                                } else if (notification.type === 'newsletter') {
-                                    // Check the message content to determine subscribe/unsubscribe
-                                    if (notification.message && notification.message.includes('unsubscribed')) {
-                                        message = `unsubscribed from newsletter`;
-                                    } else {
-                                        message = `subscribed to newsletter updates`;
-                                    }
-                                    link = `/blog-profilepage/index.html?userId=${notification.actor_id}`;
-                                }
+                                    const actorImage = notification.profileImage 
+                                        ? (notification.profileImage.startsWith('http') ? notification.profileImage : BACKEND_URL + "/uploads/" + notification.profileImage)
+                                        : '/images/default.jpg';
 
-                                notificationItem.innerHTML = `
-                                    <a href="/blog-homepage/blog-profilepage/index.html?userId=${notification.actor_id}">
-                                        <img src="${notification.profileImage || '/uploads/default.jpg'}" alt="${notification.profileName}" class="notification-avatar">
-                                    </a>
+                                    notificationItem.innerHTML = `
+                                        <a href="/blog-homepage/blog-profilepage/index.html?userId=${notification.actor_id}">
+                                            <img src="${actorImage}" alt="${notification.profileName}" class="notification-avatar" onerror="this.src='/images/default.jpg'">
+                                        </a>
                                     <div class="notification-content">
                                         <div class="notification-text">
                                             <a href="/blog-homepage/blog-profilepage/index.html?userId=${notification.actor_id}" style="font-weight:600">${notification.profileName}</a> ${message}

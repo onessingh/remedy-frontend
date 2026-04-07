@@ -1274,24 +1274,47 @@ img {
       display: none !important;
   }
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.5rem; /* Further shrunk from 1.8rem */
+    margin-bottom: 0.8rem;
+  }
+  .hero-subtitle {
+    font-size: 0.9rem; /* Further shrunk from 1rem */
+    margin-bottom: 1.2rem;
+  }
+  .cta-button {
+    padding: 8px 18px; /* Further shrunk padding */
+    font-size: 0.85rem;
   }
   .feature-card {
     max-width: 100%;
     flex: 0 0 100%;
+    padding: 1rem 0.8rem; /* Further shrunk padding */
+  }
+  .feature-card .icon {
+    font-size: 1.5rem; /* Further shrunk from 1.8rem */
+    margin-bottom: 0.8rem;
+  }
+  .feature-card h3 {
+    font-size: 1.1rem; /* Further shrunk from 1.2rem */
+  }
+  .section-header h2 {
+    font-size: 1.4rem; /* Further shrunk from 1.6rem */
+  }
+  .section-header p {
+    font-size: 0.9rem; /* Further shrunk from 0.95rem */
   }
   .remedy-card {
-    flex: 0 0 280px;
+    flex: 0 0 240px; /* Further reduced width */
   }
   .footer-container {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Shrunk from 1.8rem */
   }
   .hero-buttons {
     flex-direction: column;
@@ -1299,6 +1322,7 @@ img {
   }
   .cta-button {
     width: 100%;
+    padding: 12px; /* Slightly tighter for very small screens */
   }
   .category-tab {
     padding: 0.6rem 1rem;

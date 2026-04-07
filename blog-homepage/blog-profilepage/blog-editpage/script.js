@@ -253,10 +253,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (element) element.value = value;
             });
 
+            const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                ? 'http://localhost:5000' 
+                : 'https://remedy-backend-2lbx.onrender.com';
+
             // Set profile image
             const profileImg = document.getElementById('profilePreview');
             if (profileImg) {
-                profileImg.src = user.profileImage || '/images/default.jpg';
+                profileImg.src = user.profileImage 
+                    ? (user.profileImage.startsWith('http') ? user.profileImage : BACKEND_URL + "/uploads/" + user.profileImage)
+                    : '/images/default.jpg';
             }
 
             // Calculate remaining minimum loading time

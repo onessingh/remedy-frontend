@@ -93,6 +93,10 @@ function loadNotifications() {
         })
         .catch(err => console.error('Error fetching notification count:', err));
 
+    const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+        ? 'http://localhost:5000' 
+        : 'https://remedy-backend-2lbx.onrender.com';
+
     fetch('/api/user/notifications?limit=5')
         .then(res => res.json())
         .then(data => {
@@ -122,7 +126,7 @@ function loadNotifications() {
                         notifItem.innerHTML = `
                             <div class="notification-content">
                                 <a href="/blog-homepage/blog-profilepage/index.html?userId=${notif.actor_id}">
-                                    <img src="${notif.profileImage || '/Uploads/default.jpg'}" alt="Profile" class="notification-avatar">
+                                    <img src="${notif.profileImage ? (notif.profileImage.startsWith('http') ? notif.profileImage : BACKEND_URL + "/uploads/" + notif.profileImage) : '/images/default.jpg'}" alt="Profile" class="notification-avatar">
                                 </a>
                                 <div class="notification-text">
                                     <a href="/blog-homepage/blog-profilepage/index.html?userId=${notif.actor_id}" style="font-weight:600">${notif.profileName || 'Anonymous'}</a> ${message}
@@ -403,6 +407,10 @@ function closeModal(modal, overlay) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+        ? 'http://localhost:5000' 
+        : 'https://remedy-backend-2lbx.onrender.com';
+
     fetch("/api/user/profile")
         .then(res => {
             if (!res.ok) {
@@ -417,8 +425,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 const profileNameEl = document.getElementById("header-profile-name");
 
                 if (profileImageEl) {
-                    profileImageEl.src = user.profileImage || "/Uploads/default.jpg";
-                    profileImageEl.onerror = () => profileImageEl.src = "/Uploads/default.jpg";
+                    profileImageEl.src = user.profileImage 
+                        ? (user.profileImage.startsWith('http') ? user.profileImage : BACKEND_URL + "/uploads/" + user.profileImage)
+                        : "/images/default.jpg";
+                    profileImageEl.onerror = () => profileImageEl.src = "/images/default.jpg";
                 }
 
                 if (profileNameEl) {
@@ -429,7 +439,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(err => {
             console.error("Failed to load profile info:", err);
             const profileImageEl = document.getElementById("header-profile-image");
-            if (profileImageEl) profileImageEl.src = "/Uploads/default.jpg";
+            if (profileImageEl) profileImageEl.src = "/images/default.jpg";
         });
 
     const createBlogBtn = document.getElementById("createBlogBtn");
@@ -661,6 +671,10 @@ function showError(message) {
 }
 
 function renderUniqueUserPost(post) {
+    const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+        ? 'http://localhost:5000' 
+        : 'https://remedy-backend-2lbx.onrender.com';
+
     const container = document.querySelector(".post-container");
     if (!container) return;
 
@@ -668,11 +682,11 @@ function renderUniqueUserPost(post) {
     postBox.className = `post-box ${post.category ? post.category.toLowerCase() : 'all'}`;
     
     const thumbnailUrl = post.media && post.media.length > 0 ? 
-        post.media[0].url : 
-        '/Uploads/default.jpg';
+        (post.media[0].url.startsWith('http') ? post.media[0].url : BACKEND_URL + "/uploads/" + post.media[0].url) : 
+        '/images/default.jpg';
     
     postBox.innerHTML = `
-        <img src="${thumbnailUrl}" alt="Post Image" class="post-img" onerror="this.src='/Uploads/default.jpg'" />
+        <img src="${thumbnailUrl}" alt="Post Image" class="post-img" onerror="this.src='/images/default.jpg'" />
         <h2 class="category">${post.category || 'Uncategorized'}</h2>
         <a href="/blog-homepage/readmore/index.html?blogId=${post.id}" class="post-title">${post.title || 'Untitled'}</a>
         <span class="post-date">${new Date(post.created_at).toLocaleDateString()}</span>
@@ -681,7 +695,7 @@ function renderUniqueUserPost(post) {
             ${post.content ? post.content.replace(/<[^>]+>/g, '').substring(0, 200) : "No content available."}...
         </p>
         <a href="/blog-homepage/blog-profilepage/index.html?userId=${post.user_id}" class="profile-info" style="display: flex; align-items: center; gap: 10px; margin-top: 15px;">
-            <img src="${post.author?.image || '/Uploads/default.jpg'}" alt="Author" class="profile-img" style="width: 30px; height: 30px; border-radius: 50%;">
+            <img src="${post.author?.image ? (post.author.image.startsWith('http') ? post.author.image : BACKEND_URL + "/uploads/" + post.author.image) : '/images/default.jpg'}" alt="Author" class="profile-img" style="width: 30px; height: 30px; border-radius: 50%;">
             <span class="profile-name" style="font-size: 0.9rem;">${post.author?.name || "Unknown Author"}</span>
         </a>
     `;

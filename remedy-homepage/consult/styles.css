@@ -230,3 +230,47 @@
 #successModal .modal-buttons {
     justify-content: center;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 1rem; /* Further shrunk from 3rem */
+    }
+
+    .hero-section h1 {
+        font-size: 1.5rem; /* Further shrunk from 1.8rem */
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-section p {
+        font-size: 0.9rem; /* Further shrunk from 0.95rem */
+    }
+
+    .consult-form {
+        padding: 1.5rem 1rem; /* Further shrunk padding */
+    }
+
+    .consult-form form {
+        padding: 1.2rem; /* Further shrunk padding */
+    }
+
+    .expert-card {
+        width: 100%;
+        max-width: 280px; /* Reduced max-width */
+    }
+
+    .expert-card img {
+        height: 180px; /* Further shrunk image height */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.4rem; /* Further shrunk */
+    }
+
+    .consult-form .cta-button {
+        padding: 0.7rem;
+        font-size: 0.85rem;
+    }
+}

@@ -82,7 +82,15 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!res.ok) throw new Error('Not authenticated');
 
             const data = await res.json();
-            const photoUrl = data.photo ? "/uploads/" + data.photo : defaultIcon;
+            
+            // 🌐 Backend URL Configuration
+            const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                ? 'http://localhost:5000' 
+                : 'https://remedy-backend-2lbx.onrender.com';
+
+            const photoUrl = data.photo 
+                ? (data.photo.startsWith('http') ? data.photo : BACKEND_URL + "/uploads/" + data.photo)
+                : defaultIcon;
 
             // Update UI with user data
             userIcon.src = photoUrl;
