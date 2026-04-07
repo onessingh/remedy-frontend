@@ -1,0 +1,8 @@
+/api/*  https://remedy-backend-2lbx.onrender.com/api/:splat  200
+/auth/*  https://remedy-backend-2lbx.onrender.com/auth/:splat  200
+/profile/*  https://remedy-backend-2lbx.onrender.com/profile/:splat  200
+/forgot-password/*  https://remedy-backend-2lbx.onrender.com/forgot-password/:splat  200
+/login  https://remedy-backend-2lbx.onrender.com/login  200
+/signup  https://remedy-backend-2lbx.onrender.com/signup  200
+/logout  https://remedy-backend-2lbx.onrender.com/logout  200
+/me  https://remedy-backend-2lbx.onrender.com/me  200

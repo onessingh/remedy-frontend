@@ -176,7 +176,7 @@ async function saveProfile() {
         showNotification('Profile saved successfully!');
         
         // Redirect with cache busting
-        window.location.href = "http://localhost:5000/blog-homepage/blog-profilepage/index.html";
+        window.location.href = "/blog-homepage/blog-profilepage/index.html";
     } catch (error) {
         console.error('Save error:', error);
         showNotification(error.message || 'Error saving profile', 'error');

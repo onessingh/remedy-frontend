@@ -160,7 +160,7 @@
                 // Show loading state
                 container.innerHTML = '<p style="text-align: center;">Searching...</p>';
 
-                fetch(`http://localhost:5000/api/user/search?q=${encodeURIComponent(query)}&type=${searchType}`)
+                fetch(`/api/user/search?q=${encodeURIComponent(query)}&type=${searchType}`)
                     .then(res => res.json())
                     .then(data => {
                         container.innerHTML = '';
@@ -237,7 +237,7 @@
             }
             // Check login status and load notifications if logged in
             function checkLoginStatus(callback) {
-                fetch("http://localhost:5000/api/check-auth")
+                fetch("/api/check-auth")
                     .then(res => res.json())
                     .then(data => callback(data.loggedIn))
                     .catch(err => {
@@ -254,7 +254,7 @@
             document.body.appendChild(notificationDropdown);
 
             function loadNotifications() {
-                fetch('http://localhost:5000/api/user/notifications/unread-count')
+                fetch('/api/user/notifications/unread-count')
                     .then(res => res.json())
                     .then(data => {
                         if (data.success) {
@@ -265,7 +265,7 @@
                     })
                     .catch(err => console.error('Error fetching notification count:', err));
 
-                fetch('http://localhost:5000/api/user/notifications?limit=5')
+                fetch('/api/user/notifications?limit=5')
                     .then(res => res.json())
                     .then(data => {
                         if (data.success) {
@@ -341,7 +341,7 @@
             }
 
             function markAllNotificationsAsRead() {
-                fetch('http://localhost:5000/api/user/notifications/mark-all-read', {
+                fetch('/api/user/notifications/mark-all-read', {
                     method: 'POST'
                 })
                     .then(response => response.json())

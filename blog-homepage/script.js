@@ -59,7 +59,7 @@ document.querySelectorAll('.dropdown-item').forEach(item => {
 });
 
 function loadNotifications() {
-    fetch('http://localhost:5000/api/user/notifications/unread-count')
+    fetch('/api/user/notifications/unread-count')
         .then(res => res.json())
         .then(data => {
             if (data.success) {
@@ -70,7 +70,7 @@ function loadNotifications() {
         })
         .catch(err => console.error('Error fetching notification count:', err));
 
-    fetch('http://localhost:5000/api/user/notifications?limit=5')
+    fetch('/api/user/notifications?limit=5')
         .then(res => res.json())
         .then(data => {
             if (data.success) {
@@ -146,7 +146,7 @@ function formatTime(dateString) {
 }
 
 function markAllNotificationsAsRead() {
-    fetch('http://localhost:5000/api/user/notifications/mark-all-read', {
+    fetch('/api/user/notifications/mark-all-read', {
         method: 'POST'
     })
         .then(response => response.json())
@@ -181,7 +181,7 @@ function filterPosts(filter = "all") {
 }
 
 $(document).ready(function () {
-    fetch('http://localhost:5000/api/user/blogs/recent')
+    fetch('/api/user/blogs/recent')
         .then(res => {
             if (!res.ok) {
                 return res.json().then(err => {
@@ -267,7 +267,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 function checkLoginStatus(callback) {
-    fetch("http://localhost:5000/api/check-auth")
+    fetch("/api/check-auth")
         .then(res => res.json())
         .then(data => callback(data.loggedIn))
         .catch(err => {
@@ -380,7 +380,7 @@ function closeModal(modal, overlay) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("http://localhost:5000/api/user/profile")
+    fetch("/api/user/profile")
         .then(res => {
             if (!res.ok) {
                 throw new Error(`Profile fetch failed: ${res.status}`);
@@ -442,14 +442,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             try {
-                const authResponse = await fetch('http://localhost:5000/api/check-auth');
+                const authResponse = await fetch('/api/check-auth');
                 if (!authResponse.ok) {
                     throw new Error("Auth check failed");
                 }
                 const authData = await authResponse.json();
                 
                 if (authData.loggedIn) {
-                    const userResponse = await fetch('http://localhost:5000/api/user');
+                    const userResponse = await fetch('/api/user');
                     if (!userResponse.ok) {
                         throw new Error("User data fetch failed");
                     }
@@ -480,7 +480,7 @@ async function checkSubscriptionStatus() {
     if (!newsletterForm) return;
 
     try {
-        const authResponse = await fetch('http://localhost:5000/api/check-auth');
+        const authResponse = await fetch('/api/check-auth');
         if (!authResponse.ok) {
             throw new Error("Auth check failed");
         }
@@ -507,7 +507,7 @@ async function checkSubscriptionStatus() {
 
 async function checkServerSubscriptionStatus(email, userId) {
     try {
-        const response = await fetch(`http://localhost:5000/api/user/newsletter/check?email=${encodeURIComponent(email)}`, {
+        const response = await fetch(`/api/user/newsletter/check?email=${encodeURIComponent(email)}`, {
             headers: {
                 'Authorization': userId ? `Bearer ${localStorage.getItem('token')}` : ''
             }
@@ -526,7 +526,7 @@ async function checkServerSubscriptionStatus(email, userId) {
 
 async function subscribeToNewsletter(email, userId) {
     try {
-        const response = await fetch('http://localhost:5000/api/user/newsletter/subscribe', {
+        const response = await fetch('/api/user/newsletter/subscribe', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -555,7 +555,7 @@ async function subscribeToNewsletter(email, userId) {
 
 async function unsubscribeFromNewsletter(email, userId) {
     try {
-        const response = await fetch('http://localhost:5000/api/user/newsletter/unsubscribe', {
+        const response = await fetch('/api/user/newsletter/unsubscribe', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -597,7 +597,7 @@ function showSubscribedState(email) {
 
     document.getElementById("unsubscribeBtn").addEventListener("click", async function() {
         try {
-            const authResponse = await fetch('http://localhost:5000/api/check-auth');
+            const authResponse = await fetch('/api/check-auth');
             if (!authResponse.ok) {
                 throw new Error("Auth check failed");
             }
