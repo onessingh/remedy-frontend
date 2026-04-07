@@ -56,7 +56,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 200;
+    z-index: 21000;
     transition: all 0.4s ease;
     background: var(--container-color);
 }
@@ -68,7 +68,7 @@ header {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
-    z-index: 5000; /* Lower than header and sidebar */
+    z-index: 19999;  /* Sidebar (20000) ke theek neeche */
     display: none;
     transition: all 0.4s ease;
     cursor: pointer;
@@ -177,7 +177,7 @@ header.shadow .home-icon {
 .profile-dropdown {
     position: relative;
     display: inline-block;
-    z-index: 1001;
+    z-index: 22000;
 }
 
 .profile-icon {
@@ -212,7 +212,7 @@ header.shadow .home-icon {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
-    z-index: 1;
+    z-index: 23000;
 }
 
 .profile-dropdown.active .dropdown-content {
@@ -271,7 +271,7 @@ header.shadow .home-icon {
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     border-radius: 10px;
     padding: 15px;
-    z-index: 1000;
+    z-index: 22000;
     display: none;
 }
 
@@ -1530,7 +1530,7 @@ footer p {
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
-        z-index: 1001;
+        z-index: 25000;  /* Sidebar se upar */
     }
     .nav {
         padding: 15px 0;
@@ -1571,7 +1571,7 @@ footer p {
     .nav-right {
         position: fixed;
         top: 0;
-        left: -100%;
+        left: 0;
         width: 280px;
         height: 100vh;
         background: var(--bg-color);
@@ -1586,7 +1586,6 @@ footer p {
         gap: 1.5rem;
         overflow-y: auto;
         transform: translateX(-100%);
-        left: 0;
     }
     .nav-right.active {
         transform: translateX(0);
@@ -1598,9 +1597,22 @@ footer p {
         padding: 10px 0;
         border-bottom: 1px solid #f0f0f0;
     }
+    .notification-dropdown {
+        position: static;
+        width: 100%;
+        max-height: none;
+        box-shadow: none;
+        padding-left: 20px;
+        border-left: 2px solid var(--second-color);
+        margin-top: 10px;
+        background: transparent;
+    }
     .notification-icon {
         color: var(--dark-color);
         margin-top: 10px;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 10px;
     }
     .profile-dropdown {
         width: 100%;

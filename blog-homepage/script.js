@@ -36,20 +36,29 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 const profileDropdown = document.querySelector('.profile-dropdown');
-const dropdownContent = profileDropdown.querySelector('.dropdown-content');
+const profileIconTrigger = document.querySelector('.profile-icon');
 const notificationIcon = document.querySelector('.notification-icon');
 const notificationCount = document.querySelector('.notification-count');
-const notificationDropdown = document.createElement('div');
-notificationDropdown.className = 'notification-dropdown';
+let notificationDropdown = document.querySelector('.notification-dropdown');
 
-document.body.appendChild(notificationDropdown);
+if (!notificationDropdown) {
+    notificationDropdown = document.createElement('div');
+    notificationDropdown.className = 'notification-dropdown';
+    // Append it to navRight instead of body for mobile flow
+    const navRight = document.querySelector('.nav-right');
+    if (navRight) {
+        navRight.appendChild(notificationDropdown);
+    } else {
+        document.body.appendChild(notificationDropdown);
+    }
+}
 
 const handleDropdownToggle = (dropdownToOpen, dropdownToClose) => {
     return function(e) {
         e.stopPropagation();
-        if (dropdownToClose.classList.contains('active')) {
-            dropdownToClose.classList.remove('active');
-        }
+        // Always close the other dropdown
+        dropdownToClose.classList.remove('active');
+        // Toggle the target one
         dropdownToOpen.classList.toggle('active');
         
         if (dropdownToOpen === notificationDropdown && dropdownToOpen.classList.contains('active')) {
@@ -59,7 +68,7 @@ const handleDropdownToggle = (dropdownToOpen, dropdownToClose) => {
 };
 
 notificationIcon.addEventListener('click', handleDropdownToggle(notificationDropdown, profileDropdown));
-profileDropdown.addEventListener('click', handleDropdownToggle(profileDropdown, notificationDropdown));
+profileIconTrigger.addEventListener('click', handleDropdownToggle(profileDropdown, notificationDropdown));
 
 document.addEventListener('click', function() {
     notificationDropdown.classList.remove('active');
