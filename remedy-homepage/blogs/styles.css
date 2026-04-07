@@ -753,142 +753,26 @@
         }
 
         /* Responsive Design for Header */
-        @media (max-width: 768px) {
-          .main-nav {
-              display: flex !important;
-              justify-content: space-between !important;
-              align-items: center !important;
-              width: 100% !important;
-          }
-
-          .main-nav ul {
-              display: flex;
-              position: fixed !important;
-              top: 0;
-              left: -280px !important;
-              right: auto !important;
-              width: 280px !important;
-              max-width: 280px !important;
-              height: 100vh !important;
-              background-color: var(--white) !important;
-              flex-direction: column !important;
-              padding: 4rem 1.5rem 2rem !important;
-              box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15) !important;
-              z-index: 2050 !important;
-              transition: all 0.4s cubic-bezier(0.7, 0, 0.3, 1) !important;
-              opacity: 0;
-              pointer-events: none;
-              margin: 0 !important;
-          }
-
-          .main-nav ul.show {
-              left: 0 !important;
-              opacity: 1 !important;
-              pointer-events: auto !important;
-          }
-
-          .main-nav ul li {
-              width: 100% !important;
-              text-align: left !important;
-              margin-bottom: 0.8rem !important;
-              border-bottom: none !important;
-              padding: 0 !important;
-          }
-
-          .main-nav ul li a {
-              display: inline-block !important;
-              font-size: 1.15rem !important;
-              font-weight: 500 !important;
-              color: var(--dark) !important;
-              padding: 0.8rem 0 !important;
-              width: 100% !important;
-          }
-
-          .main-nav ul li.active a::after {
-              display: none !important;
-          }
-
-          .mobile-menu-btn {
-              display: block !important;
-              margin-left: auto !important;
-              background: none !important;
-              border: none !important;
-              font-size: 1.4rem !important;
-              color: var(--primary) !important;
-              cursor: pointer !important;
-              z-index: 2100 !important;
-              padding: 5px !important;
-              position: relative !important;
-          }
-
-          .header-right {
-              display: none !important;
-          }
-
-          .featured-post {
-              height: 400px;
-              margin-top: 5rem;
-          }
-          
-          .post-content {
-              padding: 2rem;
-          }
-          
-          .post-content h1 {
-              font-size: 2rem;
-          }
-          
-          .section-title {
-              font-size: 2rem;
-          }
-          
-          .newsletter-form {
-              flex-direction: column;
-          }
-          
-          .newsletter-form input,
-          .btn-subscribe {
-              border-radius: 50px;
-          }
-          
-          .btn-subscribe {
-              margin-top: 1rem;
-              padding: 1rem;
-          }
-        }
-
-        @media (max-width: 576px) {
-          .featured-post {
-              height: 350px;
-          }
-          
-          .post-content {
-              padding: 1.5rem;
-          }
-          
-          .post-content h1 {
-              font-size: 1.8rem;
-          }
-          
-          .post-meta {
-              flex-direction: column;
-              gap: 0.5rem;
-          }
-          
-          .blog-grid {
-              grid-template-columns: 1fr;
-          }
-          
-          .modal-content {
-              width: 95%;
-              padding: 1rem;
-          }
-        }
-        .blog-card {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.blog-card.hidden {
-    display: none;
-}
         
+
+
+
+
+/* ============================================================
+   TRUE DESKTOP SITE MODE (NO SCALING)
+   ============================================================ */
+@media (max-width: 1200px) {
+    /* 1. Force Pure Desktop Structure */
+    .nav, .main-nav, .main-header, .nav-right, .nav-links, .main-nav ul, .footer-container, .post, .about, .main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        min-width: 1024px !important;
+    }
+
+    /* 2. Hide Mobile UI */
+    .menu-toggle, .mobile-menu-btn, .navbar-toggler, .hamburger, .menu-overlay {
+        display: none !important;
+    }
+}

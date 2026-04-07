@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1200">
     <title>Search Results - BlogHub</title>
     <!-- Box-icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -199,7 +199,7 @@
                     : 'https://remedy-backend-2lbx.onrender.com';
 
                 const thumbnailUrl = post.media && post.media.length > 0 ?
-                    (post.media[0].url.startsWith('http') ? post.media[0].url : BACKEND_URL + "/uploads/" + post.media[0].url) : 
+                    (post.media[0].url.startsWith('http') || post.media[0].url.startsWith('data:') ? post.media[0].url : BACKEND_URL + "/uploads/" + post.media[0].url) : 
                     '/images/default.jpg';
 
                 postBox.innerHTML = `
@@ -212,7 +212,7 @@
                         ${post.content ? post.content.replace(/<[^>]+>/g, '').substring(0, 200) : "No content available."}...
                     </p>
                     <a href="/blog-homepage/blog-profilepage/index.html?userId=${post.user_id}" class="profile-info" style="display: flex; align-items: center; gap: 10px; margin-top: 15px;">
-                        <img src="${post.author?.image ? (post.author.image.startsWith('http') ? post.author.image : BACKEND_URL + "/uploads/" + post.author.image) : '/images/default.jpg'}" alt="Author" class="profile-img" style="width: 30px; height: 30px; border-radius: 50%;">
+                        <img src="${post.author?.image ? (post.author.image.startsWith('http') || post.author.image.startsWith('data:') ? post.author.image : BACKEND_URL + "/uploads/" + post.author.image) : '/images/default.jpg'}" alt="Author" class="profile-img" style="width: 30px; height: 30px; border-radius: 50%;">
                         <span class="profile-name" style="font-size: 0.9rem;">${post.author?.name || "Unknown Author"}</span>
                     </a>
                 `;
@@ -230,7 +230,7 @@
 
                 userBox.innerHTML = `
                     <div style="text-align: center; padding: 20px;">
-                        <img src="${user.profileImage ? (user.profileImage.startsWith('http') ? user.profileImage : BACKEND_URL + "/uploads/" + user.profileImage) : '/images/default.jpg'}" 
+                        <img src="${user.profileImage ? (user.profileImage.startsWith('http') || user.profileImage.startsWith('data:') ? user.profileImage : BACKEND_URL + "/uploads/" + user.profileImage) : '/images/default.jpg'}" 
                              class="profile-img" 
                              alt="${user.profileName}"
                              style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 15px; border: 3px solid var(--second-color);"
@@ -304,7 +304,7 @@
                                     notifItem.innerHTML = `
                                     <div class="notification-content">
                                         <a href="/blog-homepage/blog-profilepage/index.html?userId=${notif.actor_id}">
-                                            <img src="${notif.profileImage ? (notif.profileImage.startsWith('http') ? notif.profileImage : BACKEND_URL + "/uploads/" + notif.profileImage) : '/images/default.jpg'}" alt="Profile" class="notification-avatar">
+                                            <img src="${notif.profileImage ? (notif.profileImage.startsWith('http') || notif.profileImage.startsWith('data:') ? notif.profileImage : BACKEND_URL + "/uploads/" + notif.profileImage) : '/images/default.jpg'}" alt="Profile" class="notification-avatar">
                                         </a>
                                         <div class="notification-text">
                                             <a href="/blog-homepage/blog-profilepage/index.html?userId=${notif.actor_id}" style="font-weight:600">${notif.profileName || 'Anonymous'}</a> ${message}

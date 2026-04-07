@@ -216,7 +216,7 @@ function updateProfilePage(user, blogs, isOwnProfile, loggedInUserId, profileUse
     const profileImg = document.querySelector('.profile-pic');
     if (profileImg) {
         const photoUrl = user.profileImage 
-            ? (user.profileImage.startsWith('http') ? user.profileImage : BACKEND_URL + "/uploads/" + user.profileImage)
+            ? (user.profileImage.startsWith('http') || user.profileImage.startsWith('data:') ? user.profileImage : BACKEND_URL + "/uploads/" + user.profileImage)
             : "/images/default.jpg";
         profileImg.src = photoUrl;
         profileImg.onerror = () => profileImg.src = "/images/default.jpg";
@@ -422,7 +422,7 @@ async function showFollowersList() {
         listEl.innerHTML = data.followers.length > 0 
             ? data.followers.map(user => {
                 const avatar = user.image 
-                    ? (user.image.startsWith('http') ? user.image : BACKEND_URL + "/uploads/" + user.image)
+                    ? (user.image.startsWith('http') || user.image.startsWith('data:') ? user.image : BACKEND_URL + "/uploads/" + user.image)
                     : '/images/default.jpg';
                 return `
                 <div class="user-item" onclick="window.location.href='/blog-homepage/blog-profilepage/index.html?userId=${user.id}'">
@@ -480,7 +480,7 @@ async function showFollowingList() {
         listEl.innerHTML = data.following.length > 0 
             ? data.following.map(user => {
                 const avatar = user.image 
-                    ? (user.image.startsWith('http') ? user.image : BACKEND_URL + "/uploads/" + user.image)
+                    ? (user.image.startsWith('http') || user.image.startsWith('data:') ? user.image : BACKEND_URL + "/uploads/" + user.image)
                     : '/images/default.jpg';
                 return `
                 <div class="user-item" onclick="window.location.href='/blog-homepage/blog-profilepage/index.html?userId=${user.id}'">

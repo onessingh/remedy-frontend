@@ -126,7 +126,7 @@ function loadNotifications() {
                         notifItem.innerHTML = `
                             <div class="notification-content">
                                 <a href="/blog-homepage/blog-profilepage/index.html?userId=${notif.actor_id}">
-                                    <img src="${notif.profileImage ? (notif.profileImage.startsWith('http') ? notif.profileImage : BACKEND_URL + "/uploads/" + notif.profileImage) : '/images/default.jpg'}" alt="Profile" class="notification-avatar">
+                                    <img src="${notif.profileImage ? (notif.profileImage.startsWith('http') || notif.profileImage.startsWith('data:') ? notif.profileImage : BACKEND_URL + "/uploads/" + notif.profileImage) : '/images/default.jpg'}" alt="Profile" class="notification-avatar">
                                 </a>
                                 <div class="notification-text">
                                     <a href="/blog-homepage/blog-profilepage/index.html?userId=${notif.actor_id}" style="font-weight:600">${notif.profileName || 'Anonymous'}</a> ${message}
@@ -426,7 +426,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (profileImageEl) {
                     profileImageEl.src = user.profileImage 
-                        ? (user.profileImage.startsWith('http') ? user.profileImage : BACKEND_URL + "/uploads/" + user.profileImage)
+                        ? (user.profileImage.startsWith('http') || user.profileImage.startsWith('data:') ? user.profileImage : BACKEND_URL + "/uploads/" + user.profileImage)
                         : "/images/default.jpg";
                     profileImageEl.onerror = () => profileImageEl.src = "/images/default.jpg";
                 }
@@ -682,7 +682,7 @@ function renderUniqueUserPost(post) {
     postBox.className = `post-box ${post.category ? post.category.toLowerCase() : 'all'}`;
     
     const thumbnailUrl = post.media && post.media.length > 0 ? 
-        (post.media[0].url.startsWith('http') ? post.media[0].url : BACKEND_URL + "/uploads/" + post.media[0].url) : 
+        (post.media[0].url.startsWith('http') || post.media[0].url.startsWith('data:') ? post.media[0].url : BACKEND_URL + "/uploads/" + post.media[0].url) : 
         '/images/default.jpg';
     
     postBox.innerHTML = `
@@ -695,7 +695,7 @@ function renderUniqueUserPost(post) {
             ${post.content ? post.content.replace(/<[^>]+>/g, '').substring(0, 200) : "No content available."}...
         </p>
         <a href="/blog-homepage/blog-profilepage/index.html?userId=${post.user_id}" class="profile-info" style="display: flex; align-items: center; gap: 10px; margin-top: 15px;">
-            <img src="${post.author?.image ? (post.author.image.startsWith('http') ? post.author.image : BACKEND_URL + "/uploads/" + post.author.image) : '/images/default.jpg'}" alt="Author" class="profile-img" style="width: 30px; height: 30px; border-radius: 50%;">
+            <img src="${post.author?.image ? (post.author.image.startsWith('http') || post.author.image.startsWith('data:') ? post.author.image : BACKEND_URL + "/uploads/" + post.author.image) : '/images/default.jpg'}" alt="Author" class="profile-img" style="width: 30px; height: 30px; border-radius: 50%;">
             <span class="profile-name" style="font-size: 0.9rem;">${post.author?.name || "Unknown Author"}</span>
         </a>
     `;

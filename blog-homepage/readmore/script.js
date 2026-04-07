@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
             authorNameLink.href = `/blog-homepage/blog-profilepage/index.html?userId=${blog.user_id}`;
             authorName.textContent = blog.author.name || 'Unknown';
             authorImage.src = blog.author.image 
-                ? (blog.author.image.startsWith('http') ? blog.author.image : BACKEND_URL + "/uploads/" + blog.author.image)
+                ? (blog.author.image.startsWith('http') || blog.author.image.startsWith('data:') ? blog.author.image : BACKEND_URL + "/uploads/" + blog.author.image)
                 : '/images/default.jpg';
             authorImage.alt = `Profile image of ${blog.author.name || 'Unknown'}`;
 
@@ -113,14 +113,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 blog.media.forEach(media => {
                     if (media.type.startsWith('image/')) {
                         const img = document.createElement('img');
-                        img.src = media.url.startsWith('http') ? media.url : BACKEND_URL + "/uploads/" + media.url;
+                        img.src = (media.url.startsWith('http') || media.url.startsWith('data:')) ? media.url : BACKEND_URL + "/uploads/" + media.url;
                         img.alt = 'Blog image';
                         img.className = 'media-item';
                         img.setAttribute('role', 'img');
                         mediaContainer.appendChild(img);
                     } else if (media.type.startsWith('video/')) {
                         const video = document.createElement('video');
-                        video.src = media.url.startsWith('http') ? media.url : BACKEND_URL + "/uploads/" + media.url;
+                        video.src = (media.url.startsWith('http') || media.url.startsWith('data:')) ? media.url : BACKEND_URL + "/uploads/" + media.url;
                         video.controls = true;
                         video.className = 'media-item';
                         video.setAttribute('role', 'video');
@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 commentElement.innerHTML = `
                     <div class="comment-header">
                         <a href="/blog-homepage/blog-profilepage/index.html?userId=${comment.author.id}" class="comment-author-link">
-                            <img src="${comment.author.image ? (comment.author.image.startsWith('http') ? comment.author.image : BACKEND_URL + "/uploads/" + comment.author.image) : '/images/default.jpg'}" alt="Profile image of ${comment.author.name || 'User'}" class="comment-author-image">
+                            <img src="${comment.author.image ? (comment.author.image.startsWith('http') || comment.author.image.startsWith('data:') ? comment.author.image : BACKEND_URL + "/uploads/" + comment.author.image) : '/images/default.jpg'}" alt="Profile image of ${comment.author.name || 'User'}" class="comment-author-image">
                         </a>
                         <a href="/blog-homepage/blog-profilepage/index.html?userId=${comment.author.id}" class="comment-author-link">
                             <span class="comment-author">${comment.author.name || 'User'}</span>

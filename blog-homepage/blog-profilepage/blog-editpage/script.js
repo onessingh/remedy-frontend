@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const profileImg = document.getElementById('profilePreview');
             if (profileImg) {
                 profileImg.src = user.profileImage 
-                    ? (user.profileImage.startsWith('http') ? user.profileImage : BACKEND_URL + "/uploads/" + user.profileImage)
+                    ? (user.profileImage.startsWith('http') || user.profileImage.startsWith('data:') ? user.profileImage : BACKEND_URL + "/uploads/" + user.profileImage)
                     : '/images/default.jpg';
             }
 

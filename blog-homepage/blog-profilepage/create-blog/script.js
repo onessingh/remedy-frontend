@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             : 'https://remedy-backend-2lbx.onrender.com';
 
                         const img = document.createElement('img');
-                        img.src = media.url.startsWith('http') ? media.url : BACKEND_URL + "/uploads/" + media.url;
+                        img.src = (media.url.startsWith('http') || media.url.startsWith('data:')) ? media.url : BACKEND_URL + "/uploads/" + media.url;
                         img.setAttribute('role', 'img');
                         img.setAttribute('aria-label', 'Uploaded image preview');
                         const removeBtn = document.createElement('button');
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             : 'https://remedy-backend-2lbx.onrender.com';
 
                         const video = document.createElement('video');
-                        video.src = media.url.startsWith('http') ? media.url : BACKEND_URL + "/uploads/" + media.url;
+                        video.src = (media.url.startsWith('http') || media.url.startsWith('data:')) ? media.url : BACKEND_URL + "/uploads/" + media.url;
                         video.controls = true;
                         video.setAttribute('role', 'video');
                         video.setAttribute('aria-label', 'Uploaded video preview');
@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const draftElement = document.createElement('div');
                 draftElement.className = 'uploaded-blog';
                 const thumbnailUrl = draft.thumbnail_url 
-                    ? (draft.thumbnail_url.startsWith('http') ? draft.thumbnail_url : BACKEND_URL + "/uploads/" + draft.thumbnail_url)
+                    ? (draft.thumbnail_url.startsWith('http') || draft.thumbnail_url.startsWith('data:') ? draft.thumbnail_url : BACKEND_URL + "/uploads/" + draft.thumbnail_url)
                     : '/images/default.jpg';
 
                 draftElement.innerHTML = `

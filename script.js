@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 : 'https://remedy-backend-2lbx.onrender.com';
 
             const photoUrl = data.photo 
-                ? (data.photo.startsWith('http') ? data.photo : BACKEND_URL + "/uploads/" + data.photo)
+                ? (data.photo.startsWith('http') || data.photo.startsWith('data:') ? data.photo : BACKEND_URL + "/uploads/" + data.photo)
                 : defaultIcon;
 
             // Update UI with user data
