@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Ayurveda blogs on daily routines, seasonal eating, and holistic health practices.">
+    <meta name="description"
+        content="Explore Ayurveda blogs on daily routines, seasonal eating, and holistic health practices.">
     <title>Blogs | Home Remedies</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Header with Navigation -->
-   <header class="main-header">
-       <nav class="main-nav">
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <a href="/index.html" style="color: var(--primary); font-size: 1.5rem;"><i class="fas fa-home"></i></a>
-        <div class="logo">
-            <span>Home Remedies</span>
-        </div>
-    </div>
+    <header class="main-header">
+        <nav class="main-nav">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <a href="/index.html" style="color: var(--primary); font-size: 1.5rem;"><i class="fas fa-home"></i></a>
+                <div class="logo">
+                    <span>Home Remedies</span>
+                </div>
+            </div>
             <ul>
                 <li><a href="/remedy-homepage/index.html">Home</a></li>
                 <li><a href="/remedy-homepage/yoga/index.html">Yoga</a></li>
@@ -28,11 +33,11 @@
                 <li><a href="/remedy-homepage/consult/index.html">Consult</a></li>
                 <li><a href="/remedy-homepage/about/index.html">About Us</a></li>
             </ul>
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-        <i class="fas fa-bars"></i>
-    </button>
-    <div class="menu-overlay" id="menuOverlay"></div>
-</nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="menu-overlay" id="menuOverlay"></div>
+        </nav>
     </header>
 
     <!-- Main Content -->
@@ -40,459 +45,524 @@
         <!-- Featured Post Section -->
         <section class="featured-post">
             <div class="container">
-                <img src="images/featured-blog.jpg" alt="Woman practicing morning Ayurvedic routine with oil and herbs" class="modal-image">
+                <img src="images/featured-blog.jpg" alt="Woman practicing morning Ayurvedic routine with oil and herbs"
+                    class="modal-image">
                 <div class="post-content">
                     <span class="category-tag">Daily Routine</span>
                     <h1>Daily Routines in Ayurveda: The Path to Balance</h1>
-                    <p class="excerpt">Discover how Dinacharya - the ancient Ayurvedic daily routine - can transform your health by aligning your body with natural rhythms.</p>
+                    <p class="excerpt">Discover how Dinacharya - the ancient Ayurvedic daily routine - can transform
+                        your health by aligning your body with natural rhythms.</p>
                     <div class="post-meta">
                         <span><i class="far fa-calendar"></i> June 15, 2025</span>
                         <span><i class="far fa-clock"></i> 5 min read</span>
                     </div>
-                    <a href="#" class="read-more" data-blog-id="daily-routines">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="read-more" data-blog-id="daily-routines">Read More <i
+                            class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
 
         <!-- Blog Grid Section --><!-- Blog Grid Section -->
-<section class="blog-section">
-    <div class="container">
-        <h2 class="section-title">Latest Articles on Ayurvedic Living</h2>
-        <p class="section-subtitle">Explore our collection of articles written by certified Ayurvedic practitioners</p>
-        
-        <div class="blog-grid">
-            <!-- Section 1: Nutrition -->
-            <!-- Blog Card 1 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/seasonal-eating.png" alt="Seasonal fruits and vegetables arranged in a circle" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Nutrition</span>
-                    <h3>Eating With the Seasons: An Ayurvedic Guide</h3>
-                    <p class="excerpt">Learn how to align your diet with nature's cycles for optimal digestion, energy, and immunity throughout the year.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> May 28, 2025</span>
-                        <span><i class="far fa-clock"></i> 4 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="seasonal-eating">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+        <section class="blog-section">
+            <div class="container">
+                <h2 class="section-title">Latest Articles on Ayurvedic Living</h2>
+                <p class="section-subtitle">Explore our collection of articles written by certified Ayurvedic
+                    practitioners</p>
 
-            <!-- Blog Card 2 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/digestive-health.png" alt="Ayurvedic ingredients for digestion on wooden table" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Nutrition</span>
-                    <h3>Ayurvedic Principles for Optimal Digestion</h3>
-                    <p class="excerpt">Discover how Ayurveda approaches digestive health and learn simple practices to improve your Agni (digestive fire).</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> May 20, 2025</span>
-                        <span><i class="far fa-clock"></i> 5 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="digestive-health">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                <div class="blog-grid">
+                    <!-- Section 1: Nutrition -->
+                    <!-- Blog Card 1 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/seasonal-eating.png"
+                                alt="Seasonal fruits and vegetables arranged in a circle" class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Nutrition</span>
+                            <h3>Eating With the Seasons: An Ayurvedic Guide</h3>
+                            <p class="excerpt">Learn how to align your diet with nature's cycles for optimal digestion,
+                                energy, and immunity throughout the year.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> May 28, 2025</span>
+                                <span><i class="far fa-clock"></i> 4 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="seasonal-eating">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Blog Card 3 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/food-combining.png" alt="Properly combined foods on plate" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Nutrition</span>
-                    <h3>The Art of Food Combining in Ayurveda</h3>
-                    <p class="excerpt">Understand which food combinations promote health and which ones may create toxins according to Ayurvedic principles.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> May 12, 2025</span>
-                        <span><i class="far fa-clock"></i> 6 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="food-combining">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Blog Card 2 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/digestive-health.png"
+                                alt="Ayurvedic ingredients for digestion on wooden table" class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Nutrition</span>
+                            <h3>Ayurvedic Principles for Optimal Digestion</h3>
+                            <p class="excerpt">Discover how Ayurveda approaches digestive health and learn simple
+                                practices to improve your Agni (digestive fire).</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> May 20, 2025</span>
+                                <span><i class="far fa-clock"></i> 5 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="digestive-health">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Section 2: Herbal Remedies -->
-            <!-- Blog Card 4 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/herbal-remedies.png" alt="Various Ayurvedic herbs on wooden surface" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Herbal Remedies</span>
-                    <h3>Top 5 Ayurvedic Herbs for Everyday Wellness</h3>
-                    <p class="excerpt">Discover the most versatile Ayurvedic herbs that can address common health concerns naturally and effectively.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> May 15, 2025</span>
-                        <span><i class="far fa-clock"></i> 6 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="ayurvedic-herbs">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Blog Card 3 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/food-combining.png" alt="Properly combined foods on plate"
+                                class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Nutrition</span>
+                            <h3>The Art of Food Combining in Ayurveda</h3>
+                            <p class="excerpt">Understand which food combinations promote health and which ones may
+                                create toxins according to Ayurvedic principles.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> May 12, 2025</span>
+                                <span><i class="far fa-clock"></i> 6 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="food-combining">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Blog Card 5 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/immunity-boosters.png" alt="Herbs and spices for immunity" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Herbal Remedies</span>
-                    <h3>Ayurvedic Immunity Boosters for All Seasons</h3>
-                    <p class="excerpt">Strengthen your immune system naturally with these time-tested Ayurvedic herbs and formulations.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> May 8, 2025</span>
-                        <span><i class="far fa-clock"></i> 5 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="immunity-boosters">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Section 2: Herbal Remedies -->
+                    <!-- Blog Card 4 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/herbal-remedies.png" alt="Various Ayurvedic herbs on wooden surface"
+                                class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Herbal Remedies</span>
+                            <h3>Top 5 Ayurvedic Herbs for Everyday Wellness</h3>
+                            <p class="excerpt">Discover the most versatile Ayurvedic herbs that can address common
+                                health concerns naturally and effectively.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> May 15, 2025</span>
+                                <span><i class="far fa-clock"></i> 6 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="ayurvedic-herbs">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Blog Card 6 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/turmeric-benefits.png" alt="Turmeric root and powder" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Herbal Remedies</span>
-                    <h3>The Healing Power of Turmeric in Ayurveda</h3>
-                    <p class="excerpt">Explore the numerous health benefits of turmeric and learn how to use it effectively according to your dosha.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> May 1, 2025</span>
-                        <span><i class="far fa-clock"></i> 7 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="turmeric-benefits">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Blog Card 5 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/immunity-boosters.png" alt="Herbs and spices for immunity"
+                                class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Herbal Remedies</span>
+                            <h3>Ayurvedic Immunity Boosters for All Seasons</h3>
+                            <p class="excerpt">Strengthen your immune system naturally with these time-tested Ayurvedic
+                                herbs and formulations.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> May 8, 2025</span>
+                                <span><i class="far fa-clock"></i> 5 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="immunity-boosters">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Section 3: Yoga -->
-            <!-- Blog Card 7 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/yoga-ayurveda.png" alt="Woman practicing yoga at sunrise" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Yoga</span>
-                    <h3>Yoga Asanas for Your Dosha Type</h3>
-                    <p class="excerpt">Customize your yoga practice according to your dominant dosha (Vata, Pitta, or Kapha) for maximum benefits.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> April 30, 2025</span>
-                        <span><i class="far fa-clock"></i> 7 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="yoga-dosha">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Blog Card 6 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/turmeric-benefits.png" alt="Turmeric root and powder" class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Herbal Remedies</span>
+                            <h3>The Healing Power of Turmeric in Ayurveda</h3>
+                            <p class="excerpt">Explore the numerous health benefits of turmeric and learn how to use it
+                                effectively according to your dosha.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> May 1, 2025</span>
+                                <span><i class="far fa-clock"></i> 7 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="turmeric-benefits">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Blog Card 8 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/pranayama.png" alt="Person practicing breathing exercises" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Yoga</span>
-                    <h3>Pranayama Techniques for Dosha Balance</h3>
-                    <p class="excerpt">Learn specific breathing techniques tailored to pacify Vata, Pitta, or Kapha imbalances and restore harmony.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> April 25, 2025</span>
-                        <span><i class="far fa-clock"></i> 6 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="pranayama-techniques">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Section 3: Yoga -->
+                    <!-- Blog Card 7 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/yoga-ayurveda.png" alt="Woman practicing yoga at sunrise"
+                                class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Yoga</span>
+                            <h3>Yoga Asanas for Your Dosha Type</h3>
+                            <p class="excerpt">Customize your yoga practice according to your dominant dosha (Vata,
+                                Pitta, or Kapha) for maximum benefits.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> April 30, 2025</span>
+                                <span><i class="far fa-clock"></i> 7 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="yoga-dosha">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Blog Card 9 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/yoga-nidra.png" alt="Person in yoga nidra pose" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Yoga</span>
-                    <h3>Yoga Nidra for Deep Relaxation</h3>
-                    <p class="excerpt">Discover the Ayurvedic perspective on this powerful yogic sleep practice and how it can help reduce stress and fatigue.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> April 18, 2025</span>
-                        <span><i class="far fa-clock"></i> 5 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="yoga-nidra">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Blog Card 8 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/pranayama.png" alt="Person practicing breathing exercises"
+                                class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Yoga</span>
+                            <h3>Pranayama Techniques for Dosha Balance</h3>
+                            <p class="excerpt">Learn specific breathing techniques tailored to pacify Vata, Pitta, or
+                                Kapha imbalances and restore harmony.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> April 25, 2025</span>
+                                <span><i class="far fa-clock"></i> 6 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="pranayama-techniques">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Section 4: Daily Routine -->
-            <!-- Blog Card 10 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/morning-routine.png" alt="Ayurvedic morning routine items" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Daily Routine</span>
-                    <h3>Perfecting Your Ayurvedic Morning Routine</h3>
-                    <p class="excerpt">Step-by-step guide to creating an energizing and balancing morning routine based on your dosha type.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> April 15, 2025</span>
-                        <span><i class="far fa-clock"></i> 8 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="morning-routine">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Blog Card 9 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/yoga-nidra.png" alt="Person in yoga nidra pose" class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Yoga</span>
+                            <h3>Yoga Nidra for Deep Relaxation</h3>
+                            <p class="excerpt">Discover the Ayurvedic perspective on this powerful yogic sleep practice
+                                and how it can help reduce stress and fatigue.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> April 18, 2025</span>
+                                <span><i class="far fa-clock"></i> 5 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="yoga-nidra">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Blog Card 11 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/night-routine.png" alt="Relaxing bedtime setup" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Daily Routine</span>
-                    <h3>Ayurvedic Night Routine for Better Sleep</h3>
-                    <p class="excerpt">Learn how to wind down properly according to Ayurveda to ensure deep, restorative sleep every night.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> April 10, 2025</span>
-                        <span><i class="far fa-clock"></i> 6 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="night-routine">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Section 4: Daily Routine -->
+                    <!-- Blog Card 10 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/morning-routine.png" alt="Ayurvedic morning routine items"
+                                class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Daily Routine</span>
+                            <h3>Perfecting Your Ayurvedic Morning Routine</h3>
+                            <p class="excerpt">Step-by-step guide to creating an energizing and balancing morning
+                                routine based on your dosha type.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> April 15, 2025</span>
+                                <span><i class="far fa-clock"></i> 8 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="morning-routine">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Blog Card 12 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/abhyanga.png" alt="Person performing self-massage with oil" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Daily Routine</span>
-                    <h3>The Benefits of Abhyanga (Self-Massage)</h3>
-                    <p class="excerpt">Discover how this daily Ayurvedic practice can improve circulation, reduce stress, and promote longevity.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> April 5, 2025</span>
-                        <span><i class="far fa-clock"></i> 5 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="abhyanga">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Blog Card 11 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/night-routine.png" alt="Relaxing bedtime setup" class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Daily Routine</span>
+                            <h3>Ayurvedic Night Routine for Better Sleep</h3>
+                            <p class="excerpt">Learn how to wind down properly according to Ayurveda to ensure deep,
+                                restorative sleep every night.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> April 10, 2025</span>
+                                <span><i class="far fa-clock"></i> 6 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="night-routine">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Section 5: Mental Wellness -->
-            <!-- Blog Card 13 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/meditation.png" alt="Person meditating at sunrise" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Mental Wellness</span>
-                    <h3>Ayurvedic Meditation Techniques</h3>
-                    <p class="excerpt">Explore meditation practices tailored to your dosha type for optimal mental clarity and emotional balance.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> March 28, 2025</span>
-                        <span><i class="far fa-clock"></i> 7 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="meditation-techniques">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Blog Card 12 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/abhyanga.png" alt="Person performing self-massage with oil"
+                                class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Daily Routine</span>
+                            <h3>The Benefits of Abhyanga (Self-Massage)</h3>
+                            <p class="excerpt">Discover how this daily Ayurvedic practice can improve circulation,
+                                reduce stress, and promote longevity.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> April 5, 2025</span>
+                                <span><i class="far fa-clock"></i> 5 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="abhyanga">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Blog Card 14 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/stress-management.png" alt="Relaxing scene with candles" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Mental Wellness</span>
-                    <h3>Ayurvedic Approaches to Stress Management</h3>
-                    <p class="excerpt">Learn how to identify stress patterns according to your dosha and natural ways to restore balance.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> March 22, 2025</span>
-                        <span><i class="far fa-clock"></i> 6 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="stress-management">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Section 5: Mental Wellness -->
+                    <!-- Blog Card 13 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/meditation.png" alt="Person meditating at sunrise" class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Mental Wellness</span>
+                            <h3>Ayurvedic Meditation Techniques</h3>
+                            <p class="excerpt">Explore meditation practices tailored to your dosha type for optimal
+                                mental clarity and emotional balance.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> March 28, 2025</span>
+                                <span><i class="far fa-clock"></i> 7 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="meditation-techniques">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Blog Card 15 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/mindful-living.png" alt="Person journaling in nature" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Mental Wellness</span>
-                    <h3>Mindful Living According to Ayurveda</h3>
-                    <p class="excerpt">Practical ways to incorporate mindfulness into your daily life for greater peace and awareness.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> March 15, 2025</span>
-                        <span><i class="far fa-clock"></i> 5 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="mindful-living">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Blog Card 14 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/stress-management.png" alt="Relaxing scene with candles"
+                                class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Mental Wellness</span>
+                            <h3>Ayurvedic Approaches to Stress Management</h3>
+                            <p class="excerpt">Learn how to identify stress patterns according to your dosha and natural
+                                ways to restore balance.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> March 22, 2025</span>
+                                <span><i class="far fa-clock"></i> 6 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="stress-management">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Section 6: Seasonal Living -->
-            <!-- Blog Card 16 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/seasonal-detox.png" alt="Detox ingredients and tools" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Seasonal Living</span>
-                    <h3>Ayurvedic Seasonal Detox Guide</h3>
-                    <p class="excerpt">Learn the best times and methods for detoxification according to Ayurvedic principles and seasonal changes.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> March 10, 2025</span>
-                        <span><i class="far fa-clock"></i> 8 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="seasonal-detox">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Blog Card 15 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/mindful-living.png" alt="Person journaling in nature" class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Mental Wellness</span>
+                            <h3>Mindful Living According to Ayurveda</h3>
+                            <p class="excerpt">Practical ways to incorporate mindfulness into your daily life for
+                                greater peace and awareness.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> March 15, 2025</span>
+                                <span><i class="far fa-clock"></i> 5 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="mindful-living">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Blog Card 17 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/monsoon-care.png" alt="Rainy season with Ayurvedic remedies" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Seasonal Living</span>
-                    <h3>Ayurvedic Monsoon Care Routine</h3>
-                    <p class="excerpt">Special practices and dietary adjustments to stay healthy during the rainy season according to Ayurveda.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> March 5, 2025</span>
-                        <span><i class="far fa-clock"></i> 6 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="monsoon-care">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Section 6: Seasonal Living -->
+                    <!-- Blog Card 16 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/seasonal-detox.png" alt="Detox ingredients and tools" class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Seasonal Living</span>
+                            <h3>Ayurvedic Seasonal Detox Guide</h3>
+                            <p class="excerpt">Learn the best times and methods for detoxification according to
+                                Ayurvedic principles and seasonal changes.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> March 10, 2025</span>
+                                <span><i class="far fa-clock"></i> 8 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="seasonal-detox">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Blog Card 18 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/winter-wellness.png" alt="Winter wellness ingredients" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Seasonal Living</span>
-                    <h3>Winter Wellness with Ayurveda</h3>
-                    <p class="excerpt">Stay warm, energized, and healthy during the cold months with these Ayurvedic recommendations.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> February 28, 2025</span>
-                        <span><i class="far fa-clock"></i> 7 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="winter-wellness">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Blog Card 17 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/monsoon-care.png" alt="Rainy season with Ayurvedic remedies"
+                                class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Seasonal Living</span>
+                            <h3>Ayurvedic Monsoon Care Routine</h3>
+                            <p class="excerpt">Special practices and dietary adjustments to stay healthy during the
+                                rainy season according to Ayurveda.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> March 5, 2025</span>
+                                <span><i class="far fa-clock"></i> 6 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="monsoon-care">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Section 7: Home Remedies -->
-            <!-- Blog Card 19 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/cold-remedies.png" alt="Natural cold remedies" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Home Remedies</span>
-                    <h3>Ayurvedic Cold and Flu Remedies</h3>
-                    <p class="excerpt">Effective natural treatments to prevent and recover from seasonal illnesses using kitchen ingredients.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> February 22, 2025</span>
-                        <span><i class="far fa-clock"></i> 5 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="cold-remedies">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Blog Card 18 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/winter-wellness.png" alt="Winter wellness ingredients" class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Seasonal Living</span>
+                            <h3>Winter Wellness with Ayurveda</h3>
+                            <p class="excerpt">Stay warm, energized, and healthy during the cold months with these
+                                Ayurvedic recommendations.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> February 28, 2025</span>
+                                <span><i class="far fa-clock"></i> 7 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="winter-wellness">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Blog Card 20 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/digestive-remedies.png" alt="Digestive aid ingredients" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Home Remedies</span>
-                    <h3>Simple Ayurvedic Digestive Aids</h3>
-                    <p class="excerpt">Common kitchen spices and simple preparations that can dramatically improve your digestion.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> February 15, 2025</span>
-                        <span><i class="far fa-clock"></i> 4 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="digestive-remedies">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Section 7: Home Remedies -->
+                    <!-- Blog Card 19 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/cold-remedies.png" alt="Natural cold remedies" class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Home Remedies</span>
+                            <h3>Ayurvedic Cold and Flu Remedies</h3>
+                            <p class="excerpt">Effective natural treatments to prevent and recover from seasonal
+                                illnesses using kitchen ingredients.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> February 22, 2025</span>
+                                <span><i class="far fa-clock"></i> 5 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="cold-remedies">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Blog Card 21 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/skin-care.png" alt="Natural skin care ingredients" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Home Remedies</span>
-                    <h3>Ayurvedic Skin Care Solutions</h3>
-                    <p class="excerpt">Natural remedies for common skin issues based on your dosha type and skin constitution.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> February 8, 2025</span>
-                        <span><i class="far fa-clock"></i> 6 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="skin-care">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Blog Card 20 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/digestive-remedies.png" alt="Digestive aid ingredients"
+                                class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Home Remedies</span>
+                            <h3>Simple Ayurvedic Digestive Aids</h3>
+                            <p class="excerpt">Common kitchen spices and simple preparations that can dramatically
+                                improve your digestion.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> February 15, 2025</span>
+                                <span><i class="far fa-clock"></i> 4 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="digestive-remedies">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Section 8: Ayurveda Basics -->
-            <!-- Blog Card 22 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/doshas.png" alt="Ayurvedic dosha symbols" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Ayurveda Basics</span>
-                    <h3>Understanding the Three Doshas</h3>
-                    <p class="excerpt">A beginner's guide to Vata, Pitta, and Kapha - the fundamental energies that govern your health.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> February 1, 2025</span>
-                        <span><i class="far fa-clock"></i> 8 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="understanding-doshas">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Blog Card 21 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/skin-care.png" alt="Natural skin care ingredients" class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Home Remedies</span>
+                            <h3>Ayurvedic Skin Care Solutions</h3>
+                            <p class="excerpt">Natural remedies for common skin issues based on your dosha type and skin
+                                constitution.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> February 8, 2025</span>
+                                <span><i class="far fa-clock"></i> 6 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="skin-care">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Blog Card 23 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/agni.png" alt="Digestive fire concept" class="modal-image">
-                </div>
-                <div class="card-content">
-                    <span class="category-tag">Ayurveda Basics</span>
-                    <h3>The Concept of Agni (Digestive Fire)</h3>
-                    <p class="excerpt">Learn why Ayurveda considers strong digestion as the cornerstone of good health and how to strengthen yours.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> January 25, 2025</span>
-                        <span><i class="far fa-clock"></i> 6 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="agni-concept">Read More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+                    <!-- Section 8: Ayurveda Basics -->
+                    <!-- Blog Card 22 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/doshas.png" alt="Ayurvedic dosha symbols" class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Ayurveda Basics</span>
+                            <h3>Understanding the Three Doshas</h3>
+                            <p class="excerpt">A beginner's guide to Vata, Pitta, and Kapha - the fundamental energies
+                                that govern your health.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> February 1, 2025</span>
+                                <span><i class="far fa-clock"></i> 8 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="understanding-doshas">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
 
-            <!-- Blog Card 24 -->
-            <article class="blog-card">
-                <div class="card-image">
-                    <img src="images/ayurvedic-lifestyle.png" alt="Holistic Ayurvedic lifestyle elements" class="modal-image">
+                    <!-- Blog Card 23 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/agni.png" alt="Digestive fire concept" class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Ayurveda Basics</span>
+                            <h3>The Concept of Agni (Digestive Fire)</h3>
+                            <p class="excerpt">Learn why Ayurveda considers strong digestion as the cornerstone of good
+                                health and how to strengthen yours.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> January 25, 2025</span>
+                                <span><i class="far fa-clock"></i> 6 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="agni-concept">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 24 -->
+                    <article class="blog-card">
+                        <div class="card-image">
+                            <img src="images/ayurvedic-lifestyle.png" alt="Holistic Ayurvedic lifestyle elements"
+                                class="modal-image">
+                        </div>
+                        <div class="card-content">
+                            <span class="category-tag">Ayurveda Basics</span>
+                            <h3>Principles of an Ayurvedic Lifestyle</h3>
+                            <p class="excerpt">Fundamental concepts that form the basis of living in harmony with nature
+                                according to Ayurveda.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> January 18, 2025</span>
+                                <span><i class="far fa-clock"></i> 7 min read</span>
+                            </div>
+                            <a href="#" class="read-more" data-blog-id="ayurvedic-lifestyle">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
                 </div>
-                <div class="card-content">
-                    <span class="category-tag">Ayurveda Basics</span>
-                    <h3>Principles of an Ayurvedic Lifestyle</h3>
-                    <p class="excerpt">Fundamental concepts that form the basis of living in harmony with nature according to Ayurveda.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> January 18, 2025</span>
-                        <span><i class="far fa-clock"></i> 7 min read</span>
-                    </div>
-                    <a href="#" class="read-more" data-blog-id="ayurvedic-lifestyle">Read More <i class="fas fa-arrow-right"></i></a>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-link prev" disabled>Prev</button>
+                    <span class="page-link active" data-page="1">1</span>
+                    <span class="page-link" data-page="2">2</span>
+                    <span class="page-link" data-page="3">3</span>
+                    <span class="page-link" data-page="4">4</span>
+                    <span class="page-link" data-page="5">5</span>
+                    <span class="page-link" data-page="6">6</span>
+                    <span class="page-link" data-page="7">7</span>
+                    <span class="page-link" data-page="8">8</span>
+                    <button class="page-link next">Next</button>
                 </div>
-            </article>
-        </div>
-        
-        <!-- Pagination -->
-        <div class="pagination">
-    <button class="page-link prev" disabled>Prev</button>
-    <span class="page-link active" data-page="1">1</span>
-    <span class="page-link" data-page="2">2</span>
-    <span class="page-link" data-page="3">3</span>
-    <span class="page-link" data-page="4">4</span>
-    <span class="page-link" data-page="5">5</span>
-    <span class="page-link" data-page="6">6</span>
-    <span class="page-link" data-page="7">7</span>
-    <span class="page-link" data-page="8">8</span>
-    <button class="page-link next">Next</button>
-</div>
-    </div>
-</section>
+            </div>
+        </section>
     </main>
 
     <!-- Blog Modal -->
@@ -508,10 +578,11 @@
     <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-bottom">
-            <p>&copy; 2025 Ayurveda Healing. All rights reserved.</p>
+            <p> 2025 Ayurveda Healing. All rights reserved.</p>
         </div>
     </footer>
 
-     <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

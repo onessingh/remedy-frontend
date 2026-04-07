@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,53 +12,55 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-   <!-- Replace your current nav section in index.html with this updated one -->
-<header>
-    <div class="nav container">
-        <div class="logo-home-container">
-            <a href="/index.html" class="home-icon"><i class='bx bx-home'></i></a>
-            <a href="#" class="logo">Blog<span>Hub</span></a>
-        </div>
-
-        <!-- 🌟 Added Search Bar -->
-        <!-- Replace the existing search form with this -->
-<form class="nav-search-form" id="searchForm">
-    <input type="text" placeholder="Search..." class="nav-search-input" id="searchQuery" />
-    <select class="nav-search-input" id="searchType">
-        <option value="user">Users</option>
-                <option value="location">Location</option>
-        <option value="category">Category</option>
-    </select>
-    <button type="submit" class="nav-search-btn"><i class='bx bx-search'></i></button>
-</form>
-
-        <div class="nav-right">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#posts" class="nav-link">Posts</a>
-
-            <!-- Notification Icon -->
-            <div class="notification-icon">
-                <i class='bx bx-bell'></i>
-                <span class="notification-count">0</span>
+    <!-- Replace your current nav section in index.html with this updated one -->
+    <header>
+        <div class="nav container">
+            <div class="logo-home-container">
+                <a href="/index.html" class="home-icon"><i class='bx bx-home'></i></a>
+                <a href="#" class="logo">Blog<span>Hub</span></a>
             </div>
 
-            <!-- Profile Dropdown -->
-            <div class="profile-dropdown">
-                <div class="profile-icon"><i class='bx bx-user'></i></div>
-                <div class="dropdown-content">
-                    <a href="blog-profilepage/create-blog/index.html" id="createBlogBtn" class="dropdown-item">Create New Blog</a>
-                    <a href="blog-profilepage/index.html" id="profileBtn" class="dropdown-item">Profile</a>
+            <!-- 🌟 Added Search Bar -->
+            <!-- Replace the existing search form with this -->
+            <form class="nav-search-form" id="searchForm">
+                <input type="text" placeholder="Search..." class="nav-search-input" id="searchQuery" />
+                <select class="nav-search-input" id="searchType">
+                    <option value="user">Users</option>
+                    <option value="location">Location</option>
+                    <option value="category">Category</option>
+                </select>
+                <button type="submit" class="nav-search-btn"><i class='bx bx-search'></i></button>
+            </form>
+
+            <div class="nav-right">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#posts" class="nav-link">Posts</a>
+
+                <!-- Notification Icon -->
+                <div class="notification-icon">
+                    <i class='bx bx-bell'></i>
+                    <span class="notification-count">0</span>
+                </div>
+
+                <!-- Profile Dropdown -->
+                <div class="profile-dropdown">
+                    <div class="profile-icon"><i class='bx bx-user'></i></div>
+                    <div class="dropdown-content">
+                        <a href="blog-profilepage/create-blog/index.html" id="createBlogBtn"
+                            class="dropdown-item">Create New Blog</a>
+                        <a href="blog-profilepage/index.html" id="profileBtn" class="dropdown-item">Profile</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="menu-toggle">
-            <i class='bx bx-menu'></i>
+            <div class="menu-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
 
     <section class="home" id="home">
@@ -72,24 +75,28 @@
     </section>
 
     <section class="about container" id="about">
-    <div class="contentBx" data-aos="fade-right">
-        <h2 class="titleText">Stay updated with trending topics</h2>
-        <div id="aboutText">
-            <p class="title-text">
-                Our blog brings you the latest in technology, food, and news from around the world. We curate content that matters to keep you informed and inspired.
-            </p>
-            <div id="moreText">
+        <div class="contentBx" data-aos="fade-right">
+            <h2 class="titleText">Stay updated with trending topics</h2>
+            <div id="aboutText">
                 <p class="title-text">
-                    Our team of passionate writers works tirelessly to deliver high-quality articles that spark conversations and broaden perspectives. We cover a wide range of topics from the latest tech innovations to culinary adventures around the globe.
+                    Our blog brings you the latest in technology, food, and news from around the world. We curate
+                    content that matters to keep you informed and inspired.
                 </p>
+                <div id="moreText">
+                    <p class="title-text">
+                        Our team of passionate writers works tirelessly to deliver high-quality articles that spark
+                        conversations and broaden perspectives. We cover a wide range of topics from the latest tech
+                        innovations to culinary adventures around the globe.
+                    </p>
+                </div>
             </div>
+            <button id="readMoreBtn" class="btn2">Read more</button>
         </div>
-        <button id="readMoreBtn" class="btn2">Read more</button>
-    </div>
-    <div class="imgBx" data-aos="fade-left">
-        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="About us" class="fitBg">
-    </div>
-</section>
+        <div class="imgBx" data-aos="fade-left">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                alt="About us" class="fitBg">
+        </div>
+    </section>
 
     <div class="post-filter container" id="posts" data-aos="fade-up">
         <span class="filter-item active-filter" data-filter="all">All</span>
@@ -98,7 +105,7 @@
         <span class="filter-item" data-filter="news">News</span>
         <span class="filter-item" data-filter="travel">Travel</span>
     </div>
-    
+
     <div class="post-container"></div>
 
     <div class="newsletter container" data-aos="fade-up">
@@ -116,12 +123,16 @@
         <div class="footer-container">
             <div class="sec aboutus">
                 <h2>About Us</h2>
-                <p>BlogHub is dedicated to bringing you the most engaging content across various topics. Our team of experts curates and creates content that informs, inspires, and entertains.</p>
+                <p>BlogHub is dedicated to bringing you the most engaging content across various topics. Our team of
+                    experts curates and creates content that informs, inspires, and entertains.</p>
                 <ul class="sci">
                     <li><a href="https://www.facebook.com/share/15oArcMBw9/"><i class="bx bxl-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/__s.singh._?igsh=cWVsOXNxMjdhejR6"><i class="bx bxl-instagram"></i></a></li>
-                    <li><a href="https://x.com/one_ssingh?t=dyKEoDhBciTFrJU2-i9cGA&s=09"><i class="bx bxl-twitter"></i></a></li>
-                    <li><a href="https://in.linkedin.com/in/shivarn-singh-a016b8344"><i class="bx bxl-linkedin"></i></a></li>
+                    <li><a href="https://www.instagram.com/__s.singh._?igsh=cWVsOXNxMjdhejR6"><i
+                                class="bx bxl-instagram"></i></a></li>
+                    <li><a href="https://x.com/one_ssingh?t=dyKEoDhBciTFrJU2-i9cGA&s=09"><i
+                                class="bx bxl-twitter"></i></a></li>
+                    <li><a href="https://in.linkedin.com/in/shivarn-singh-a016b8344"><i class="bx bxl-linkedin"></i></a>
+                    </li>
                 </ul>
             </div>
             <div class="sec quicklinks">
@@ -141,7 +152,7 @@
                         <span>Babatpur <br> varanasi City, 221206 <br> INDIA</span>
                     </li>
                     <li>
-                        <span><i class='bx bx-envelope' ></i></span>
+                        <span><i class='bx bx-envelope'></i></span>
                         <p><a href="mailto:thakurshivarnsingh2321@gmail.com">thakurshivarnsingh2321@gmail.com</a></p>
                     </li>
                 </ul>
@@ -150,7 +161,7 @@
     </footer>
 
     <div class="copyright">
-        <p>&copy; 2025 BlogHub. All Rights Reserved.</p>
+        <p> 2025 BlogHub. All Rights Reserved.</p>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -158,50 +169,51 @@
     <script src="script.js"></script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      fetch('/api/check-auth')
-        .then(res => res.json())
-        .then(data => {
-          const profileMenu = document.getElementById("profile-menu");
-          if (profileMenu) {
-            if (data.loggedIn) {
-              profileMenu.innerHTML = `
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('/api/check-auth')
+                .then(res => res.json())
+                .then(data => {
+                    const profileMenu = document.getElementById("profile-menu");
+                    if (profileMenu) {
+                        if (data.loggedIn) {
+                            profileMenu.innerHTML = `
                 <li><a href="/create-blog.html">Create New Blog</a></li>
                 <li><a href="/profile.html">Profile</a></li>
                 <li><a href="#" id="logout">Logout</a></li>
               `;
-            } else {
-              profileMenu.innerHTML = `
+                        } else {
+                            profileMenu.innerHTML = `
                 <li><a href="/login.html">Login</a></li>
                 <li><a href="/register.html">Register</a></li>
               `;
-            }
-          }
+                        }
+                    }
+                });
+
+            document.addEventListener("click", function (e) {
+                if (e.target && e.target.id === "logout") {
+                    fetch('/logout', { method: 'POST' })
+                        .then(() => window.location.href = "/login.html");
+                }
+            });
+
+            // Read more button functionality
+            document.getElementById('readMoreBtn').addEventListener('click', function () {
+                const moreText = document.getElementById('moreText');
+                const btn = document.getElementById('readMoreBtn');
+
+                if (moreText.style.display === 'none') {
+                    moreText.style.display = 'inline';
+                    btn.textContent = 'Hide more';
+                    // Scroll to the button to show the expanded content
+                    btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    moreText.style.display = 'none';
+                    btn.textContent = 'Read more';
+                }
+            });
         });
-
-      document.addEventListener("click", function (e) {
-        if (e.target && e.target.id === "logout") {
-          fetch('/logout', { method: 'POST' })
-            .then(() => window.location.href = "/login.html");
-        }
-      });
-
-      // Read more button functionality
-      document.getElementById('readMoreBtn').addEventListener('click', function() {
-        const moreText = document.getElementById('moreText');
-        const btn = document.getElementById('readMoreBtn');
-        
-        if (moreText.style.display === 'none') {
-            moreText.style.display = 'inline';
-            btn.textContent = 'Hide more';
-            // Scroll to the button to show the expanded content
-            btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-            moreText.style.display = 'none';
-            btn.textContent = 'Read more';
-        }
-      });
-    });
     </script>
 </body>
+
 </html>

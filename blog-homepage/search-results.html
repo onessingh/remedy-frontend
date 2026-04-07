@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <div class="nav container">
@@ -30,7 +32,7 @@
             </form>
 
             <div class="nav-right">
-               <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#home" class="nav-link">Home</a>
                 <a href="index.html#about" class="nav-link">About</a>
                 <a href="index.html#posts" class="nav-link">Posts</a>
                 <!-- Notification Icon -->
@@ -43,7 +45,8 @@
                 <div class="profile-dropdown">
                     <div class="profile-icon"><i class='bx bx-user'></i></div>
                     <div class="dropdown-content">
-                        <a href="blog-profilepage/create-blog/index.html" id="createBlogBtn" class="dropdown-item">Create New Blog</a>
+                        <a href="blog-profilepage/create-blog/index.html" id="createBlogBtn"
+                            class="dropdown-item">Create New Blog</a>
                         <a href="blog-profilepage/index.html" id="profileBtn" class="dropdown-item">Profile</a>
                     </div>
                 </div>
@@ -69,12 +72,16 @@
         <div class="footer-container">
             <div class="sec aboutus">
                 <h2>About Us</h2>
-                <p>BlogHub is dedicated to bringing you the most engaging content across various topics. Our team of experts curates and creates content that informs, inspires, and entertains.</p>
+                <p>BlogHub is dedicated to bringing you the most engaging content across various topics. Our team of
+                    experts curates and creates content that informs, inspires, and entertains.</p>
                 <ul class="sci">
                     <li><a href="https://www.facebook.com/share/15oArcMBw9/"><i class="bx bxl-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/__s.singh._?igsh=cWVsOXNxMjdhejR6"><i class="bx bxl-instagram"></i></a></li>
-                    <li><a href="https://x.com/one_ssingh?t=dyKEoDhBciTFrJU2-i9cGA&s=09"><i class="bx bxl-twitter"></i></a></li>
-                    <li><a href="https://in.linkedin.com/in/shivarn-singh-a016b8344"><i class="bx bxl-linkedin"></i></a></li>
+                    <li><a href="https://www.instagram.com/__s.singh._?igsh=cWVsOXNxMjdhejR6"><i
+                                class="bx bxl-instagram"></i></a></li>
+                    <li><a href="https://x.com/one_ssingh?t=dyKEoDhBciTFrJU2-i9cGA&s=09"><i
+                                class="bx bxl-twitter"></i></a></li>
+                    <li><a href="https://in.linkedin.com/in/shivarn-singh-a016b8344"><i class="bx bxl-linkedin"></i></a>
+                    </li>
                 </ul>
             </div>
             <div class="sec quicklinks">
@@ -94,7 +101,7 @@
                         <span>Babatpur <br> varanasi City, 221206 <br> INDIA</span>
                     </li>
                     <li>
-                        <span><i class='bx bx-envelope' ></i></span>
+                        <span><i class='bx bx-envelope'></i></span>
                         <p><a href="mailto:thakurshivarnsingh2321@gmail.com">thakurshivarnsingh2321@gmail.com</a></p>
                     </li>
                 </ul>
@@ -103,13 +110,13 @@
     </footer>
 
     <div class="copyright">
-        <p>&copy; 2025 BlogHub. All Rights Reserved.</p>
+        <p> 2025 BlogHub. All Rights Reserved.</p>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
             AOS.init({
                 duration: 800,
                 easing: 'ease-in-out',
@@ -131,16 +138,16 @@
             }
 
             // Search form handler
-            $("#searchForm").on("submit", function(e) {
+            $("#searchForm").on("submit", function (e) {
                 e.preventDefault();
                 const query = $("#searchQuery").val().trim();
                 const searchType = $("#searchType").val();
-                
+
                 if (!query) {
                     alert("Please enter a search term");
                     return;
                 }
-                
+
                 // Update URL and perform search
                 window.history.pushState({}, '', `search-results.html?query=${encodeURIComponent(query)}&type=${searchType}`);
                 performSearch(query, searchType);
@@ -149,18 +156,18 @@
             function performSearch(query, searchType) {
                 const container = document.querySelector(".post-container");
                 const resultsCount = document.getElementById('results-count');
-                
+
                 // Show loading state
                 container.innerHTML = '<p style="text-align: center;">Searching...</p>';
-                
+
                 fetch(`http://localhost:5000/api/user/search?q=${encodeURIComponent(query)}&type=${searchType}`)
                     .then(res => res.json())
                     .then(data => {
                         container.innerHTML = '';
-                        
+
                         if (data.success && Array.isArray(data.results) && data.results.length > 0) {
                             resultsCount.textContent = `Found ${data.results.length} ${searchType === 'user' ? 'users' : 'posts'} for "${query}"`;
-                            
+
                             data.results.forEach(item => {
                                 if (searchType === 'user') {
                                     renderUserResult(item);
@@ -189,10 +196,10 @@
                 const container = document.querySelector(".post-container");
                 const postBox = document.createElement("div");
                 postBox.className = "post-box";
-                
-                const thumbnailUrl = post.media && post.media.length > 0 ? 
+
+                const thumbnailUrl = post.media && post.media.length > 0 ?
                     post.media[0].url : '/Uploads/default.jpg';
-                    
+
                 postBox.innerHTML = `
                     <img src="${thumbnailUrl}" alt="Post Image" class="post-img" onerror="this.src='/Uploads/default.jpg'" />
                     <h2 class="category">${post.category || 'Uncategorized'}</h2>
@@ -214,7 +221,7 @@
                 const container = document.querySelector(".post-container");
                 const userBox = document.createElement("div");
                 userBox.className = "post-box";
-                
+
                 userBox.innerHTML = `
                     <div style="text-align: center; padding: 20px;">
                         <img src="${user.profileImage || '/Uploads/default.jpg'}" 
@@ -228,63 +235,63 @@
                 `;
                 container.appendChild(userBox);
             }
-        // Check login status and load notifications if logged in
-        function checkLoginStatus(callback) {
-            fetch("http://localhost:5000/api/check-auth")
-                .then(res => res.json())
-                .then(data => callback(data.loggedIn))
-                .catch(err => {
-                    console.error("Auth check error:", err);
-                    callback(false);
-                });
-        }
+            // Check login status and load notifications if logged in
+            function checkLoginStatus(callback) {
+                fetch("http://localhost:5000/api/check-auth")
+                    .then(res => res.json())
+                    .then(data => callback(data.loggedIn))
+                    .catch(err => {
+                        console.error("Auth check error:", err);
+                        callback(false);
+                    });
+            }
 
-        // Notification functionality
-        const notificationIcon = document.querySelector('.notification-icon');
-        const notificationCount = document.querySelector('.notification-count');
-        const notificationDropdown = document.createElement('div');
-        notificationDropdown.className = 'notification-dropdown';
-        document.body.appendChild(notificationDropdown);
+            // Notification functionality
+            const notificationIcon = document.querySelector('.notification-icon');
+            const notificationCount = document.querySelector('.notification-count');
+            const notificationDropdown = document.createElement('div');
+            notificationDropdown.className = 'notification-dropdown';
+            document.body.appendChild(notificationDropdown);
 
-        function loadNotifications() {
-            fetch('http://localhost:5000/api/user/notifications/unread-count')
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
-                        const unreadCount = data.unreadCount;
-                        notificationCount.textContent = unreadCount > 9 ? '9+' : unreadCount;
-                        notificationCount.style.display = unreadCount > 0 ? 'flex' : 'none';
-                    }
-                })
-                .catch(err => console.error('Error fetching notification count:', err));
+            function loadNotifications() {
+                fetch('http://localhost:5000/api/user/notifications/unread-count')
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            const unreadCount = data.unreadCount;
+                            notificationCount.textContent = unreadCount > 9 ? '9+' : unreadCount;
+                            notificationCount.style.display = unreadCount > 0 ? 'flex' : 'none';
+                        }
+                    })
+                    .catch(err => console.error('Error fetching notification count:', err));
 
-            fetch('http://localhost:5000/api/user/notifications?limit=5')
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
-                        notificationDropdown.innerHTML = '';
-                        
-                        if (data.notifications.length === 0) {
-                            notificationDropdown.innerHTML = '<div class="notification-item">No notifications</div>';
-                        } else {
-                            data.notifications.forEach(notif => {
-                                const notifItem = document.createElement('div');
-                                notifItem.className = `notification-item ${notif.isRead ? '' : 'unread'}`;
-                                
-                                let message = '';
-                                if (notif.type === 'like') {
-                                    message = `liked your blog <a href="/blog-homepage/readmore/index.html?blogId=${notif.reference_id}">${notif.blogTitle || 'your post'}</a>`;
-                                } else if (notif.type === 'follow') {
-                                    message = `started following you`;
-                                } else if (notif.type === 'comment') {
-                                    message = `commented on your blog <a href="/blog-homepage/readmore/index.html?blogId=${notif.reference_id}#comments">${notif.blogTitle || 'your post'}</a>`;
-                                } else if (notif.type === 'newsletter') {
-                                    message = notif.message && notif.message.includes('unsubscribed') ? 
-                                        `unsubscribed from newsletter` : 
-                                        `subscribed to newsletter updates`;
-                                }
-                                
-                                notifItem.innerHTML = `
+                fetch('http://localhost:5000/api/user/notifications?limit=5')
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            notificationDropdown.innerHTML = '';
+
+                            if (data.notifications.length === 0) {
+                                notificationDropdown.innerHTML = '<div class="notification-item">No notifications</div>';
+                            } else {
+                                data.notifications.forEach(notif => {
+                                    const notifItem = document.createElement('div');
+                                    notifItem.className = `notification-item ${notif.isRead ? '' : 'unread'}`;
+
+                                    let message = '';
+                                    if (notif.type === 'like') {
+                                        message = `liked your blog <a href="/blog-homepage/readmore/index.html?blogId=${notif.reference_id}">${notif.blogTitle || 'your post'}</a>`;
+                                    } else if (notif.type === 'follow') {
+                                        message = `started following you`;
+                                    } else if (notif.type === 'comment') {
+                                        message = `commented on your blog <a href="/blog-homepage/readmore/index.html?blogId=${notif.reference_id}#comments">${notif.blogTitle || 'your post'}</a>`;
+                                    } else if (notif.type === 'newsletter') {
+                                        message = notif.message && notif.message.includes('unsubscribed') ?
+                                            `unsubscribed from newsletter` :
+                                            `subscribed to newsletter updates`;
+                                    }
+
+                                    notifItem.innerHTML = `
                                     <div class="notification-content">
                                         <a href="/blog-homepage/blog-profilepage/index.html?userId=${notif.actor_id}">
                                             <img src="${notif.profileImage || '/Uploads/default.jpg'}" alt="Profile" class="notification-avatar">
@@ -297,162 +304,162 @@
                                         </div>
                                     </div>
                                 `;
-                                
-                                notificationDropdown.appendChild(notifItem);
-                            });
-                            
-                            const viewAll = document.createElement('a');
-                            viewAll.className = 'view-all-notifications';
-                            viewAll.href = '/blog-homepage/notifications.html';
-                            viewAll.textContent = 'View All Notifications';
-                            notificationDropdown.appendChild(viewAll);
+
+                                    notificationDropdown.appendChild(notifItem);
+                                });
+
+                                const viewAll = document.createElement('a');
+                                viewAll.className = 'view-all-notifications';
+                                viewAll.href = '/blog-homepage/notifications.html';
+                                viewAll.textContent = 'View All Notifications';
+                                notificationDropdown.appendChild(viewAll);
+                            }
                         }
-                    }
-                })
-                .catch(err => console.error('Error loading notifications:', err));
-        }
-
-        function formatTime(dateString) {
-            const date = new Date(dateString);
-            const now = new Date();
-            const diffInSeconds = Math.floor((now - date) / 1000);
-
-            if (diffInSeconds < 60) return 'Just now';
-            else if (diffInSeconds < 3600) {
-                const minutes = Math.floor(diffInSeconds / 60);
-                return `${minutes} minute${minutes !== 1 ? 's' : ''} ago`;
-            } else if (diffInSeconds < 86400) {
-                const hours = Math.floor(diffInSeconds / 3600);
-                return `${hours} hour${hours !== 1 ? 's' : ''} ago`;
-            } else {
-                return date.toLocaleDateString('en-US', {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric'
-                });
+                    })
+                    .catch(err => console.error('Error loading notifications:', err));
             }
-        }
 
-        function markAllNotificationsAsRead() {
-            fetch('http://localhost:5000/api/user/notifications/mark-all-read', {
-                method: 'POST'
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        document.querySelectorAll('.notification-item').forEach(item => {
-                            item.classList.remove('unread');
-                        });
-                        notificationCount.style.display = 'none';
-                    }
-                })
-                .catch(err => console.error('Error marking notifications as read:', err));
-        }
+            function formatTime(dateString) {
+                const date = new Date(dateString);
+                const now = new Date();
+                const diffInSeconds = Math.floor((now - date) / 1000);
 
-        // Toggle dropdowns
-        const profileDropdown = document.querySelector('.profile-dropdown');
-        const dropdownContent = profileDropdown.querySelector('.dropdown-content');
-
-        const handleDropdownToggle = (dropdownToOpen, dropdownToClose) => {
-            return function(e) {
-                e.stopPropagation();
-                if (dropdownToClose.classList.contains('active')) {
-                    dropdownToClose.classList.remove('active');
-                }
-                dropdownToOpen.classList.toggle('active');
-                
-                if (dropdownToOpen === notificationDropdown && dropdownToOpen.classList.contains('active')) {
-                    markAllNotificationsAsRead();
-                }
-            };
-        };
-
-        notificationIcon.addEventListener('click', handleDropdownToggle(notificationDropdown, profileDropdown));
-        profileDropdown.addEventListener('click', handleDropdownToggle(profileDropdown, notificationDropdown));
-
-        document.addEventListener('click', function() {
-            notificationDropdown.classList.remove('active');
-            profileDropdown.classList.remove('active');
-        });
-
-        // Check login status on page load
-        checkLoginStatus(function(isLoggedIn) {
-            if (isLoggedIn) {
-                loadNotifications();
-                setInterval(loadNotifications, 30000);
-            } else {
-                notificationIcon.style.display = 'none';
-            }
-        });
-
-        // Menu toggle functionality for mobile
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navRight = document.querySelector('.nav-right');
-
-        menuToggle.addEventListener('click', () => {
-            navRight.classList.toggle('active');
-            menuToggle.querySelector('i').classList.toggle('bx-x');
-        });
-
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navRight.classList.remove('active');
-                menuToggle.querySelector('i').classList.remove('bx-x');
-            });
-        });
-
-        // Profile and create blog buttons login check
-        const createBlogBtn = document.getElementById("createBlogBtn");
-        const profileBtn = document.getElementById("profileBtn");
-
-        [createBlogBtn, profileBtn].forEach(btn => {
-            if (btn) {
-                btn.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    checkLoginStatus(function (isLoggedIn) {
-                        if (!isLoggedIn) {
-                            showLoginPrompt();
-                        } else {
-                            window.location.href = btn.getAttribute("href");
-                        }
+                if (diffInSeconds < 60) return 'Just now';
+                else if (diffInSeconds < 3600) {
+                    const minutes = Math.floor(diffInSeconds / 60);
+                    return `${minutes} minute${minutes !== 1 ? 's' : ''} ago`;
+                } else if (diffInSeconds < 86400) {
+                    const hours = Math.floor(diffInSeconds / 3600);
+                    return `${hours} hour${hours !== 1 ? 's' : ''} ago`;
+                } else {
+                    return date.toLocaleDateString('en-US', {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric'
                     });
-                });
+                }
             }
-        });
 
-        function showLoginPrompt() {
-            const overlay = document.createElement("div");
-            overlay.style.position = "fixed";
-            overlay.style.top = "0";
-            overlay.style.left = "0";
-            overlay.style.width = "100%";
-            overlay.style.height = "100%";
-            overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-            overlay.style.backdropFilter = "blur(4px)";
-            overlay.style.zIndex = "9998";
-            overlay.style.transition = "opacity 0.3s ease";
-            overlay.style.opacity = "0";
-            setTimeout(() => overlay.style.opacity = "1", 10);
+            function markAllNotificationsAsRead() {
+                fetch('http://localhost:5000/api/user/notifications/mark-all-read', {
+                    method: 'POST'
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            document.querySelectorAll('.notification-item').forEach(item => {
+                                item.classList.remove('unread');
+                            });
+                            notificationCount.style.display = 'none';
+                        }
+                    })
+                    .catch(err => console.error('Error marking notifications as read:', err));
+            }
 
-            const modal = document.createElement("div");
-            modal.style.position = "fixed";
-            modal.style.top = "50%";
-            modal.style.left = "50%";
-            modal.style.transform = "translate(-50%, -50%) scale(0.8)";
-            modal.style.backgroundColor = "#fff";
-            modal.style.padding = "25px 30px";
-            modal.style.borderRadius = "12px";
-            modal.style.boxShadow = "0 10px 30px rgba(0,0,0,0.1)";
-            modal.style.zIndex = "9999";
-            modal.style.textAlign = "center";
-            modal.style.transition = "transform 0.3s ease, opacity 0.3s ease";
-            modal.style.opacity = "0";
-            setTimeout(() => {
-                modal.style.opacity = "1";
-                modal.style.transform = "translate(-50%, -50%) scale(1)";
-            }, 100);
+            // Toggle dropdowns
+            const profileDropdown = document.querySelector('.profile-dropdown');
+            const dropdownContent = profileDropdown.querySelector('.dropdown-content');
 
-            modal.innerHTML = `
+            const handleDropdownToggle = (dropdownToOpen, dropdownToClose) => {
+                return function (e) {
+                    e.stopPropagation();
+                    if (dropdownToClose.classList.contains('active')) {
+                        dropdownToClose.classList.remove('active');
+                    }
+                    dropdownToOpen.classList.toggle('active');
+
+                    if (dropdownToOpen === notificationDropdown && dropdownToOpen.classList.contains('active')) {
+                        markAllNotificationsAsRead();
+                    }
+                };
+            };
+
+            notificationIcon.addEventListener('click', handleDropdownToggle(notificationDropdown, profileDropdown));
+            profileDropdown.addEventListener('click', handleDropdownToggle(profileDropdown, notificationDropdown));
+
+            document.addEventListener('click', function () {
+                notificationDropdown.classList.remove('active');
+                profileDropdown.classList.remove('active');
+            });
+
+            // Check login status on page load
+            checkLoginStatus(function (isLoggedIn) {
+                if (isLoggedIn) {
+                    loadNotifications();
+                    setInterval(loadNotifications, 30000);
+                } else {
+                    notificationIcon.style.display = 'none';
+                }
+            });
+
+            // Menu toggle functionality for mobile
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navRight = document.querySelector('.nav-right');
+
+            menuToggle.addEventListener('click', () => {
+                navRight.classList.toggle('active');
+                menuToggle.querySelector('i').classList.toggle('bx-x');
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navRight.classList.remove('active');
+                    menuToggle.querySelector('i').classList.remove('bx-x');
+                });
+            });
+
+            // Profile and create blog buttons login check
+            const createBlogBtn = document.getElementById("createBlogBtn");
+            const profileBtn = document.getElementById("profileBtn");
+
+            [createBlogBtn, profileBtn].forEach(btn => {
+                if (btn) {
+                    btn.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        checkLoginStatus(function (isLoggedIn) {
+                            if (!isLoggedIn) {
+                                showLoginPrompt();
+                            } else {
+                                window.location.href = btn.getAttribute("href");
+                            }
+                        });
+                    });
+                }
+            });
+
+            function showLoginPrompt() {
+                const overlay = document.createElement("div");
+                overlay.style.position = "fixed";
+                overlay.style.top = "0";
+                overlay.style.left = "0";
+                overlay.style.width = "100%";
+                overlay.style.height = "100%";
+                overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+                overlay.style.backdropFilter = "blur(4px)";
+                overlay.style.zIndex = "9998";
+                overlay.style.transition = "opacity 0.3s ease";
+                overlay.style.opacity = "0";
+                setTimeout(() => overlay.style.opacity = "1", 10);
+
+                const modal = document.createElement("div");
+                modal.style.position = "fixed";
+                modal.style.top = "50%";
+                modal.style.left = "50%";
+                modal.style.transform = "translate(-50%, -50%) scale(0.8)";
+                modal.style.backgroundColor = "#fff";
+                modal.style.padding = "25px 30px";
+                modal.style.borderRadius = "12px";
+                modal.style.boxShadow = "0 10px 30px rgba(0,0,0,0.1)";
+                modal.style.zIndex = "9999";
+                modal.style.textAlign = "center";
+                modal.style.transition = "transform 0.3s ease, opacity 0.3s ease";
+                modal.style.opacity = "0";
+                setTimeout(() => {
+                    modal.style.opacity = "1";
+                    modal.style.transform = "translate(-50%, -50%) scale(1)";
+                }, 100);
+
+                modal.innerHTML = `
                 <h3 style="margin-bottom: 15px; font-family: 'Segoe UI', sans-serif;">🔒 Authentication Required</h3>
                 <p style="margin-bottom: 20px; color: #555;">You need to login first to access this feature.</p>
                 <button id="goToLoginBtn" style="
@@ -478,34 +485,35 @@
                 ">Cancel</button>
             `;
 
-            document.body.appendChild(overlay);
-            document.body.appendChild(modal);
+                document.body.appendChild(overlay);
+                document.body.appendChild(modal);
 
-            document.getElementById("goToLoginBtn").addEventListener("click", () => {
-                window.location.href = "/signin-page/signin.html";
-            });
+                document.getElementById("goToLoginBtn").addEventListener("click", () => {
+                    window.location.href = "/signin-page/signin.html";
+                });
 
-            document.getElementById("cancelBtn").addEventListener("click", () => {
-                closeModal(modal, overlay);
-            });
+                document.getElementById("cancelBtn").addEventListener("click", () => {
+                    closeModal(modal, overlay);
+                });
 
-            overlay.addEventListener("click", () => {
-                closeModal(modal, overlay);
-            });
-        }
+                overlay.addEventListener("click", () => {
+                    closeModal(modal, overlay);
+                });
+            }
 
-        function closeModal(modal, overlay) {
-            modal.style.opacity = "0";
-            modal.style.transform = "translate(-50%, -50%) scale(0.8)";
-            overlay.style.opacity = "0";
+            function closeModal(modal, overlay) {
+                modal.style.opacity = "0";
+                modal.style.transform = "translate(-50%, -50%) scale(0.8)";
+                overlay.style.opacity = "0";
 
-            setTimeout(() => {
-                document.body.removeChild(modal);
-                document.body.removeChild(overlay);
-            }, 300);
-        }
-    } // <-- Add this closing brace for the DOMContentLoaded function
-    ); // <-- This parenthesis closes the DOMContentLoaded event listener
+                setTimeout(() => {
+                    document.body.removeChild(modal);
+                    document.body.removeChild(overlay);
+                }, 300);
+            }
+        } // <-- Add this closing brace for the DOMContentLoaded function
+        ); // <-- This parenthesis closes the DOMContentLoaded event listener
     </script>
 </body>
+
 </html>

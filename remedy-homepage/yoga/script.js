@@ -1,4 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.querySelector('.main-nav ul');
+    const menuOverlay = document.getElementById('menuOverlay');
+    
+    function toggleMenu() {
+        if (!mainNav || !mobileMenuBtn || !menuOverlay) return;
+        mainNav.classList.toggle('show');
+        menuOverlay.classList.toggle('show');
+        document.body.style.overflow = mainNav.classList.contains('show') ? 'hidden' : 'auto';
+        mobileMenuBtn.innerHTML = mainNav.classList.contains('show') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    }
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+    }
+
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', toggleMenu);
+    }
+
     const yogaCards = document.getElementById("yogaCards");
     const videoContainer = document.getElementById("videoContainer");
     const categoryBtns = document.querySelectorAll(".category-btn");
