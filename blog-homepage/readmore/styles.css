@@ -158,9 +158,9 @@ body {
 
 .post-content-text {
     font-size: 1.1rem;
-    word-break: break-all;
-    overflow-wrap: anywhere;
-    white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word; /* Keeps words together unless they are too long */
+    white-space: pre-wrap; /* Preserves newlines and spaces */
     overflow: visible;
     width: 100%;
 }
