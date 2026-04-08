@@ -1551,8 +1551,8 @@ footer p {
 .nav-search-form {
     display: flex !important;
     flex-grow: 1 !important;
-    max-width: 220px !important; /* Further reduced to prevent icon overlap */
-    margin: 0 5px !important; /* Tightened margins */
+    max-width: 200px !important; /* Further reduced from 250px to make space icon */
+    margin: 0 20px 0 10px !important; /* Increased right margin to push icons away */
 }
 
 
@@ -1566,7 +1566,7 @@ footer p {
     box-shadow: none !important;
     padding: 0 !important;
     transform: none !important;
-    gap: 1.5rem !important; /* Increased gap to push icons further right away from search */
+    gap: 1.5rem !important; /* Restored larger gap to prevent icon overlap */
     flex-direction: row !important;
     opacity: 1 !important;
     pointer-events: auto !important;
