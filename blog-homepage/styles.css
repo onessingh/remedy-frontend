@@ -398,7 +398,7 @@ header.shadow .home-icon {
 }
 
 .home-title {
-    font-size: 3rem; /* Reduced from 4rem for better 800px fit */
+    font-size: 2.5rem; /* Further reduced from 3rem for desired fit */
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.2;
