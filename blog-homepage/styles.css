@@ -713,6 +713,7 @@ header.shadow .home-icon {
     -webkit-box-orient: vertical;
     overflow: hidden;
     color: #555;
+    white-space: pre-wrap; /* Preserves newlines and empty lines */
 }
 
 .profile {
