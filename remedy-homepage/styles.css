@@ -1162,12 +1162,17 @@ img {
 .logo {
     display: flex !important;
     align-items: center !important;
-    gap: 0.8rem !important;
+    gap: 0.5rem !important;
     font-size: 1.1rem !important; /* Reduced for force desktop */
     font-weight: 700 !important;
     color: var(--primary) !important;
     white-space: nowrap !important;
     flex-shrink: 0 !important;
+}
+
+/* Hide logo text to prevent overflow on mobile forced-desktop view */
+.logo span {
+    display: none !important;
 }
 
 .logo img, .logo i {

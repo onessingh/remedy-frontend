@@ -60,123 +60,74 @@
           padding: 0 15px;
         }
 
-        /* Header */
+        /* Header styles removed, now using shared root styles.css */
+        
+        /* ============================================================
+           TRUE DESKTOP SITE MODE (FORCED) - Fix for "Ajib" (Weird) Navbar
+           ============================================================ */
         .main-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 1rem 5%;
-          background-color: var(--white);
-          box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-          position: sticky;
-          top: 0;
-          z-index: 1000;
-          transition: all 0.3s ease;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            height: 70px !important;
+            padding: 0 5% !important;
+            background-color: var(--white) !important;
+            position: sticky !important;
+            top: 0 !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+            z-index: 1000 !important;
         }
 
-        .main-header.scrolled {
-          padding: 0.5rem 5%;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .main-nav {
+            display: flex !important;
+            align-items: center !important;
+            width: 100% !important;
+            justify-content: space-between !important;
         }
 
         .logo {
-          display: flex;
-          align-items: center;
-          gap: 0.8rem;
-          font-weight: 700;
-          font-size: 1.2rem;
-          color: var(--primary);
-        }
-
-        .logo img {
-          height: 40px;
+            display: flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+            font-size: 1.1rem !important;
+            font-weight: 700 !important;
+            color: var(--primary) !important;
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
         }
 
         .main-nav ul {
-          display: flex;
-          gap: 1.5rem;
+            display: flex !important;
+            position: static !important;
+            flex-direction: row !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            width: auto !important;
+            height: auto !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            gap: 1.2rem !important;
+            visibility: visible !important;
+        }
+
+        .main-nav ul li {
+            display: inline-block !important;
+            margin: 0 !important;
         }
 
         .main-nav ul li a {
-          font-weight: 500;
-          transition: all 0.3s;
-          padding: 0.5rem 0;
-          position: relative;
+            font-size: 0.85rem !important;
+            font-weight: 500 !important;
+            color: var(--primary-dark) !important;
+            white-space: nowrap !important;
         }
 
-        .main-nav ul li a:hover {
-          color: var(--primary);
-        }
-
-        .main-nav ul li.active a {
-          color: var(--primary);
-          font-weight: 600;
-        }
-
-        .main-nav ul li.active a::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 3px;
-          background: linear-gradient(to right, var(--primary), var(--secondary));
-          border-radius: 3px;
-        }
-
-        .header-right {
-          display: flex;
-          align-items: center;
-          gap: 1.5rem;
-        }
-
-        .search-box {
-          display: flex;
-          align-items: center;
-          position: relative;
-        }
-
-        .search-box input {
-          padding: 0.6rem 1.2rem;
-          border: 1px solid var(--gray);
-          border-radius: 50px;
-          outline: none;
-          width: 200px;
-          font-size: 0.9rem;
-          transition: all 0.3s;
-        }
-
-        .search-box input:focus {
-          border-color: var(--primary);
-          width: 220px;
-        }
-
-        .search-box button {
-          position: absolute;
-          right: 12px;
-          background: none;
-          border: none;
-          color: var(--primary);
-          cursor: pointer;
-          transition: transform 0.3s;
-        }
-
-        .search-box button:hover {
-          transform: scale(1.1);
-        }
-
-        .mobile-menu-btn {
-          display: none;
-          background: none;
-          border: none;
-          font-size: 1.5rem;
-          color: var(--primary);
-          cursor: pointer;
-          transition: transform 0.3s;
-        }
-
-        .mobile-menu-btn:hover {
-          transform: scale(1.1);
+        .mobile-menu-btn, .menu-overlay {
+            display: none !important;
         }
 
         /* About Page Specific Styles */
@@ -733,81 +684,157 @@
           }
         }
 
-        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+          .about-hero h1 {
+              font-size: 2.5rem;
+          }
+        }
 
+        @media (max-width: 768px) {
+          /* Mobile nav overrides removed to force desktop view */
+          .mission-section .container {
+              grid-template-columns: 1fr;
+          }
+          
+          .mission-image {
+              order: -1;
+          }
+          
+          .about-hero h1 {
+              font-size: 2.2rem;
+          }
 
+          .footer-bottom {
+              flex-direction: column;
+              gap: 1rem;
+              text-align: center;
+          }
+        }
 
+        @media (max-width: 480px) {
+          .about-hero {
+              padding: 6rem 0;
+          }
 
-/* ============================================================
-   TRUE DESKTOP SITE MODE (NO SCALING)
-   ============================================================ */
+          .about-hero h1 {
+              font-size: 1.8rem;
+          }
 
+          .about-hero p {
+              font-size: 1rem;
+          }
 
+          .timeline {
+              padding-left: 40px;
+          }
 
-/* ============================================================
-   TRUE DESKTOP SITE MODE (FORCED) - Fix for "Ajib" (Weird) Navbar
-   ============================================================ */
-.main-header {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    height: 70px !important;
-    padding: 0 5% !important;
-    background-color: var(--white) !important;
-    position: sticky !important;
-    top: 0 !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+          .timeline-year {
+              left: -40px;
+              width: 30px;
+              height: 30px;
+              font-size: 0.8rem;
+          }
+
+          .testimonial-card {
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+          }
+        }/* Realistic Nature Elements */
+.nature-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
 }
 
-.main-nav {
-    display: flex !important;
-    align-items: center !important;
-    width: 100% !important;
-    justify-content: space-between !important;
+/* Butterfly with Flapping Wings */
+.butterfly {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 50px;
+    height: 50px;
+    animation: floatButterfly 15s linear infinite, flapWings 0.2s ease-in-out infinite alternate;
 }
 
-.logo {
-    display: flex !important;
-    align-items: center !important;
-    gap: 0.8rem !important;
-    font-size: 1.1rem !important;
-    font-weight: 700 !important;
-    color: var(--primary) !important;
+@keyframes floatButterfly {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(100vw, 50vh) rotate(360deg); }
 }
 
-.main-nav ul {
-    display: flex !important;
-    position: static !important;
-    flex-direction: row !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    width: auto !important;
-    height: auto !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    gap: 1.2rem !important;
-    visibility: visible !important;
+@keyframes flapWings {
+    0% { transform: scaleY(1); }
+    100% { transform: scaleY(0.8); }
 }
 
-.main-nav ul li {
-    display: inline-block !important;
-    margin: 0 !important;
+/* Bird with Wing Movement */
+.bird {
+    position: absolute;
+    top: 30%;
+    left: -100px;
+    width: 80px;
+    height: 40px;
+    animation: flyBird 20s linear infinite, flapBirdWings 0.5s ease-in-out infinite;
 }
 
-.main-nav ul li a {
-    font-size: 0.85rem !important;
-    font-weight: 500 !important;
-    color: var(--primary-dark) !important;
-    white-space: nowrap !important;
+@keyframes flyBird {
+    0% { transform: translateX(-100px) translateY(0) scaleX(1); }
+    100% { transform: translateX(100vw) translateY(-50px) scaleX(1); }
 }
 
-.mobile-menu-btn, .menu-overlay {
-    display: none !important;
+@keyframes flapBirdWings {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
 
+/* Leaf with Wobble Effect */
+.leaf {
+    position: absolute;
+    top: 60%;
+    left: 70%;
+    width: 40px;
+    height: 40px;
+    animation: floatLeaf 25s linear infinite, wobble 3s ease-in-out infinite;
+}
 
+@keyframes floatLeaf {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(-50vw, -50vh) rotate(360deg); }
+}
 
+@keyframes wobble {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+/* Butterfly Wing Morphing */
+.left-wing, .right-wing {
+    animation: wingMorph 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes wingMorph {
+    0% { d: path("M100,100 C50,50 0,100 0,150 C0,200 50,150 100,100"); }
+    100% { d: path("M100,100 C30,30 0,100 0,170 C0,220 60,170 100,100"); }
+}
+
+/* Bird Wing Flap */
+.bird-wings .left-wing, .bird-wings .right-wing {
+    transform-origin: center;
+    animation: birdWingFlap 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes birdWingFlap {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(20deg); }
+}
+.about-hero, .mission-section, .values-section {
+    position: relative;
+    z-index: 2;
+}
+.butterfly, .bird, .leaf {
+    will-change: transform, opacity;
+}

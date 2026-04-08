@@ -262,10 +262,17 @@
 .logo {
     display: flex !important;
     align-items: center !important;
-    gap: 0.8rem !important;
+    gap: 0.5rem !important;
     font-size: 1.1rem !important;
     font-weight: 700 !important;
     color: var(--primary) !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+/* Hide logo text to prevent overflow - icon only */
+.logo span {
+    display: none !important;
 }
 
 .main-nav ul {
@@ -298,6 +305,23 @@
 
 .mobile-menu-btn, .menu-overlay {
     display: none !important;
+}
+
+/* Specific layout: 2 above, 1 below (matching Image 2) */
+.expert-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 2rem !important;
+    width: 100% !important;
+    max-width: 750px !important; /* Forces 2 to fit and 3rd to wrap */
+    margin: 0 auto !important;
+    padding: 2rem 0 !important;
+}
+
+.expert-card {
+    flex: 0 0 320px !important;
+    max-width: 320px !important;
 }
 
 

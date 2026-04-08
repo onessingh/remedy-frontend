@@ -1,23 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-// Mobile Menu Toggle logic
+    // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mainNav = document.querySelector('.main-nav ul');
-    const menuOverlay = document.getElementById('menuOverlay');
     
-    function toggleMenu() {
+    mobileMenuBtn.addEventListener('click', function() {
         mainNav.classList.toggle('show');
-        menuOverlay.classList.toggle('show');
-        document.body.style.overflow = mainNav.classList.contains('show') ? 'hidden' : 'auto';
-        mobileMenuBtn.innerHTML = mainNav.classList.contains('show') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-    }
-
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', toggleMenu);
-    }
-
-    if (menuOverlay) {
-        menuOverlay.addEventListener('click', toggleMenu);
-    }
+        this.setAttribute('aria-expanded', mainNav.classList.contains('show'));
+    });
 
     // Optimized Header Scroll Effect
     function handleScroll() {
