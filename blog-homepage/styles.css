@@ -1541,7 +1541,7 @@ footer p {
 
 
 .logo {
-    font-size: 1.2rem !important; /* Shrunk from 1.5rem to prevent overlap */
+    font-size: 1.1rem !important; /* Shrunk further */
     white-space: nowrap !important;
     font-weight: 800 !important;
 }
@@ -1550,9 +1550,9 @@ footer p {
 
 .nav-search-form {
     display: flex !important;
-    flex-grow: 1 !important;
-    max-width: 200px !important; /* Further reduced from 250px to make space icon */
-    margin: 0 20px 0 10px !important; /* Increased right margin to push icons away */
+    flex-grow: 0 !important;
+    max-width: 200px !important;
+    margin: 0 auto 0 20px !important; /* Shifting search left-ish and pushing icons to the far right */
 }
 
 
@@ -1561,15 +1561,17 @@ footer p {
     display: flex !important;
     position: static !important;
     width: auto !important;
+    flex-grow: 1 !important; /* Allow this container to take up remaining space */
     height: auto !important;
     background: transparent !important;
     box-shadow: none !important;
     padding: 0 !important;
     transform: none !important;
-    gap: 1.5rem !important; /* Restored larger gap to prevent icon overlap */
+    gap: 0.8rem !important;
     flex-direction: row !important;
     opacity: 1 !important;
     pointer-events: auto !important;
+    justify-content: flex-end !important;
 }
 
 
