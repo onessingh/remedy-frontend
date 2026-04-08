@@ -41,7 +41,7 @@ section {
 }
 
 .container {
-    max-width: 1068px;
+    max-width: 800px;
     margin: auto;
     width: 100%;
 }
@@ -705,6 +705,7 @@ header.shadow .home-icon {
     margin: 10px 0 15px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     color: #555;
