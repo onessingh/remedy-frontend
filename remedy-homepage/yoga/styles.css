@@ -441,77 +441,7 @@ body {
 
 
 
-/* ============================================================
-   TRUE DESKTOP SITE MODE (FORCED) - Fix for "Ajib" (Weird) Navbar
-   ============================================================ */
-.main-header {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    height: 70px !important;
-    padding: 0 5% !important;
-    background-color: var(--white) !important;
-    position: sticky !important;
-    top: 0 !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
-}
-
-.main-nav {
-    display: flex !important;
-    align-items: center !important;
-    width: 100% !important;
-    justify-content: space-between !important;
-}
-
-.logo {
-    display: flex !important;
-    align-items: center !important;
-    gap: 0.5rem !important;
-    font-size: 1.1rem !important;
-    font-weight: 700 !important;
-    color: var(--primary) !important;
-    white-space: nowrap !important;
-    flex-shrink: 0 !important;
-}
-
-/* Hide logo text to prevent overflow - icon only */ 
-.logo span {
-    display: none !important;
-}
-
-.main-nav ul {
-    display: flex !important;
-    position: static !important;
-    flex-direction: row !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    width: auto !important;
-    height: auto !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    gap: 1.2rem !important;
-    visibility: visible !important;
-}
-
-.main-nav ul li {
-    display: inline-block !important;
-    margin: 0 !important;
-}
-
-.main-nav ul li a {
-    font-size: 0.85rem !important;
-    font-weight: 500 !important;
-    color: var(--primary-dark) !important;
-    white-space: nowrap !important;
-}
-
-.mobile-menu-btn, .menu-overlay {
-    display: none !important;
-}
+/* Navigation now using master root styles.css */
 
 
 
