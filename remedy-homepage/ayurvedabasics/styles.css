@@ -133,6 +133,11 @@
             white-space: nowrap !important;
         }
 
+        .logo span {
+            display: inline-block !important;
+            font-size: 1.5rem !important;
+        }
+
         .mobile-menu-btn, .menu-overlay {
             display: none !important;
         }
@@ -140,7 +145,7 @@
         /* Ayurveda Basics Content Styles */
         .container {
           width: 100%;
-          max-width: 1100px;
+          max-width: 1000px;
           margin: 0 auto;
           padding: 0 20px;
         }
