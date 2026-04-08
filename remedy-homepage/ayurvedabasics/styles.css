@@ -76,7 +76,7 @@
             display: flex !important;
             justify-content: space-between !important;
             align-items: center !important;
-            height: 70px !important;
+            height: 100px !important;
             padding: 0 5% !important;
             background-color: var(--white) !important;
             position: sticky !important;
@@ -97,8 +97,8 @@
         .logo {
             display: flex !important;
             align-items: center !important;
-            gap: 0.5rem !important;
-            font-size: 1.1rem !important;
+            gap: 0.8rem !important;
+            font-size: 1.5rem !important;
             font-weight: 700 !important;
             color: var(--primary) !important;
             white-space: nowrap !important;
@@ -117,7 +117,7 @@
             box-shadow: none !important;
             padding: 0 !important;
             margin: 0 !important;
-            gap: 1.2rem !important;
+            gap: 2rem !important;
             visibility: visible !important;
         }
 
@@ -127,7 +127,7 @@
         }
 
         .main-nav ul li a {
-            font-size: 0.85rem !important;
+            font-size: 1.1rem !important;
             font-weight: 500 !important;
             color: var(--primary-dark) !important;
             white-space: nowrap !important;
@@ -140,7 +140,7 @@
         /* Ayurveda Basics Content Styles */
         .container {
           width: 100%;
-          max-width: 1200px;
+          max-width: 1100px;
           margin: 0 auto;
           padding: 0 20px;
         }
@@ -175,6 +175,9 @@
         }
 
         .hero-buttons {
+          display: flex;
+          justify-content: center;
+          gap: 1.5rem;
           margin-bottom: 50px;
         }
 
@@ -190,7 +193,6 @@
           cursor: pointer;
           box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4);
           text-align: center;
-          margin: 0 10px;
         }
 
         .cta-button.pulse {
