@@ -1614,6 +1614,9 @@ header.shadow .nav-link {
 
 /* Post Grid Fix for Desktop View on Mobile */
 .post-container {
+    display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    max-width: 800px !important; /* Updated from 1200px */
+    width: 800px !important; /* Forces 800px width to match the header */
+    min-width: 800px !important;
+    margin: 0 auto !important;
 }
