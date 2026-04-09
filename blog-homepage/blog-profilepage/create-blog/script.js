@@ -479,24 +479,37 @@ document.addEventListener('DOMContentLoaded', function() {
                 imagePreview.innerHTML = '';
 
                 const reader = new FileReader();
-                reader.onload = function(e) {
-                    const imgContainer = document.createElement('div');
-                    imgContainer.className = 'image-preview-item';
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.setAttribute('role', 'img');
-                    img.setAttribute('aria-label', 'Uploaded image preview');
-                    const removeBtn = document.createElement('button');
-                    removeBtn.textContent = 'Remove';
-                    removeBtn.className = 'remove-image-btn';
-                    removeBtn.addEventListener('click', () => removeImage(0));
-                    imgContainer.appendChild(img);
-                    imgContainer.appendChild(removeBtn);
-                    imagePreview.appendChild(imgContainer);
-                    
-                    images.push({ blob: file, type: file.type, name: file.name, isThumbnail: true });
-                    imagePreview.style.display = 'flex';
-                    saveState();
+                reader.onload = async function(e) {
+                    try {
+                        const originalResult = e.target.result;
+                        const compressedBlob = await compressImage(file);
+                        
+                        const imgContainer = document.createElement('div');
+                        imgContainer.className = 'image-preview-item';
+                        const img = document.createElement('img');
+                        img.src = URL.createObjectURL(compressedBlob);
+                        img.setAttribute('role', 'img');
+                        img.setAttribute('aria-label', 'Uploaded image preview');
+                        const removeBtn = document.createElement('button');
+                        removeBtn.textContent = 'Remove';
+                        removeBtn.className = 'remove-image-btn';
+                        removeBtn.addEventListener('click', () => removeImage(0));
+                        imgContainer.appendChild(img);
+                        imgContainer.appendChild(removeBtn);
+                        imagePreview.appendChild(imgContainer);
+                        
+                        images.push({ 
+                            blob: compressedBlob, 
+                            type: 'image/jpeg', 
+                            name: file.name.replace(/\.[^/.]+$/, "") + ".jpg", 
+                            isThumbnail: true 
+                        });
+                        imagePreview.style.display = 'flex';
+                        saveState();
+                    } catch (err) {
+                        console.error('Compression error:', err);
+                        alert('Error processing image.');
+                    }
                 };
                 reader.readAsDataURL(file);
                 this.value = ''; 
@@ -504,6 +517,46 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Error uploading images:', error);
                 alert('Failed to upload images: ' + error.message);
             }
+        });
+    }
+
+    async function compressImage(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    let width = img.width;
+                    let height = img.height;
+                    const max_size = 1200;
+
+                    if (width > height) {
+                        if (width > max_size) {
+                            height *= max_size / width;
+                            width = max_size;
+                        }
+                    } else {
+                        if (height > max_size) {
+                            width *= max_size / height;
+                            height = max_size;
+                        }
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+                    
+                    canvas.toBlob((blob) => {
+                        resolve(blob);
+                    }, 'image/jpeg', 0.7);
+                };
+                img.onerror = reject;
+                img.src = e.target.result;
+            };
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
         });
     }
 

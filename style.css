@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f6f5f7;
@@ -6,6 +10,10 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+}
+
+a, button {
+    transition: all 0.3s ease;
 }
 
 /* 🔝 Header Layout: Welcome center */
@@ -111,9 +119,31 @@ body {
 }
 
 .dropdown-item:hover {
-    background: #7b4397; /* Purple hover - change this */
+    background: #7b4397; /* Purple hover */
     color: #fff;
     transform: scale(1.02); /* Subtle animation */
+}
+
+/* 🆕 New Stylish Dropdown Button (Logout) */
+.dropdown-button {
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    background: transparent;
+    color: #000;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-button:hover {
+    background: #dc3545; /* Modern Red for Logout */
+    color: #fff;
+    transform: scale(1.02);
 }
 
 /* Logged-In Info (Profile Pic + Name) */

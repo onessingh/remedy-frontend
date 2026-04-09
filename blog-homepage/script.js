@@ -778,7 +778,7 @@ function renderUniqueUserPost(post) {
         '/images/default.jpg';
     
     postBox.innerHTML = `
-        <img src="${thumbnailUrl}" alt="Post Image" class="post-img" onerror="this.src='/images/default.jpg'" />
+        <img src="${thumbnailUrl}" alt="Post Image" class="post-img" loading="lazy" onerror="this.src='/images/default.jpg'" />
         <h2 class="category">${post.category || 'Uncategorized'}</h2>
         <a href="/blog-homepage/readmore/index.html?blogId=${post.id}" class="post-title">${post.title || 'Untitled'}</a>
         <span class="post-date">${new Date(post.created_at).toLocaleDateString()}</span>
@@ -786,9 +786,9 @@ function renderUniqueUserPost(post) {
         <p class="post-description">
             ${post.content ? post.content.replace(/<[^>]+>/g, '').substring(0, 200) : "No content available."}...
         </p>
-        <a href="/blog-homepage/blog-profilepage/index.html?userId=${post.user_id}" class="profile-info" style="display: flex; align-items: center; gap: 10px; margin-top: 15px;">
-            <img src="${post.author?.image ? (post.author.image.startsWith('http') || post.author.image.startsWith('data:') ? post.author.image : BACKEND_URL + "/uploads/" + post.author.image) : '/images/default.jpg'}" alt="Author" class="profile-img" style="width: 30px; height: 30px; border-radius: 50%;">
-            <span class="profile-name" style="font-size: 0.9rem;">${post.author?.name || "Unknown Author"}</span>
+        <a href="/blog-homepage/blog-profilepage/index.html?userId=${post.user_id}" class="profile-info" style="display: flex; align-items: center; gap: 10px; margin-top: 15px; transition: transform 0.2s ease;">
+            <img src="${post.author?.image ? (post.author.image.startsWith('http') || post.author.image.startsWith('data:') ? post.author.image : BACKEND_URL + "/uploads/" + post.author.image) : '/images/default.jpg'}" alt="Author" class="profile-img" loading="lazy" style="width: 30px; height: 30px; border-radius: 50%;">
+            <span class="profile-name" style="font-size: 0.9rem; transition: color 0.2s ease;">${post.author?.name || "Unknown Author"}</span>
         </a>
     `;
 

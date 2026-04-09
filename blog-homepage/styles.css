@@ -26,6 +26,16 @@
 
 a {
     text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn {
+    transition: all 0.3s ease;
 }
 
 li {
@@ -1641,4 +1651,47 @@ footer, .copyright {
 
 footer {
     padding: 60px 50px 40px !important; /* Slightly reduced padding to fit content better */
+}
+
+/* Smooth Transitions & Performance Optimizations */
+.post-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.nav-link:hover {
+    color: var(--second-color) !important;
+    transform: translateY(-2px);
+}
+
+/* Skeleton Loading Shimmer */
+.skeleton {
+    background: #f6f7f8;
+    background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    background-repeat: no-repeat;
+    background-size: 800px 100%;
+    display: inline-block;
+    position: relative;
+    animation: placeholderShimmer 1.5s linear infinite forwards;
+}
+
+@keyframes placeholderShimmer {
+    0% {
+        background-position: -468px 0;
+    }
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+/* Optimize AOS performance */
+[data-aos] {
+    pointer-events: none;
+}
+[data-aos].aos-animate {
+    pointer-events: auto;
 }
