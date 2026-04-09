@@ -16,8 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // 🔐 Token from URL
-        const token = window.location.pathname.split("/").pop();
+        // 🔐 Token from URL (check query param first, then fallback to path)
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token') || window.location.pathname.split("/").pop();
 
         // Disable button to prevent multiple clicks
         resetBtn.disabled = true;

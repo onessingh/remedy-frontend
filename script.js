@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
             try {
-                const res = await fetch('/profile/forgot-password', {
+                const res = await fetch('/api/forgot-password', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email: userEmail }),
