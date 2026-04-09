@@ -983,6 +983,10 @@ footer p {
     color: #ccc;
     text-decoration: none;
     transition: all 0.3s ease;
+    overflow-wrap: break-word; /* Fix for long email overflow */
+    word-break: break-all;
+    display: inline-block;
+    max-width: 100%;
 }
 
 .contactBx .info li a:hover {
@@ -1625,4 +1629,16 @@ header.shadow .nav-link {
     .post-container {
         grid-template-columns: repeat(2, 1fr) !important; /* 2 columns for mobile phones */
     }
+}
+
+/* Footer and Copyright Fix for Forced Desktop Mode */
+footer, .copyright {
+    width: 800px !important;
+    min-width: 800px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+footer {
+    padding: 60px 50px 40px !important; /* Slightly reduced padding to fit content better */
 }
