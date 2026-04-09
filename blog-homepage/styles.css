@@ -1612,11 +1612,17 @@ header.shadow .nav-link {
     display: block !important;
 }
 
-/* Post Grid Fix for Desktop View on Mobile */
+/* Post Grid Fix for Desktop View on Mobile - 2 Column Layout */
 .post-container {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    width: 800px !important; /* Forces 800px width to match the header */
+    grid-template-columns: repeat(3, 1fr) !important; /* 3 columns for tablets/small desktops */
+    width: 800px !important;
     min-width: 800px !important;
     margin: 0 auto !important;
+}
+
+@media screen and (max-width: 800px) {
+    .post-container {
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 columns for mobile phones */
+    }
 }
