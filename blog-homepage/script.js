@@ -442,9 +442,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (profileImageEl) profileImageEl.src = "/images/default.jpg";
         });
 
-    const createBlogBtn = document.getElementById("createBlogBtn");
-    const profileBtn = document.getElementById("profileBtn");
-
     [createBlogBtn, profileBtn].forEach(btn => {
         if (btn) {
             btn.addEventListener("click", function (e) {
@@ -459,6 +456,34 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     });
+
+    // ✅ Auth Wall: Intercept Read More and Profile clicks in the post grid
+    const postContainer = document.querySelector(".post-container");
+    if (postContainer) {
+        postContainer.addEventListener("click", function(e) {
+            const targetLink = e.target.closest(".post-title, .profile-info");
+            if (targetLink) {
+                e.preventDefault();
+                const destination = targetLink.getAttribute("href");
+                checkLoginStatus(function(isLoggedIn) {
+                    if (!isLoggedIn) {
+                        showLoginPrompt();
+                    } else {
+                        window.location.href = destination;
+                    }
+                });
+            }
+        });
+    }
+
+    // ✅ Auth Wall: Handle redirection from private pages
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('auth_required') === 'true') {
+        // Clean URL to avoid infinite popups on refresh
+        const newUrl = window.location.pathname;
+        window.history.replaceState({}, document.title, newUrl);
+        showLoginPrompt();
+    }
 
     const newsletterForm = document.querySelector(".newsletter-form");
     if (newsletterForm) {

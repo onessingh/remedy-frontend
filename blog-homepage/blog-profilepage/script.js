@@ -133,9 +133,14 @@ async function loadProfileData() {
 
     } catch (err) {
         console.error("Error loading profile:", err);
+        // ✅ Auth Wall: Redirect if not authenticated
+        if (err.message === "Not authenticated") {
+            window.location.href = '/blog-homepage/index.html?auth_required=true';
+            return;
+        }
         const profileContainer = document.querySelector(".profile-container");
         if (profileContainer) {
-            profileContainer.innerHTML = '<p class="error">Failed to load profile. Without Login.</p>';
+            profileContainer.innerHTML = '<p class="error">Failed to load profile.</p>';
         }
     } finally {
         showLoading(false);

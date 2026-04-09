@@ -206,6 +206,7 @@
             <div class="menu-toggle">
                 <i class='bx bx-menu'></i>
             </div>
+            <div class="nav-overlay"></div>
         </div>
     </header>
 
@@ -345,7 +346,27 @@
                                     const notificationItem = document.createElement('div');
                                     notificationItem.className = `notification-item ${notification.isRead ? '' : 'unread'}`;
                                     
-                                    // ... determined message logic ...
+                                    // determined message logic
+                                    let message = '';
+                                    switch (notification.type) {
+                                        case 'like':
+                                            message = `liked your post "${notification.blogTitle || 'Untitled'}"`;
+                                            break;
+                                        case 'comment':
+                                            message = `commented on your post "${notification.blogTitle || 'Untitled'}"`;
+                                            break;
+                                        case 'follow':
+                                            message = `started following you`;
+                                            break;
+                                        case 'new_post':
+                                            message = `published a new post "${notification.blogTitle || 'Untitled'}"`;
+                                            break;
+                                        case 'newsletter':
+                                            message = `just subscribed to the newsletter`;
+                                            break;
+                                        default:
+                                            message = notification.message || 'sent you a notification';
+                                    }
 
                                     const actorImage = notification.profileImage 
                                         ? (notification.profileImage.startsWith('http') || notification.profileImage.startsWith('data:') ? notification.profileImage : BACKEND_URL + "/uploads/" + notification.profileImage)

@@ -1,4 +1,16 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    // ✅ Auth Wall: Check if user is logged in
+    try {
+        const authRes = await fetch('/api/check-auth');
+        const authData = await authRes.json();
+        if (!authData.loggedIn) {
+            window.location.href = '/blog-homepage/index.html?auth_required=true';
+            return;
+        }
+    } catch (err) {
+        console.error('Auth check failed:', err);
+    }
+
     const urlParams = new URLSearchParams(window.location.search);
     const blogId = urlParams.get('blogId');
 
