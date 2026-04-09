@@ -506,6 +506,73 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    // ✅ Forgot Password Modal Logic
+    const forgotModal = document.getElementById('forgotModal');
+    const forgotPasswordBtn = document.getElementById('forgotPasswordBtn');
+    const closeForgotModal = document.getElementById('closeForgotModal');
+    const cancelForgot = document.getElementById('cancelForgot');
+    const submitForgot = document.getElementById('submitForgot');
+    const forgotEmailInput = document.getElementById('forgotEmail');
+    const forgotMessage = document.getElementById('forgotMessage');
+
+    if (forgotPasswordBtn) {
+        forgotPasswordBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            forgotModal.style.display = 'flex';
+        });
+    }
+
+    const hideForgotModal = () => {
+        forgotModal.style.display = 'none';
+        if (forgotEmailInput) forgotEmailInput.value = '';
+        if (forgotMessage) forgotMessage.innerText = '';
+        if (submitForgot) submitForgot.disabled = false;
+    };
+
+    if (closeForgotModal) closeForgotModal.addEventListener('click', hideForgotModal);
+    if (cancelForgot) cancelForgot.addEventListener('click', hideForgotModal);
+
+    if (submitForgot) {
+        submitForgot.addEventListener('click', async () => {
+            const email = forgotEmailInput.value.trim();
+            if (!email) {
+                forgotMessage.innerText = 'Please enter your email';
+                forgotMessage.style.color = '#dc3545';
+                return;
+            }
+
+            // Show loading state
+            forgotMessage.innerText = 'Sending reset link...';
+            forgotMessage.style.color = '#007bff';
+            submitForgot.disabled = true;
+
+            try {
+                const res = await fetch('/api/forgot-password', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+
+                const data = await res.json();
+
+                if (res.ok) {
+                    forgotMessage.innerText = '✅ Reset link sent! Check your email.';
+                    forgotMessage.style.color = '#28a745';
+                    setTimeout(hideForgotModal, 4000);
+                } else {
+                    forgotMessage.innerText = data.message || 'Failed to send link';
+                    forgotMessage.style.color = '#dc3545';
+                    submitForgot.disabled = false;
+                }
+            } catch (err) {
+                console.error('Forgot password error:', err);
+                forgotMessage.innerText = '❌ Server error. Please try again later.';
+                forgotMessage.style.color = '#dc3545';
+                submitForgot.disabled = false;
+            }
+        });
+    }
 });
 
 async function checkSubscriptionStatus() {

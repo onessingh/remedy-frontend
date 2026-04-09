@@ -48,6 +48,7 @@
                         <a href="blog-profilepage/create-blog/index.html" id="createBlogBtn"
                             class="dropdown-item">Create New Blog</a>
                         <a href="blog-profilepage/index.html" id="profileBtn" class="dropdown-item">Profile</a>
+                        <a href="#" id="forgotPasswordBtn" class="dropdown-item">Forgot Password?</a>
                     </div>
                 </div>
             </div>
@@ -211,6 +212,20 @@
             });
         });
     </script>
+    <!-- Forgot Password Modal -->
+    <div class="modal" id="forgotModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 30000; justify-content: center; align-items: center;">
+        <div class="modal-content" style="background: white; padding: 2rem; border-radius: 10px; max-width: 500px; width: 90%; position: relative;">
+            <span class="close-modal" id="closeForgotModal" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 1.5rem;">&times;</span>
+            <h2 style="margin-bottom: 1rem; color: #1a1e21;">Forgot Password</h2>
+            <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #555;">Enter your email to receive a password reset link.</p>
+            <input type="email" placeholder="Enter your email" id="forgotEmail" style="width: 100%; padding: 12px; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+            <p id="forgotMessage" style="margin-bottom: 1rem; font-size: 0.9rem;"></p>
+            <div style="display: flex; justify-content: flex-end; gap: 1rem;">
+                <button id="cancelForgot" style="padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; background: #eee;">Cancel</button>
+                <button id="submitForgot" style="padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; background: #4de4ff; color: #1a1e21; font-weight: 600;">OK</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

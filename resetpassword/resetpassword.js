@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         resetBtn.textContent = "Processing...";
 
         try {
-            const res = await fetch(`/forgot-password/reset-password/${token}`, {
+            const res = await fetch(`/api/reset-password/${token}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

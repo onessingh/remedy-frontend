@@ -230,4 +230,53 @@ window.addEventListener('DOMContentLoaded', async () => {
         signupSuccessModal.style.display = 'none';
         container.classList.remove('active');
     });
+    // Forgot Password Submit Handler
+    const submitForgotBtn = document.getElementById('submitForgot');
+    const forgotEmailInput = document.getElementById('forgotEmail');
+    const forgotMessage = document.getElementById('forgotMessage');
+
+    if (submitForgotBtn) {
+        submitForgotBtn.addEventListener('click', async () => {
+            const email = forgotEmailInput.value;
+            if (!email) {
+                forgotMessage.innerText = 'Please enter your email';
+                forgotMessage.style.color = '#e74c3c';
+                return;
+            }
+
+            forgotMessage.innerText = 'Sending link...';
+            forgotMessage.style.color = '#3498db';
+            submitForgotBtn.disabled = true;
+
+            try {
+                const res = await fetch('/api/forgot-password', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+
+                const data = await res.json();
+
+                if (res.ok) {
+                    forgotMessage.innerText = 'Reset link sent! Please check your email.';
+                    forgotMessage.style.color = '#27ae60';
+                    forgotEmailInput.value = '';
+                    setTimeout(() => {
+                        const modal = document.getElementById('forgotModal');
+                        if (modal) modal.style.display = 'none';
+                        forgotMessage.innerText = '';
+                        submitForgotBtn.disabled = false;
+                    }, 4000);
+                } else {
+                    forgotMessage.innerText = data.message || 'Failed to send reset link';
+                    forgotMessage.style.color = '#e74c3c';
+                    submitForgotBtn.disabled = false;
+                }
+            } catch (err) {
+                forgotMessage.innerText = 'Server error. Please try again later.';
+                forgotMessage.style.color = '#e74c3c';
+                submitForgotBtn.disabled = false;
+            }
+        });
+    }
 });
