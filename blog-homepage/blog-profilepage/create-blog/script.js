@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let history = [];
     let historyIndex = -1;
     let images = [];
-    let videos = [];
 
     // Template definitions
     const templates = [
@@ -123,9 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Load existing media
             if (blog.media && blog.media.length) {
                 const imagePreview = document.querySelector('.image-preview');
-                const videoPreview = document.querySelector('.video-preview');
                 imagePreview.innerHTML = '';
-                videoPreview.innerHTML = '';
                 blog.media.forEach((media, index) => {
                     if (media.type.startsWith('image')) {
                         const imgContainer = document.createElement('div');
@@ -150,34 +147,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             type: media.type,
                             isThumbnail: media.isThumbnail
                         });
-                    } else if (media.type.startsWith('video')) {
-                        const videoContainer = document.createElement('div');
-                        videoContainer.className = 'video-preview-item';
-                        const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-                            ? 'http://localhost:5000' 
-                            : 'https://remedy-backend-2lbx.onrender.com';
-
-                        const video = document.createElement('video');
-                        video.src = (media.url.startsWith('http') || media.url.startsWith('data:')) ? media.url : BACKEND_URL + "/uploads/" + media.url;
-                        video.controls = true;
-                        video.setAttribute('role', 'video');
-                        video.setAttribute('aria-label', 'Uploaded video preview');
-                        const removeBtn = document.createElement('button');
-                        removeBtn.textContent = 'Remove';
-                        removeBtn.className = 'remove-video-btn';
-                        removeBtn.addEventListener('click', () => removeVideo(index));
-                        videoContainer.appendChild(video);
-                        videoContainer.appendChild(removeBtn);
-                        videoPreview.appendChild(videoContainer);
-                        videos.push({
-                            url: media.url,
-                            type: media.type,
-                            isThumbnail: media.isThumbnail
-                        });
                     }
                 });
                 imagePreview.style.display = images.length ? 'flex' : 'none';
-                videoPreview.style.display = videos.length ? 'flex' : 'none';
             }
 
             // Trigger tag preview update
@@ -341,14 +313,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            videos.forEach((video, index) => {
-                if (video.blob) {
-                    formData.append('media', video.blob, video.name);
-                    formData.append(`media_${mediaIndex}_type`, video.type);
-                    formData.append(`media_${mediaIndex}_isThumbnail`, video.isThumbnail ? 'true' : 'false');
-                    mediaIndex++;
-                }
-            });
 
             const url = isEditMode ? `/api/user/blogs/${blogId}` : '/api/user/blogs';
             const method = isEditMode ? 'PUT' : 'POST';
@@ -488,49 +452,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Image and video upload
+    // Image upload
     const imageInput = document.getElementById('blogImages');
-    const videoInput = document.getElementById('blogVideos');
     const imagePreview = document.querySelector('.image-preview');
-    const videoPreview = document.querySelector('.video-preview');
 
     if (imageInput && imagePreview) {
         imageInput.addEventListener('change', function() {
             try {
                 const files = Array.from(this.files);
-                if (files.some(file => file.size > 5 * 1024 * 1024)) {
-                    alert('Each image must be less than 5MB.');
+                if (files.length === 0) return;
+
+                const file = files[0]; // Only take the first file
+                if (file.size > 5 * 1024 * 1024) {
+                    alert('Image must be less than 5MB.');
                     this.value = '';
                     return;
                 }
-                files.forEach((file, index) => {
-                    if (!file.type.startsWith('image/')) {
-                        alert('Please upload valid image files.');
-                        return;
-                    }
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        const imgContainer = document.createElement('div');
-                        imgContainer.className = 'image-preview-item';
-                        const img = document.createElement('img');
-                        img.src = e.target.result;
-                        img.setAttribute('role', 'img');
-                        img.setAttribute('aria-label', 'Uploaded image preview');
-                        const removeBtn = document.createElement('button');
-                        removeBtn.textContent = 'Remove';
-                        removeBtn.className = 'remove-image-btn';
-                        removeBtn.addEventListener('click', () => removeImage(images.length - 1));
-                        imgContainer.appendChild(img);
-                        imgContainer.appendChild(removeBtn);
-                        imagePreview.appendChild(imgContainer);
-                        const isThumbnail = images.length === 0 && videos.length === 0;
-                        images.push({ blob: file, type: file.type, name: file.name, isThumbnail });
-                        imagePreview.style.display = 'flex';
-                        saveState();
-                    };
-                    reader.readAsDataURL(file);
-                });
-                this.value = ''; // Clear input to allow re-uploading
+                
+                if (!file.type.startsWith('image/')) {
+                    alert('Please upload a valid image file.');
+                    return;
+                }
+
+                // Clear existing media (Single Photo)
+                images = [];
+                imagePreview.innerHTML = '';
+
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imgContainer = document.createElement('div');
+                    imgContainer.className = 'image-preview-item';
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.setAttribute('role', 'img');
+                    img.setAttribute('aria-label', 'Uploaded image preview');
+                    const removeBtn = document.createElement('button');
+                    removeBtn.textContent = 'Remove';
+                    removeBtn.className = 'remove-image-btn';
+                    removeBtn.addEventListener('click', () => removeImage(0));
+                    imgContainer.appendChild(img);
+                    imgContainer.appendChild(removeBtn);
+                    imagePreview.appendChild(imgContainer);
+                    
+                    images.push({ blob: file, type: file.type, name: file.name, isThumbnail: true });
+                    imagePreview.style.display = 'flex';
+                    saveState();
+                };
+                reader.readAsDataURL(file);
+                this.value = ''; 
             } catch (error) {
                 console.error('Error uploading images:', error);
                 alert('Failed to upload images: ' + error.message);
@@ -545,9 +514,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateImagePreview();
                 // Update thumbnail status
                 if (images.length > 0) {
-                    images[0].isThumbnail = videos.length === 0;
-                } else if (videos.length > 0) {
-                    videos[0].isThumbnail = true;
+                    images[0].isThumbnail = true;
                 }
                 saveState();
             }
@@ -583,94 +550,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    if (videoInput && videoPreview) {
-        videoInput.addEventListener('change', function() {
-            try {
-                const files = Array.from(this.files);
-                if (files.some(file => file.size > 10 * 1024 * 1024)) {
-                    alert('Each video must be less than 10MB.');
-                    this.value = '';
-                    return;
-                }
-                files.forEach((file, index) => {
-                    if (!file.type.startsWith('video/')) {
-                        alert('Please upload valid video files.');
-                        return;
-                    }
-                    const videoContainer = document.createElement('div');
-                    videoContainer.className = 'video-preview-item';
-                    const video = document.createElement('video');
-                    const url = URL.createObjectURL(file);
-                    video.src = url;
-                    video.controls = true;
-                    video.setAttribute('role', 'video');
-                    video.setAttribute('aria-label', 'Uploaded video preview');
-                    const removeBtn = document.createElement('button');
-                    removeBtn.textContent = 'Remove';
-                    removeBtn.className = 'remove-video-btn';
-                    removeBtn.addEventListener('click', () => removeVideo(videos.length - 1));
-                    videoContainer.appendChild(video);
-                    videoContainer.appendChild(removeBtn);
-                    videoPreview.appendChild(videoContainer);
-                    video.onloadeddata = () => URL.revokeObjectURL(url);
-                    const isThumbnail = images.length === 0 && videos.length === 0;
-                    videos.push({ blob: file, type: file.type, name: file.name, isThumbnail });
-                    videoPreview.style.display = 'flex';
-                    saveState();
-                });
-                this.value = ''; // Clear input to allow re-uploading
-            } catch (error) {
-                console.error('Error uploading videos:', error);
-                alert('Failed to upload videos: ' + error.message);
-            }
-        });
-    }
 
-    function removeVideo(index) {
-        try {
-            if (index >= 0 && index < videos.length) {
-                videos.splice(index, 1);
-                updateVideoPreview();
-                // Update thumbnail status
-                if (videos.length > 0) {
-                    videos[0].isThumbnail = images.length === 0;
-                } else if (images.length > 0) {
-                    images[0].isThumbnail = true;
-                }
-                saveState();
-            }
-        } catch (error) {
-            console.error('Error removing video:', error);
-            alert('Failed to remove video: ' + error.message);
-        }
-    }
-
-    function updateVideoPreview() {
-        try {
-            if (!videoPreview) throw new Error('Video preview element not found');
-            videoPreview.innerHTML = '';
-            videos.forEach((video, index) => {
-                const videoContainer = document.createElement('div');
-                videoContainer.className = 'video-preview-item';
-                const vid = document.createElement('video');
-                vid.src = video.url || URL.createObjectURL(video.blob);
-                vid.controls = true;
-                vid.setAttribute('role', 'video');
-                vid.setAttribute('aria-label', 'Uploaded video preview');
-                const removeBtn = document.createElement('button');
-                removeBtn.textContent = 'Remove';
-                removeBtn.className = 'remove-video-btn';
-                removeBtn.addEventListener('click', () => removeVideo(index));
-                videoContainer.appendChild(vid);
-                videoContainer.appendChild(removeBtn);
-                videoPreview.appendChild(videoContainer);
-            });
-            videoPreview.style.display = videos.length ? 'flex' : 'none';
-        } catch (error) {
-            console.error('Error updating video preview:', error);
-            alert('Failed to update video preview: ' + error.message);
-        }
-    }
 
     // Publish options
     const publishOptions = document.getElementById('publishOptions');
@@ -739,13 +619,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     isThumbnail: img.isThumbnail,
                     url: img.url || null
                 })),
-                videos: videos.map(video => ({
-                    name: video.name,
-                    type: video.type,
-                    size: video.blob ? video.blob.size : 0,
-                    isThumbnail: video.isThumbnail,
-                    url: video.url || null
-                })),
                 layout: document.querySelector('input[name="layout"]:checked')?.value || 'standard',
                 publishOption: document.getElementById('publishOptions')?.value || 'publish',
                 scheduleDate: document.getElementById('scheduleDate')?.value || ''
@@ -796,12 +669,10 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('publishOptions').value = state.publishOption;
             document.getElementById('scheduleDate').value = state.scheduleDate;
 
-            // Restore images and videos
-            if (imagePreview && videoPreview) {
+            // Restore images
+            if (imagePreview) {
                 imagePreview.innerHTML = '';
-                videoPreview.innerHTML = '';
                 images = [];
-                videos = [];
                 state.images.forEach(img => {
                     const imgContainer = document.createElement('div');
                     imgContainer.className = 'image-preview-item';
@@ -818,25 +689,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     imagePreview.appendChild(imgContainer);
                     images.push({ ...img, blob: img.blob || null, isThumbnail: img.isThumbnail });
                 });
-                state.videos.forEach(video => {
-                    const videoContainer = document.createElement('div');
-                    videoContainer.className = 'video-preview-item';
-                    const vid = document.createElement('video');
-                    vid.src = video.url || (video.blob ? URL.createObjectURL(video.blob) : '');
-                    vid.controls = true;
-                    vid.setAttribute('role', 'video');
-                    vid.setAttribute('aria-label', 'Uploaded video preview');
-                    const removeBtn = document.createElement('button');
-                    removeBtn.textContent = 'Remove';
-                    removeBtn.className = 'remove-video-btn';
-                    removeBtn.addEventListener('click', () => removeVideo(videos.length - 1));
-                    videoContainer.appendChild(vid);
-                    videoContainer.appendChild(removeBtn);
-                    videoPreview.appendChild(videoContainer);
-                    videos.push({ ...video, blob: video.blob || null, isThumbnail: video.isThumbnail });
-                });
                 imagePreview.style.display = state.images.length ? 'flex' : 'none';
-                videoPreview.style.display = state.videos.length ? 'flex' : 'none';
             }
 
             // Update UI
@@ -1031,15 +884,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (!img.url) image.onload = () => URL.revokeObjectURL(image.src);
                 });
 
-                videos.forEach(video => {
-                    const vid = document.createElement('video');
-                    vid.src = video.url || URL.createObjectURL(video.blob);
-                    vid.controls = true;
-                    vid.setAttribute('role', 'video');
-                    vid.setAttribute('aria-label', 'Blog preview video');
-                    mediaElement.appendChild(vid);
-                    if (!video.url) vid.onloadeddata = () => URL.revokeObjectURL(vid.src);
-                });
 
                 const contentElement = document.createElement('div');
                 contentElement.className = 'preview-content';
@@ -1060,6 +904,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function uploadBlog() {
         try {
+            // Check for mandatory media (Mandatory Single Photo)
+            if (images.length === 0) {
+                alert("Please select a photo before publishing your blog.");
+                const insertTab = document.querySelector('.tab[onclick*="insert"]');
+                if (insertTab) insertTab.click(); // Switch to the media section automatically
+                return;
+            }
+
             const title = document.getElementById('blogTitle')?.value || '';
             const content = document.getElementById('blogContent')?.innerHTML || '';
             const category = normalizeCategory(document.getElementById('blogCategory')?.value);
@@ -1094,14 +946,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            videos.forEach((video, index) => {
-                if (video.blob) {
-                    formData.append('media', video.blob, video.name);
-                    formData.append(`media_${mediaIndex}_type`, video.type);
-                    formData.append(`media_${mediaIndex}_isThumbnail`, video.isThumbnail ? 'true' : 'false');
-                    mediaIndex++;
-                }
-            });
 
             const url = isEditMode ? `/api/user/blogs/${blogId}` : '/api/user/blogs';
             const method = isEditMode ? 'PUT' : 'POST';
