@@ -716,6 +716,12 @@ header.shadow .home-icon {
     white-space: pre-wrap; /* Preserves newlines and empty lines */
 }
 
+.post-description div,
+.post-description p {
+    margin-bottom: 0.2rem;
+    display: inline; /* Keep inline for the line-clamp to work correctly in summary */
+}
+
 .profile {
     display: flex;
     align-items: center;
