@@ -378,6 +378,7 @@ body {
     padding: 1rem;
     background: white;
     overflow: auto;
+    white-space: pre-wrap; /* Preserves newlines and multiple spaces */
 }
 
 .content-editor:empty:before {
@@ -915,11 +916,13 @@ body {
 /* Updated layout styles */
 .layout-standard .preview-content {
     display: block;
+    white-space: pre-wrap;
 }
 
 .layout-featured-left .preview-content {
     display: flex;
     gap: 1rem;
+    white-space: pre-wrap;
 }
 
 .layout-featured-left .preview-content img,
@@ -933,6 +936,7 @@ body {
     display: flex;
     flex-direction: row-reverse;
     gap: 1rem;
+    white-space: pre-wrap;
 }
 
 .layout-featured-right .preview-content img,
@@ -944,6 +948,7 @@ body {
 
 .layout-full-width .preview-content {
     width: 100%;
+    white-space: pre-wrap;
 }
 
 .layout-full-width .preview-content img,
